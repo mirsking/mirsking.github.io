@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>飞扬博客-MirsKing</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">飞扬博客-MirsKing <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+                <li><a href="/pages/about.html">About</a></li>
+
+              </ul>
+            </div>
+
+<section id="content">
+<h2>Articles in the 技术修炼 category</h2>
+
+
+   <div class="row">
+
+
+        <div class="eleven columns">
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/2014/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html" rel="bookmark" title="Permalink to Matlab绘制各种动态心形图并保存为Gif">Matlab绘制各种动态心形图并保存为Gif</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-03-20T22:33:00+01:00"> Thu 20 March 2014 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>“码农”，这个自从接触编程，就永远不可能丢掉的头衔，让多少程序猿痛并快乐着。</p>
+<p>作为码农中的一员，却也时常给自己找些乐趣，比如最近很火的<a href="http://gabrielecirulli.github.io/2048/">2048游戏</a>。</p>
+<p>又比如：用Matlab画出一些漂亮的图片。先放一张图（注意，点击图片可以看到动态图哦）：</p>
+<p><a href="/images/heart-beats.gif"><img alt="heart-beats" src="/images/heart-beats.gif" /></a></p>
+<p>还不错吧，下面就贴出源代码，造福大家：</p>
+<div class="highlight"><pre><span class="n">clc</span> <span class="p">;</span><span class="n">clear</span>  
+<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span><span class="nv">%200</span><span class="err">这个值越大，则画面越细腻</span>  
+<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">]</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>  
+<span class="n">I1</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.\^</span><span class="mi">2</span><span class="o">+</span><span class="mi">9</span><span class="sr">/4\*Y.\^2+Z.\^2-1).\^3-X.\^2.\*Z.\^3-9/</span><span class="mi">80</span><span class="o">\*</span><span class="n">Y</span><span class="o">.\^</span><span class="mi">2</span><span class="o">.\*</span><span class="n">Z ...</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/2014/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html" rel="bookmark" title="Permalink to Matlab绘制各种动态心形图并保存为Gif">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/matlab.html">Matlab</a>
+                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/2014/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="bookmark" title="Permalink to Visual Studio添加Armadillo线性代数库实现矩阵运算">Visual Studio添加Armadillo线性代数库实现矩阵运算</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-03-16T10:05:00+01:00"> Sun 16 March 2014 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>Armadillo是一个C++开发的线性代数库，其可以使用LAPACK进行加速，从而取得了速度和易用性上的平衡。从而可以方便高效地把Matlab中的程序方便地移植到C++中。  </p>
+<p>Armadillo也提供了python的接口armanpy。同时在Armadillo基础上也开发了许多实用的包，如用于快速机器学习的MLPACK。<br />
+详细介绍可以看官网：<a href="http://arma.sourceforge.net/">Armadillo</a></p>
+<p>由于最近做毕设需要将Matlab的算法移植到C++上，所以安装了这个库，虽然简单，却也学习到了一些东西。  </p>
+<p>下面是安装过程及一些要注意的，记录一下，方便以后查阅。有需要的童鞋也可以一步一步跟着做一做。</p>
+<h3>到官网下载Armadillo的源文件</h3>
+<p>这里要注意的是，今天为止最新的版本是armadillo-4.100.2.tar.gz。而4.0以后的版本貌似只支持visual studio 2010以上的编译器，如果使用的是visual studio 2008的编译器，会提示编译器版本过低。所以像我这样不得不用2008的就只能下载低版本：我使用的是armadillo-3.920.4.tar.gz，测试可用。下边是下载链接。  </p>
+<p><a href="http://sourceforge.net/projects/arma/files/armadillo-3.930.4.tar.gz/download">armadillo-3.930.4.tar.gz（2008可用）</a>  </p>
+<p><a href="http://sourceforge.net/projects/arma/files/armadillo-4.100.2.tar.gz/download">armadillo-4 ...</a></p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/2014/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="bookmark" title="Permalink to Visual Studio添加Armadillo线性代数库实现矩阵运算">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/matlab.html">Matlab</a>
+                                            <a class="danger label" href="/tag/vc.html">VC++</a>
+                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/2014/build-your-programming-technical-skills.html" rel="bookmark" title="Permalink to 程序员技术练级攻略">程序员技术练级攻略</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-01-15T14:26:00+01:00"> Wed 15 January 2014 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <div class="alert alert-info">
+
+#### 前言
+
+</div>
+
+<p>你是否觉得自己从学校毕业的时候只做过小玩具一样的程序？<wbr></wbr>走入职场后哪怕没有什么经验也可以把以下这些课外练习走一遍（朋友的抱怨：学校课程总是从理论出发，<wbr></wbr>作业项目都看不出有什么实际作用，不如从工作中的需求出发）</p>
+<p>建议：</p>
+<ul>
+<li>不要乱买书，不要乱追新技术新名词，<wbr></wbr>基础的东西经过很长时间积累而且还会在未来至少10年通用。</li>
+<li>回顾一下历史，看看历史上时间线上技术的发展，你才能明白明天会是什么样。</li>
+<li>一定要动手，例子不管多么简单，<wbr></wbr>建议至少自己手敲一遍看看是否理解了里头的细枝末节。</li>
+<li>一定要学会思考，思考为什么要这样，而不是那样。还要举一反三地思考。</li>
+</ul>
+<p><strong>注</strong>：你也许会很奇怪为什么下面的东西很偏Unix/Linux，这是因为我觉得Windows下的编程可能会在未来很没有前途，原因如下：</p>
+<ul>
+<li>现在的用户界面几乎被两个东西主宰了，1）Web，2）移动设备iOS或Android。Windows的图形界面不吃香了。</li>
+<li>越来越多的企业在用成本低性能高的Linux和各种开源技术来构架其系统，Windows的成本太高了。</li>
+<li>微软的东西变得太快了，很不持久，他们完全是在玩弄程序员。详情参见《<a href="http://coolshell.cn/articles/3008.html" title="Windows编程革命简史">Windows编程革命史</a>》</li>
+</ul>
+<p>所以，我个人认为以后的趋势是前端是Web+移动，后端是Linux+开源。开发这边基本上没Windows什么事。</p>
+<div class="alert alert-info">
+
+#### 启蒙入门
+
+</div>
+
+<p><strong>1、 学习一门脚本语言，例如Python/Ruby ...</strong></p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/2014/build-your-programming-technical-skills.html" rel="bookmark" title="Permalink to 程序员技术练级攻略">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/c.html">C</a>
+                                            <a class="danger label" href="/tag/python.html">Python</a>
+                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
+                                </div>
+
+
+
+                        </article></li>
+                </ol><!-- /#posts-list -->
+
+        </div><!-- /.eleven.columns -->
+        
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="/pages/about.html">About</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="/category/gui-ji-gui-hua.html">轨迹规划</a></li>
+		<li><a href="/category/ji-qi-shi-jue-gui-ji-gui-hua.html">机器视觉, 轨迹规划</a></li>
+		<li><a href="/category/ji-zhu-xiu-lian.html">技术修炼</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+		<li><a href="/category/linux-hu-lian-wang.html">Linux, 互联网</a></li>
+		<li><a href="/category/linux-ji-zhu-xiu-lian.html">Linux, 技术修炼</a></li>
+		<li><a href="/category/notes.html">Notes</a></li>
+		<li><a href="/category/wordpress.html">WordPress</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-4"><a href="/tag/blog.html">blog</a></li>
+	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
+	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
+	    <li class="tag-4"><a href="/tag/interests.html">interests</a></li>
+	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
+	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
+	    <li class="tag-4"><a href="/tag/linux.html">linux</a></li>
+	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-2"><a href="/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-4"><a href="/tag/c.html">C</a></li>
+</ul>
+
+
+
+</div> </div><!-- /.row -->
+
+<p class="paginator">
+    Page 1 / 1
+</p>
+</section><!-- /#content -->
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

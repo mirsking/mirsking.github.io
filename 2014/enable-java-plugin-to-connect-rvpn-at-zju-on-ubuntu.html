@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>Ubuntu下安装Java插件连接浙大RVPN</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">飞扬博客-MirsKing <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+                <li><a href="/pages/about.html">About</a></li>
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/2014/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="bookmark"
+                   title="Permalink to Ubuntu下安装Java插件连接浙大RVPN">Ubuntu下安装Java插件连接浙大RVPN</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2014-05-25T17:47:00+02:00">
+                Sun 25 May 2014
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>浙大的RVPN是通过访问rvpn.zju.edu.cn，然后调用Java插件运行Sangfor(深信服)的client然后添加本地路由表实现的。</p>
+<p>windows平台IE上很容易安装Java插件，进而自动下载Sanfor的client。唯一需要注意的是在第一次访问rvpn.zju.edu.cn的时候最好把本地防火墙关闭，否则很可能登陆后一切就绪却卡在“正在初始化”阶段。这个阶段一般是因为权限不够或防火墙禁止了下载客户端、安装vpn虚拟网卡导致的。所以最好是把防火墙关了吧，反正也是鸡肋的东西。</p>
+<p>本文主要是记录下Ubuntu下安装Java插件并连接RVPN的过程。下面就开始喽：</p>
+<h2>Java插件篇</h2>
+<p>Ubuntu中常用的浏览器就是firefox和chrome。先说chrome，笔者用惯了chrome的各种优秀插件和同步功能，虽然firefox也有，但是firefox的UI现在都开始抄袭chrome了，这让笔者更坚定了chrome的阵营。</p>
+<p>可惜，就是这一坚定，让笔者走了不少弯路。本文发问之日，chrome已经更新到了稳定版35.0；而据官网介绍Chrome35移除了对像Java这类NPAPI插件的支持。所以此路不通，可惜了笔者还尝试了互联网上各种方法那么久。不过倒是有个解决方案就是降级使用chrome 34，这个可以到<a href="http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/">Chrome</a>这里去下载deb包。</p>
+<p>笔者喜欢追新，所以没有选用此法，而是被迫安装了firefox。以下是下载和安装java插件的步骤：</p>
+<ol>
+<li>浙大的RVPN在windows下用jre7u55测试通过，不过貌似ubuntu下不行，官网推荐6u27版，可以<a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html#jre-6u27-oth-JPR">点击这里下载</a>。</li>
+<li>
+<p>下载的bin文件，依次执行</p>
+<p><code>sudo chmod +x jre-6u27-linux-x64.bin  
+./jre-6u27-linux-x64.bin</code>
+即可得到一个jre1.6.0_27的目录，本文要用到的就是目录中的lib/amd64/libnpjp2.so（x86用户自行把amd64换为i386）</p>
+</li>
+<li>
+<p>cd到mozilla（firefox）的插件目录，一般是/usr/lib/mozilla/plugins/。然后运行</p>
+<p><code>sudo ln -s \$JAVA\_HOME/lib/amd64/libnpjp2.so</code>
+注意这里不用设置环境变量<code>JAVA_HOME</code>那么麻烦，只要把<code>$JAVA_HOME</code>替换为你第二步生成的文件夹目录即可。</p>
+</li>
+<li>
+<p>然后重启firefox，看下about://plugins中Java插件是否安装成功。</p>
+</li>
+</ol>
+<p>其实chrome的安装步骤类似，只是其插件目录一般是/opt/google/chrome/plugins/，此处的plugins目录如果没有，自行mkdir即可。只可惜35版本的chrome不支持Java插件了...</p>
+<h2>rvpn的设置</h2>
+<p>java安装成功后，就可以访问rvpn了。访问rvpn.zju.edu.cn登陆后，会运行一个java插件，同意运行即可。然后会下载sangfor的一个client到\~/.sangfor目录。这里注意一下打开firefox时最好在terminal中用<code>sudo firefox</code>或<code>gksudo firefoxi</code>打开，因为sangfor在运行时会虚拟一个tun0的网卡，然后建立一组路由表，这个是需要root权限的。</p>
+<p>这里如果运行正常，就会出现</p>
+<p><a href="/images/easyconnect.png"><img alt="easyconnect" src="/images/easyconnect.png" /></a></p>
+<p>这个小图标。然后就可以尽情访问内网了。</p>
+<p>但是这里笔者在执行的时候遇到了一个问题。现象是：登陆显示正常，但是没有绿色的小图标，也就无法访问内网。</p>
+<p>笔者当时尝试了n种方法，郁闷到了极点。出去转了一圈，笔者就想，在windows上，java插件运行后既然调用的是sangfor的exe然后出现了绿色图标，也即easyconnect，那么ubuntu一定是调用sangfor这一步出错导致了上述现象。</p>
+<p>于是，笔者cd到\~/.sangfor/ssl/发现了一个shell文件夹，然后发现了sslservice.sh这个脚本，于是运行一下，发现一直报错，如下：</p>
+<div class="highlight"><pre><span class="n">error</span> <span class="k">while</span> <span class="n">loading</span> <span class="n">shared</span> <span class="n">libraries:</span> <span class="n">libstdc</span><span class="o">++.</span><span class="n">so</span><span class="mf">.6</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">shared</span>
+<span class="n">object</span> <span class="n">file:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
+</pre></div>
+
+
+<p>ok，共享库的问题，于是google之，笔者找到了解决方法，运行</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libstdc</span><span class="o">++</span><span class="mi">6</span>  
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lib32stdc</span><span class="o">++</span><span class="mi">6</span>
+</pre></div>
+
+
+<p>安装这个依赖包，再次访问rvpn，一切正常。</p>
+<h2>小结</h2>
+<p>RVPN在windows下很easy，特别是有IE浏览器这种所有开发必须兼容的强大浏览器。</p>
+<p>而Ubuntu下其实Firefox/Chrome也都是支持的，可惜Chrome升级35版后放弃了对Java插件的支持。</p>
+<p>RVPN在windows和Ubuntu下倒腾了两天，想来这种东西常常是某人按官网流程来一遍就所有OK，某人搞了N久却一直搞不定的东西。所以这种东西总是不能一味照着别人的步子重复的，还是要搞的时候思路清楚，把握其中的原理，然后借助强大的google，问题就迎刃而解了！</p>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="/pages/about.html">About</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="/category/gui-ji-gui-hua.html">轨迹规划</a></li>
+		<li><a href="/category/ji-qi-shi-jue-gui-ji-gui-hua.html">机器视觉, 轨迹规划</a></li>
+		<li><a href="/category/ji-zhu-xiu-lian.html">技术修炼</a></li>
+		<li><a href="/category/linux.html">Linux</a></li>
+		<li><a href="/category/linux-hu-lian-wang.html">Linux, 互联网</a></li>
+		<li><a href="/category/linux-ji-zhu-xiu-lian.html">Linux, 技术修炼</a></li>
+		<li><a href="/category/notes.html">Notes</a></li>
+		<li><a href="/category/wordpress.html">WordPress</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-4"><a href="/tag/blog.html">blog</a></li>
+	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
+	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
+	    <li class="tag-4"><a href="/tag/interests.html">interests</a></li>
+	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
+	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
+	    <li class="tag-4"><a href="/tag/linux.html">linux</a></li>
+	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-2"><a href="/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-4"><a href="/tag/c.html">C</a></li>
+</ul>
+
+
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

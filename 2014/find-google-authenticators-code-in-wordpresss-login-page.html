@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>飞扬博客-MirsKing</title>
+        <title>wordpress后台找回google authenticator验证码</title>
         <meta charset="utf-8" />
 
 
@@ -42,52 +42,45 @@
               </ul>
             </div>
 
-<section id="content">
-<h2>Articles in the Notes category</h2>
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Write Blog with Pelican</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2015-01-12T21:40:00+01:00"> Mon 12 January 2015 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> MirsKing</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>2014年的寒假，大四即将结束，天生爱折腾的我买了域名、买了go（坑）daddy（爹）的空间搭建起了个人的博客，整个博客的模块完全仿照<a href="tianjun.ml">tianjun</a>展开，用的却是大而笨的wordpress。现如今，一年过去了，买的一年的空间就要过期，却发现自己的博客里边只静静地躺着21篇博文(加上草稿)...</p>
-<p>目前国内虚拟主机除了阿里云不太敢用，国外主机速度太慢，还经常被Q。想了良久，还是回归一个码农的本原，就在github.io上搭一个静态站吧，主要还是监督自己注意总结自己的学习内容记录下来。</p>
-<p>Github上建站大都式用jekyl、octopress，可惜都是用ruby写的。ruby不会也就不容易维护，于是放狗搜了一把有没有python的建站，发现还真有<a href="http://docs.getpelican.com/en/3.5.0/index.html">Pelican</a>,果断用起来，现在把过程记下来，算是2015开博的第一篇吧（虽然很快就要考试了...还是要克服万难，坚持下来！）</p>
-<h3>pelican 安装</h3>
-<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span> 
-<span class="nb">mkdir</span> <span class="n">blog</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">blog</span>
-<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
-</pre></div>
 
 
-<p>最后一步完成后 ...</p> </div><!-- /.entry-content -->
+            <header>
+              <h2 class="entry-title">
+                <a href="/2014/find-google-authenticators-code-in-wordpresss-login-page.html" rel="bookmark"
+                   title="Permalink to wordpress后台找回google authenticator验证码">wordpress后台找回google authenticator验证码</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2014-02-07T09:52:00+01:00">
+                Fri 07 February 2014
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>Wordpress中安装google
+authenticator插件，可以极大地增强wordpress的后台安全性。该插件的安装及设置，google一下就可以找到一大片，所以笔者在这里就不再累赘。</p>
+<p>而本文所要解决的问题则是：如果在手机上误删了google身份验证器，或者其他刷机等原因导致无法获取google
+authenticator的验证码而无法登录wordpress后台怎么办？</p>
+<p>笔者这两天手残电脑、手机同时刷了系统，无奈无法获得验证码而失去了本博客的后台。Google之却未曾找到解决方案。于是乎发挥自己的聪明才智，找到了简单的解决方案。闲话休提，下面笔者将此方案介绍给大家，以造福互联网。</p>
+<p>首先，我们虽然没有了wordpress后台的进入权限，但是我们有数据库的权限，所以登入wordpreess数据库的后台。然后，找到数据库中的wp_usermeta表，在其中，我们可以发现大量关于google
+authenticator的字段：如图</p>
+<p><a href="http://www.mirsking.com/wp-content/uploads/2014/02/googleauthenticator.bmp"><img alt="googleauthenticator" src="http://www.mirsking.com/wp-content/uploads/2014/02/googleauthenticator.bmp" /></a></p>
+<p>其中googleauthenticator_description和googleauthenticator_secret是我们这次要用到的字段。他们就是手机端google身份验证器所需要的帐号和密码。在手机上输入完成后即可得到自己想要的验证码了。</p>
+<p><strong>PS.</strong></p>
+<p>当时看到googleauthenticator_enabled这个字段，猜测如果把它的值由enabled改为disabled是否就直接可以免去验证码这一步。但是试了上文的方法后，就没再尝试。有兴趣的朋友可以一试。</p>
+<p><strong>总结一下</strong></p>
+<p>总之，wordpress所有内容都保存在数据库中，所以只要出现问题，到数据库中一定可以找到解决方案，当然前提是保存好你的数据库登录口令，如果连这个也丢掉了，那就呜呼哀哉了....</p>
+            </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/blog.html">blog</a>
-                                            <a class="danger label" href="/tag/interests.html">interests</a>
-                                </div>
-
-
-
-                        </article></li>
-                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -135,10 +128,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

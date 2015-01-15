@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>飞扬博客-MirsKing</title>
+        <title>飞扬博客-MirsKing - rvpn</title>
         <meta charset="utf-8" />
 
 
@@ -43,7 +43,7 @@
             </div>
 
 <section id="content">
-<h2>Articles in the Notes category</h2>
+
 
 
    <div class="row">
@@ -52,33 +52,32 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Write Blog with Pelican</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="/2014/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="bookmark" title="Permalink to Ubuntu下安装Java插件连接浙大RVPN">Ubuntu下安装Java插件连接浙大RVPN</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2015-01-12T21:40:00+01:00"> Mon 12 January 2015 </abbr>
+                                    <abbr class="published" title="2014-05-25T17:47:00+02:00"> Sun 25 May 2014 </abbr>
                                     <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> MirsKing</a>
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
                                     </address>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>2014年的寒假，大四即将结束，天生爱折腾的我买了域名、买了go（坑）daddy（爹）的空间搭建起了个人的博客，整个博客的模块完全仿照<a href="tianjun.ml">tianjun</a>展开，用的却是大而笨的wordpress。现如今，一年过去了，买的一年的空间就要过期，却发现自己的博客里边只静静地躺着21篇博文(加上草稿)...</p>
-<p>目前国内虚拟主机除了阿里云不太敢用，国外主机速度太慢，还经常被Q。想了良久，还是回归一个码农的本原，就在github.io上搭一个静态站吧，主要还是监督自己注意总结自己的学习内容记录下来。</p>
-<p>Github上建站大都式用jekyl、octopress，可惜都是用ruby写的。ruby不会也就不容易维护，于是放狗搜了一把有没有python的建站，发现还真有<a href="http://docs.getpelican.com/en/3.5.0/index.html">Pelican</a>,果断用起来，现在把过程记下来，算是2015开博的第一篇吧（虽然很快就要考试了...还是要克服万难，坚持下来！）</p>
-<h3>pelican 安装</h3>
-<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span> 
-<span class="nb">mkdir</span> <span class="n">blog</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">blog</span>
-<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
-</pre></div>
+                                <div class="entry-content"> <p>浙大的RVPN是通过访问rvpn.zju.edu.cn，然后调用Java插件运行Sangfor(深信服)的client然后添加本地路由表实现的。</p>
+<p>windows平台IE上很容易安装Java插件，进而自动下载Sanfor的client。唯一需要注意的是在第一次访问rvpn.zju.edu.cn的时候最好把本地防火墙关闭，否则很可能登陆后一切就绪却卡在“正在初始化”阶段。这个阶段一般是因为权限不够或防火墙禁止了下载客户端、安装vpn虚拟网卡导致的。所以最好是把防火墙关了吧，反正也是鸡肋的东西。</p>
+<p>本文主要是记录下Ubuntu下安装Java插件并连接RVPN的过程。下面就开始喽：</p>
+<h2>Java插件篇</h2>
+<p>Ubuntu中常用的浏览器就是firefox和chrome。先说chrome，笔者用惯了chrome的各种优秀插件和同步功能，虽然firefox也有，但是firefox的UI现在都开始抄袭chrome了，这让笔者更坚定了chrome的阵营。</p>
+<p>可惜，就是这一坚定，让笔者走了不少弯路。本文发问之日，chrome已经更新到了稳定版35.0；而据官网介绍Chrome35移除了对像Java这类NPAPI插件的支持。所以此路不通，可惜了笔者还尝试了互联网上各种方法那么久。不过倒是有个解决方案就是降级使用chrome 34，这个可以到<a href="http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/">Chrome</a>这里去下载deb包。</p>
+<p>笔者喜欢追新，所以没有选用此法，而是被迫安装了firefox。以下是下载和安装java插件的步骤：</p>
+<ol>
+<li>浙大的RVPN在windows下用jre7u55测试通过，不过貌似ubuntu下不行，官网推荐6u27版 ...</li></ol> </div><!-- /.entry-content -->
 
-
-<p>最后一步完成后 ...</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="/2014/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="bookmark" title="Permalink to Ubuntu下安装Java插件连接浙大RVPN">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/blog.html">blog</a>
-                                            <a class="danger label" href="/tag/interests.html">interests</a>
+                                            <a class="danger label" href="/tag/java-plugin.html">java plugin</a>
+                                            <a class="danger label" href="/tag/rvpn.html">rvpn</a>
+                                            <a class="danger label" href="/tag/ubuntu.html">ubuntu</a>
                                 </div>
 
 

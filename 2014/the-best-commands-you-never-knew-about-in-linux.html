@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>飞扬博客-MirsKing</title>
+        <title>你绝不知道的Linux中极好用的命令</title>
         <meta charset="utf-8" />
 
 
@@ -42,52 +42,58 @@
               </ul>
             </div>
 
-<section id="content">
-<h2>Articles in the Notes category</h2>
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Write Blog with Pelican</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2015-01-12T21:40:00+01:00"> Mon 12 January 2015 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> MirsKing</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>2014年的寒假，大四即将结束，天生爱折腾的我买了域名、买了go（坑）daddy（爹）的空间搭建起了个人的博客，整个博客的模块完全仿照<a href="tianjun.ml">tianjun</a>展开，用的却是大而笨的wordpress。现如今，一年过去了，买的一年的空间就要过期，却发现自己的博客里边只静静地躺着21篇博文(加上草稿)...</p>
-<p>目前国内虚拟主机除了阿里云不太敢用，国外主机速度太慢，还经常被Q。想了良久，还是回归一个码农的本原，就在github.io上搭一个静态站吧，主要还是监督自己注意总结自己的学习内容记录下来。</p>
-<p>Github上建站大都式用jekyl、octopress，可惜都是用ruby写的。ruby不会也就不容易维护，于是放狗搜了一把有没有python的建站，发现还真有<a href="http://docs.getpelican.com/en/3.5.0/index.html">Pelican</a>,果断用起来，现在把过程记下来，算是2015开博的第一篇吧（虽然很快就要考试了...还是要克服万难，坚持下来！）</p>
-<h3>pelican 安装</h3>
-<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span> 
-<span class="nb">mkdir</span> <span class="n">blog</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">blog</span>
-<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
-</pre></div>
 
 
-<p>最后一步完成后 ...</p> </div><!-- /.entry-content -->
+            <header>
+              <h2 class="entry-title">
+                <a href="/2014/the-best-commands-you-never-knew-about-in-linux.html" rel="bookmark"
+                   title="Permalink to 你绝不知道的Linux中极好用的命令">你绝不知道的Linux中极好用的命令</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2014-02-18T17:50:00+01:00">
+                Tue 18 February 2014
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h2>引子</h2>
+<p>最近发现了一个很好玩的网站Quora。</p>
+<p>该网站的立意是：to share and grow the world's knowledge.</p>
+<p>而其实现途径则是：Ask any question, get real answers from people with
+first hand experience, and blog about what you know.</p>
+<p>也就是说任何人可以发布自己的问题，然后由一群高智商、丰富经验的网友来答疑解难从而助力知识大爆发。</p>
+<p>听起来类似百度知道，但上边的问题和解答，个人感觉比百度知道的水平要高许多。</p>
+<h2>正文</h2>
+<p>好了，闲话休题。下边来为大家介绍在上面看到的一个好帖：《<a href="http://www.quora.com/Jordan-Goldman-4/Posts/The-Best-Commands-You-Never-Knew-About-in-Linux?srid=toPT&amp;share=1" title="The Best Commands You Never Knew About in Linux">The Best Commands You Never Knew About in Linux</a>》。所以将其转过来，帮助自己提高，也推荐给大家。</p>
+<p>大家不得不承认，即使是最好的系统管理员也可能从未听说过一到两个好用的命令。下边这些命令，大家可以试一试，我保证他们会节约你的时间，至少会让你感到这些命令好酷！</p>
+<p>column——效果是把输入排列成多列。</p>
+<p>试一试：mount | column –t</p>
+<p>dstat——系统集成检测。快速地告诉你CPU、硬盘、带宽的使用情况等等。</p>
+<p>试一试：dstat -a</p>
+<p>tac——cat命令的逆操作。将输出保存成一个文件。</p>
+<p>试一试：tac \&lt;文件名></p>
+<p>ctrl + r——查询你使用过的命令历史。如果你忘记了曾经精心输入的长命令，那么试试ctrl+r吧。</p>
+<p>watch——在y段时间内，没间隔x秒执行一个命令。</p>
+<p>试一试：watch –interval 3 df –h</p>
+<p>!\$——存储上一个命令的最后一个参数的值。</p>
+<p>试一试：cat \&lt;文件名>|echo !\$</p>
+<p>htop——交互的进程查看器（用来替代top），如果你想杀掉进程列表中的某个进程，那么htop值得一试。</p>
+<p>diff3——或许你用过diff命令，但是你曾经需要比较三个文件的不同吗？试试这个命令吧。</p>
+<p>cal——在命令窗中工作了许久，想快速看下日历？输入cal看看发生了什么把。</p>
+<h2>结语</h2>
+<p>文中提到了一些很奇怪的命令，正因为奇进而我们可能见到的机会比较小。但是有一部分命令如果熟练用起来还是不错的，比如：ctrl+r，比如tac。当然文中列出的命令只是linux庞大命令库的凤毛麟角，欢迎大家回帖分享大家喜欢的命令！</p>
+            </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/blog.html">blog</a>
-                                            <a class="danger label" href="/tag/interests.html">interests</a>
-                                </div>
-
-
-
-                        </article></li>
-                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -135,10 +141,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

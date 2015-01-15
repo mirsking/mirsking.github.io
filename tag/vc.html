@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>飞扬博客-MirsKing</title>
+        <title>飞扬博客-MirsKing - VC++</title>
         <meta charset="utf-8" />
 
 
@@ -43,7 +43,7 @@
             </div>
 
 <section id="content">
-<h2>Articles in the Notes category</h2>
+
 
 
    <div class="row">
@@ -52,33 +52,32 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Write Blog with Pelican</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="/2014/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="bookmark" title="Permalink to Visual Studio添加Armadillo线性代数库实现矩阵运算">Visual Studio添加Armadillo线性代数库实现矩阵运算</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2015-01-12T21:40:00+01:00"> Mon 12 January 2015 </abbr>
+                                    <abbr class="published" title="2014-03-16T10:05:00+01:00"> Sun 16 March 2014 </abbr>
                                     <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> MirsKing</a>
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
                                     </address>
                                 </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>2014年的寒假，大四即将结束，天生爱折腾的我买了域名、买了go（坑）daddy（爹）的空间搭建起了个人的博客，整个博客的模块完全仿照<a href="tianjun.ml">tianjun</a>展开，用的却是大而笨的wordpress。现如今，一年过去了，买的一年的空间就要过期，却发现自己的博客里边只静静地躺着21篇博文(加上草稿)...</p>
-<p>目前国内虚拟主机除了阿里云不太敢用，国外主机速度太慢，还经常被Q。想了良久，还是回归一个码农的本原，就在github.io上搭一个静态站吧，主要还是监督自己注意总结自己的学习内容记录下来。</p>
-<p>Github上建站大都式用jekyl、octopress，可惜都是用ruby写的。ruby不会也就不容易维护，于是放狗搜了一把有没有python的建站，发现还真有<a href="http://docs.getpelican.com/en/3.5.0/index.html">Pelican</a>,果断用起来，现在把过程记下来，算是2015开博的第一篇吧（虽然很快就要考试了...还是要克服万难，坚持下来！）</p>
-<h3>pelican 安装</h3>
-<div class="highlight"><pre><span class="n">pip</span> <span class="n">install</span> <span class="n">pelican</span> 
-<span class="nb">mkdir</span> <span class="n">blog</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">blog</span>
-<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
-</pre></div>
+                                <div class="entry-content"> <p>Armadillo是一个C++开发的线性代数库，其可以使用LAPACK进行加速，从而取得了速度和易用性上的平衡。从而可以方便高效地把Matlab中的程序方便地移植到C++中。  </p>
+<p>Armadillo也提供了python的接口armanpy。同时在Armadillo基础上也开发了许多实用的包，如用于快速机器学习的MLPACK。<br />
+详细介绍可以看官网：<a href="http://arma.sourceforge.net/">Armadillo</a></p>
+<p>由于最近做毕设需要将Matlab的算法移植到C++上，所以安装了这个库，虽然简单，却也学习到了一些东西。  </p>
+<p>下面是安装过程及一些要注意的，记录一下，方便以后查阅。有需要的童鞋也可以一步一步跟着做一做。</p>
+<h3>到官网下载Armadillo的源文件</h3>
+<p>这里要注意的是，今天为止最新的版本是armadillo-4.100.2.tar.gz。而4.0以后的版本貌似只支持visual studio 2010以上的编译器，如果使用的是visual studio 2008的编译器，会提示编译器版本过低。所以像我这样不得不用2008的就只能下载低版本：我使用的是armadillo-3.920.4.tar.gz，测试可用。下边是下载链接。  </p>
+<p><a href="http://sourceforge.net/projects/arma/files/armadillo-3.930.4.tar.gz/download">armadillo-3.930.4.tar.gz（2008可用）</a>  </p>
+<p><a href="http://sourceforge.net/projects/arma/files/armadillo-4.100.2.tar.gz/download">armadillo-4 ...</a></p> </div><!-- /.entry-content -->
 
-
-<p>最后一步完成后 ...</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/2015/write_blog_with_pelican.html" rel="bookmark" title="Permalink to Write Blog with Pelican">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="/2014/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="bookmark" title="Permalink to Visual Studio添加Armadillo线性代数库实现矩阵运算">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/blog.html">blog</a>
-                                            <a class="danger label" href="/tag/interests.html">interests</a>
+                                            <a class="danger label" href="/tag/matlab.html">Matlab</a>
+                                            <a class="danger label" href="/tag/vc.html">VC++</a>
+                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
                                 </div>
 
 
