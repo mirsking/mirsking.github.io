@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="mirsking.tk/" rel="alternate"></link><link href="mirsking.tk/feeds/blog.atom.xml" rel="self"></link><id>mirsking.tk/</id><updated>2015-01-23T13:00:00+08:00</updated><entry><title>Blog on Openshift and Github Pages</title><link href="mirsking.tk/blog/blog-on-openshift-and-github-pages.html" rel="alternate"></link><updated>2015-01-23T13:00:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2015-01-23:mirsking.tk/blog/blog-on-openshift-and-github-pages.html</id><summary type="html">&lt;p&gt;考试终于结束了，复习这两周好辛苦的说：又是感冒，又是扭到脖子...&lt;/p&gt;
+&lt;p&gt;上次复习过程中将博客迁移到了Github Pages中，暂时分配了域名&lt;a href="http://mirsking.tk"&gt;mirsking.tk&lt;/a&gt;，然后一直想添加一个二级域名&lt;a href="#"&gt;feed.mirsking.tk&lt;/a&gt;作为RSS的域名，以便和原来的博客无缝转移。可惜Github Pages貌似只支持一个域名，无法 做二级域名转发，而且不支持.htaccess...&lt;/p&gt;
+&lt;p&gt;无奈VPS太贵，踌躇间，突然想起以前申请的免费云主机Openshift(Openshift的优点是长期免费，而且最重要的式支持git!!!)于是乎，折腾就此开始。现在记录下折腾的过程和成果。&lt;/p&gt;
+&lt;h2&gt;折腾效果&lt;/h2&gt;
+&lt;h3&gt;博客域名:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tk&lt;/span&gt; &lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt; &lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt; &lt;span class="sr"&gt;//&lt;/span&gt;&lt;span class="err"&gt;由于&lt;/span&gt;&lt;span class="n"&gt;tk&lt;/span&gt;&lt;span class="err"&gt;域名对国内搜索引擎不友好&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;所以这个域名只做&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="err"&gt;的备份用&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+ &lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt; &lt;span class="n"&gt;domain&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rhcloud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="sr"&gt;//&lt;/span&gt;&lt;span class="err"&gt;这个作为主域名&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="err"&gt;兼容原来博客基本上所有的链接地址&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;原博客的部分链接做了删除&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+ &lt;span class="n"&gt;feed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="n"&gt;CNMAE&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt; &lt;span class="n"&gt;feed&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rhcloud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt; &lt;span class="sr"&gt;//&lt;/span&gt;&lt;span class="err"&gt;这个作为&lt;/span&gt;&lt;span class="n"&gt;feed&lt;/span&gt;&lt;span class="err"&gt;的主域名&lt;/span&gt;
+
+ &lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ml&lt;/span&gt; &lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt; &lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+ &lt;span class="n"&gt;feed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ml&lt;/span&gt; &lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt; &lt;span class="n"&gt;feed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+
+ &lt;span class="n"&gt;wangpeng&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ml&lt;/span&gt; &lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt; &lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+ &lt;span class="n"&gt;feed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wangpeng&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ml&lt;/span&gt; &lt;span class="n"&gt;CNAME&lt;/span&gt;&lt;span class="err"&gt;到&lt;/span&gt; &lt;span class="n"&gt;feed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mirsking&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;额, 不要骂我搞了这么多域名, ml/tk都是免费域名,只是为了防止被别人抢注, wangpeng.ml本来是被别人占着的,好不容易刚刚抢注到...&lt;/p&gt;
+&lt;h2&gt;折腾过程&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Github Pages存储的是pelican生成的静态网页,具体看我上一篇博客.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Openshift 上创建了两个app,一个用来托管mirsking.com主站,一个用来托管feed.mirsking.com. 没办法,谁让Openshift也不支持二级域名重定向呢. 不过不知道是否支持.htaccess, 等有空了再试验一下.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Openshift创建app并配置nginx&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;登陆&lt;a href="https://openshift.redhat.com/"&gt;openshift&lt;/a&gt;,在Applications选项卡中添加Application&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择最右下脚的Do it yourself(注意这里一定要选择diy,否则运行nginx就要停用已经跑起来的占用了端口服务)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cd到Openshift的TMP目录下载安装nginx,这里初次用Openshift的我感觉到了深深的恶意,没有找到Openshift的文档,不清楚Openshift到底又多少各变量,在此总结下:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Openshit变量总结&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$OPENSHIFT_TMP_DIR&lt;/span&gt;          &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tmp&lt;/span&gt;
+&lt;span class="nv"&gt;$OPENSHIFT_DATA_DIR&lt;/span&gt;         &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="sr"&gt;/app-root/&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;
+&lt;span class="nv"&gt;$OPENSHIFT_DIY_IP&lt;/span&gt;           &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;ip&lt;/span&gt;
+&lt;span class="nv"&gt;$OPENSHIFT_DIY_PORT&lt;/span&gt;         &lt;span class="n"&gt;your&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;nginx安装过程&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="nv"&gt;$OPENSHIFT_TMP_DIR&lt;/span&gt;
+&lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="n"&gt;http:&lt;/span&gt;&lt;span class="sr"&gt;//&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="sr"&gt;/download/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1.7.9&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt;
+&lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="n"&gt;ftp:&lt;/span&gt;&lt;span class="sr"&gt;//&lt;/span&gt;&lt;span class="n"&gt;ftp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;csx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cam&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ac&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;uk&lt;/span&gt;&lt;span class="sr"&gt;/pub/so&lt;/span&gt;&lt;span class="n"&gt;ftware&lt;/span&gt;&lt;span class="sr"&gt;/programming/&lt;/span&gt;&lt;span class="n"&gt;pcre&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pcre&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;8.36&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt;
+
+&lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="n"&gt;xzf&lt;/span&gt; &lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1.7.9&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt;
+&lt;span class="n"&gt;tar&lt;/span&gt; &lt;span class="n"&gt;xzf&lt;/span&gt; &lt;span class="n"&gt;pcre&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;8.36&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gz&lt;/span&gt;
+
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;1.7.9&lt;/span&gt;
+&lt;span class="nb"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="nv"&gt;$OPENSHIFT_DATA_DIR&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;
+&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="sr"&gt;/configure --prefix=$OPENSHIFT_DATA_DIR/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pcre&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$OPENSHIFT_TMP_DIR&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pcre&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;8.36&lt;/span&gt;
+&lt;span class="n"&gt;make&lt;/span&gt; 
+&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;经过上述步骤nginx已经安装成功了,下边就是配置nginx并启动了,先:&lt;code&gt;echo $OPENSHIFT_DIY_IP&lt;/code&gt;  &lt;code&gt;echo $OPENSHIFT_DIY_PORT&lt;/code&gt;, 获取application的ip和端口.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="nv"&gt;$OPENSHIFT_DATA_DIR&lt;/span&gt;&lt;span class="sr"&gt;/nginx/co&lt;/span&gt;&lt;span class="n"&gt;nf&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;nginx&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="err"&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;找到&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;server_name&lt;/span&gt; &lt;span class="n"&gt;localhost&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;location&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="n"&gt;your_site_dir&lt;/span&gt;
+        &lt;span class="nb"&gt;index&lt;/span&gt; &lt;span class="nb"&gt;index&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;修改为上边&lt;code&gt;echo&lt;/code&gt;出来的ip和端口. root后边写自己的博客地址.&lt;/p&gt;
+&lt;p&gt;最后到&lt;code&gt;$OPENSHIFT_DATA_DIR/nginx/sbin/&lt;/code&gt;目录运行nginx,nginx就成功跑起来了.&lt;/p&gt;
+&lt;p&gt;这里如果出现"Permission Denied"之类的错误,基本都是ip和端口没配置好,Openshift没给那些端口权限导致的.&lt;/p&gt;
+&lt;p&gt;好了,这次总结到此为止,开始写老板的大作业喽!!!&lt;/p&gt;</summary><category term="blog"></category><category term="interests"></category></entry><entry><title>Write Blog with Pelican</title><link href="mirsking.tk/blog/write_blog_with_pelican.html" rel="alternate"></link><updated>2015-01-12T21:40:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2015-01-12:mirsking.tk/blog/write_blog_with_pelican.html</id><summary type="html">&lt;p&gt;2014年的寒假，大四即将结束，天生爱折腾的我买了域名、买了go（坑）daddy（爹）的空间搭建起了个人的博客，整个博客的模块完全仿照&lt;a href="tianjun.ml"&gt;tianjun&lt;/a&gt;展开，用的却是大而笨的wordpress。现如今，一年过去了，买的一年的空间就要过期，却发现自己的博客里边只静静地躺着21篇博文(加上草稿)...&lt;/p&gt;
+&lt;p&gt;目前国内虚拟主机除了阿里云不太敢用，国外主机速度太慢，还经常被Q。想了良久，还是回归一个码农的本原，就在github.io上搭一个静态站吧，主要还是监督自己注意总结自己的学习内容记录下来。&lt;/p&gt;
+&lt;p&gt;Github上建站大都式用jekyl、octopress，可惜都是用ruby写的。ruby不会也就不容易维护，于是放狗搜了一把有没有python的建站，发现还真有&lt;a href="http://docs.getpelican.com/en/3.5.0/index.html"&gt;Pelican&lt;/a&gt;,果断用起来，现在把过程记下来，算是2015开博的第一篇吧（虽然很快就要考试了...还是要克服万难，坚持下来！）&lt;/p&gt;
+&lt;h3&gt;pelican 安装&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; 
+&lt;span class="nb"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;最后一步完成后，在blog目录会生成如下图的目录，以后只要在content目录下写markdown，然后在blog目录下&lt;code&gt;pelican&lt;/code&gt;一下，静态文件就输出到output文件夹了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pelican目录结构" src="mirsking.tk/images/150112_pelican_direction_struct.png" /&gt;&lt;/p&gt;
+&lt;h3&gt;pelican markdown 支持&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;pelican 主题的安装与配置&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="c1"&gt;#显示已安装主题&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https:&lt;/span&gt;&lt;span class="sr"&gt;//gi&lt;/span&gt;&lt;span class="n"&gt;thub&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/getpelican/&lt;/span&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="c1"&gt;#clone pelican&amp;#39;s themes on github&lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;themes&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Theme&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;安装好theme后，&lt;code&gt;pelican-themes -l&lt;/code&gt;中就可以看到已安装的主题了，然后在pelicanconf.py中添加变量&lt;code&gt;THEME='theme's name&lt;/code&gt;就可以了。&lt;/p&gt;
+&lt;p&gt;2015，为我自己加油！&lt;/p&gt;</summary><category term="blog"></category><category term="interests"></category></entry><entry><title>wordpress后台找回google authenticator验证码</title><link href="mirsking.tk/blog/find-google-authenticators-code-in-wordpresss-login-page.html" rel="alternate"></link><updated>2014-02-07T09:52:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-07:mirsking.tk/blog/find-google-authenticators-code-in-wordpresss-login-page.html</id><summary type="html">&lt;p&gt;Wordpress中安装google
+authenticator插件，可以极大地增强wordpress的后台安全性。该插件的安装及设置，google一下就可以找到一大片，所以笔者在这里就不再累赘。&lt;/p&gt;
+&lt;p&gt;而本文所要解决的问题则是：如果在手机上误删了google身份验证器，或者其他刷机等原因导致无法获取google
+authenticator的验证码而无法登录wordpress后台怎么办？&lt;/p&gt;
+&lt;p&gt;笔者这两天手残电脑、手机同时刷了系统，无奈无法获得验证码而失去了本博客的后台。Google之却未曾找到解决方案。于是乎发挥自己的聪明才智，找到了简单的解决方案。闲话休提，下面笔者将此方案介绍给大家，以造福互联网。&lt;/p&gt;
+&lt;p&gt;首先，我们虽然没有了wordpress后台的进入权限，但是我们有数据库的权限，所以登入wordpreess数据库的后台。然后，找到数据库中的wp_usermeta表，在其中，我们可以发现大量关于google
+authenticator的字段：如图&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.mirsking.com/wp-content/uploads/2014/02/googleauthenticator.bmp"&gt;&lt;img alt="googleauthenticator" src="http://www.mirsking.com/wp-content/uploads/2014/02/googleauthenticator.bmp" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其中googleauthenticator_description和googleauthenticator_secret是我们这次要用到的字段。他们就是手机端google身份验证器所需要的帐号和密码。在手机上输入完成后即可得到自己想要的验证码了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PS.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当时看到googleauthenticator_enabled这个字段，猜测如果把它的值由enabled改为disabled是否就直接可以免去验证码这一步。但是试了上文的方法后，就没再尝试。有兴趣的朋友可以一试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;总结一下&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;总之，wordpress所有内容都保存在数据库中，所以只要出现问题，到数据库中一定可以找到解决方案，当然前提是保存好你的数据库登录口令，如果连这个也丢掉了，那就呜呼哀哉了....&lt;/p&gt;</summary><category term="google二次验证"></category><category term="WordPress"></category></entry><entry><title>WordPress主题文件的调用顺序</title><link href="mirsking.tk/blog/calling-sequence-of-wordpresss-theme-files.html" rel="alternate"></link><updated>2014-01-15T08:10:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-01-15:mirsking.tk/blog/calling-sequence-of-wordpresss-theme-files.html</id><summary type="html">&lt;p&gt;本文将展示主题文件执行的层次结构。简而言之,当你加载一个页面时，我们要看看哪些模板文件被执行。您可能已经知道单篇日志是用single.php解析的。单个页面是加载page.php来render的。但WordPress将根据各种实际情况来寻找不同的模板文件,因此，这里，我们就要看看这是如何工作的。&lt;/p&gt;
+&lt;p&gt;我们首先应该清楚这一点:没有 index.php和style.css你的主题已经不再是一个有效的WP主题…所以理所当然,如果你只有这两个文件,每一个网页被render时WP都将试图加载index.php。各位客观且快速浏览一眼下面这个“cheatsheet”来看看我所指的:  &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/07/TemplateMap.jpg"&gt;&lt;img alt="TemplateMap" src="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/07/TemplateMap.jpg" /&gt;&lt;/a&gt;&lt;br /&gt;
+（ps:这个图应该从上至下，从左往右看。）&lt;/p&gt;
+&lt;p&gt;注意一下每个页面类型的执行流程都将在index.php终结。这就是为什么index.php是每一个WordPress主题所必须的文件。如果我们在WP主题中遗漏任何其他文件(例如,如果没有“search.php”),WP会自动调用index.php。&lt;/p&gt;
+&lt;p&gt;现在让我们来看看一些执行顺序的细节问题。&lt;br /&gt;
+我要向你们展示WP在你当前活动主题文件夹中搜索文件的流程。&lt;br /&gt;
+当你打算从现在开始创造一个WordPress主题的话，我希望这将会是有用的:&lt;br /&gt;
+我将会向你展示每一类型的文件执行的层次。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;首页&lt;/h3&gt;
+&lt;p&gt;对于每一个网站，这是第一,也是最重要的一个页面。所以WP提供了极大的范围来让你定制这个页面。让我们看看这个用于显示首页的文件的层次。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;front-page.php&lt;/li&gt;
+&lt;li&gt;home.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当客户端请求主页时,WP将搜索front-page.php。
+如果不存在,它将会使用home.php。如果
+home.php存在,它会用到它。否则,它会默认采用index.php。&lt;/p&gt;
+&lt;h3&gt;单篇日志&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;single-&lt;strong&gt;[post-type]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;single.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;只要你需要，WordPress可以有各种日志类型。这将会更容易使得所有/一些日志类型可以有不同的设计。默认情况下“post”是WP主要和默认的日志类型。&lt;/p&gt;
+&lt;p&gt;这样，举例来说,如果你的自定义日志类型是 product
+,那么它的模板将会是single-product.php&lt;/p&gt;
+&lt;p&gt;了解更多如何添加新日志类型,你可以参考&lt;a href="http://ihacklog.com/l.php?url=http%3A%2F%2Fcodex.wordpress.org%2FFunction_Reference%2Fregister_post_type"&gt;这个链接&lt;/a&gt;。&lt;/p&gt;
+&lt;h3&gt;单个静态页面&lt;/h3&gt;
+&lt;p&gt;其实这个在WP里面就叫page,这里翻译成中文后反倒不好分清了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[custom-template]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;page-&lt;strong&gt;[slug]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;page-&lt;strong&gt;[id]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;page.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;与post类型一样,类型,我们可以使用自定义页模板让page类型的页面有不同的页面布局。WP首先搜索指定的页面模板文件(如果存在)。&lt;/p&gt;
+&lt;p&gt;如果没有找到,它将寻找带有当前页面别名(slug)的模板文件。基本上,如果别名是aboutus,那么它将在当前主题文件夹中搜索文件page-aboutus.php。&lt;/p&gt;
+&lt;p&gt;WP将像搜索别名页面模板一样搜索文件ID模板。&lt;/p&gt;
+&lt;h3&gt;分类&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;category-&lt;strong&gt;[slug]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;category-&lt;strong&gt;[id]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;category.php&lt;/li&gt;
+&lt;li&gt;archive.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我相信，如果你已经看完了上面的话，这里应该不用我解释了。文件搜索规则是一样的。&lt;/p&gt;
+&lt;h3&gt;标签&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;tag-&lt;strong&gt;[slug]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;tag-&lt;strong&gt;[id]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;tag.php&lt;/li&gt;
+&lt;li&gt;archive.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;其它分类（Taxonomy）&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;taxonomy-&lt;strong&gt;[tax]&lt;/strong&gt;-&lt;strong&gt;[term]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;taxonomy-&lt;strong&gt;[tax]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;taxonomy.php&lt;/li&gt;
+&lt;li&gt;archive.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这里原文并没有做多少解释。但个人觉得这里要稍微解释下。什么是taxonomy?它的英文意思很简单，就是“分类”。但是在WP里面仅这么说的话，我相应很多人还是会一头雾水。还有，什么是term
+? term 的英文意思是术语。  &lt;/p&gt;
+&lt;p&gt;在WP里面，term可以是post_tag(日志标签)、link_category（链接类别）、category(日志分类）及任何其它自定义的分类。例如，自定义了一个名为book(书籍，自定义日志类型）的日志类型，可以把
+writer(作家)作为taxonomy ,那么作家的名字，如 hanhan
+(韩寒），就是term之一，一个taxonomy下可以有很多term.也就是说，taxonomy是term的一个集合。这样，我们就可以有taxonomy-writer-hanhan.php
+作为显示韩寒的书籍分类页面的模板，taxonomy-writer.php
+作为显示书籍分类的模板。&lt;/p&gt;
+&lt;h3&gt;作者&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;author-&lt;strong&gt;[author-nicname]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;author-&lt;strong&gt;[author-id]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;author.php&lt;/li&gt;
+&lt;li&gt;archive.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;附件&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[mime-type]&lt;/strong&gt;.php&lt;/li&gt;
+&lt;li&gt;attachment.php&lt;/li&gt;
+&lt;li&gt;single.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;日期&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;date.php&lt;/li&gt;
+&lt;li&gt;archive.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;存档&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;archive.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;搜索&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;search.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;搜索模板用于显示搜索结果。&lt;/p&gt;
+&lt;h3&gt;404页面&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;404.php&lt;/li&gt;
+&lt;li&gt;index.php&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;结论&lt;/h3&gt;
+&lt;p&gt;显然你可以使用这些知识在广泛的方法不同为各种类型的页面加载自定义模板…在很多情况下,即使你在使用一个现有的主题,你仍可以在不改变现有模板文件的情况下得到一个定制的解决方案。你只是需要创建新文件,并按照上述规则指定一个新的名字。&lt;/p&gt;
+&lt;p&gt;分享你的想法和任何可以包含以上的层次结构的附加文件。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3&gt;后话&lt;/h3&gt;
+&lt;p&gt;也话有朋友会说，你这个文章中列的文件不完整，不是还有 comments.php 和
+comments-popup.php
+吗？是的，对于一个标准的主题，这是应该有的。不过，本文不是在讨论WP主题应该有哪些文件，而是讨论主题文件的执行顺序问题，归根结底，comments.php
+和 comments-popup.php
+不是被WP直接调用的，而是由主题制作者自行调用的（由single.php或page.php调用&lt;strong&gt;\&amp;lt;?php
+comments_template(); ?&gt;&lt;/strong&gt;）。因此，原作者在这里没有列出comments.php 和
+comments-popup.php 我想也是完全合理的。&lt;/p&gt;
+&lt;p&gt;本文转载自  ihacklog.com&lt;/p&gt;</summary><category term="PHP"></category><category term="WordPress"></category><category term="主题"></category></entry></feed>

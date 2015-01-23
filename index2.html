@@ -4,16 +4,17 @@
 
         <title>飞扬博客-MirsKing</title>
         <meta charset="utf-8" />
+        <link href="mirsking.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Full Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
-        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+        <link rel="stylesheet" type="text/css" href="mirsking.tk/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="mirsking.tk/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="mirsking.tk/theme/pygment.css" />
 
-        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+        <script src="mirsking.tk/theme/js/libs/modernizr-2.6.2.min.js"></script>
 
 
 
@@ -28,16 +29,16 @@
         <div class="row">
 
           <header id="banner" class="body">
-                  <h1><a href="/">飞扬博客-MirsKing <strong></strong></a></h1>
+                  <h1><a href="mirsking.tk/">飞扬博客-MirsKing <strong></strong></a></h1>
           </header><!-- /#banner -->
 
             <div id="navigation" class="navbar row">
               <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
              
               <ul class="columns">
-                <li><a href="/">Home</a></li>
+                <li><a href="mirsking.tk/">Home</a></li>
 
-                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="mirsking.tk/pages/about.html">About</a></li>
 
               </ul>
             </div>
@@ -52,11 +53,43 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/tools-configuration/ubuntu12-04-vim7-4-with-lua.html" rel="bookmark" title="Permalink to ubuntu12.04安装vim7.4 with lua的心酸历程">ubuntu12.04安装vim7.4 with lua的心酸历程</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="mirsking.tk/tools-configuration/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="bookmark" title="Permalink to Ubuntu下安装Java插件连接浙大RVPN">Ubuntu下安装Java插件连接浙大RVPN</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-05-25T17:47:00+08:00"> Sun 25 May 2014 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="mirsking.tk/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>浙大的RVPN是通过访问rvpn.zju.edu.cn，然后调用Java插件运行Sangfor(深信服)的client然后添加本地路由表实现的。</p>
+<p>windows平台IE上很容易安装Java插件，进而自动下载Sanfor的client。唯一需要注意的是在第一次访问rvpn.zju.edu.cn的时候最好把本地防火墙关闭，否则很可能登陆后一切就绪却卡在“正在初始化”阶段。这个阶段一般是因为权限不够或防火墙禁止了下载客户端、安装vpn虚拟网卡导致的。所以最好是把防火墙关了吧，反正也是鸡肋的东西。</p>
+<p>本文主要是记录下Ubuntu下安装Java插件并连接RVPN的过程。下面就开始喽：</p>
+<h2>Java插件篇</h2>
+<p>Ubuntu中常用的浏览器就是firefox和chrome。先说chrome，笔者用惯了chrome的各种优秀插件和同步功能，虽然firefox也有，但是firefox的UI现在都开始抄袭chrome了，这让笔者更坚定了chrome的阵营。</p>
+<p>可惜，就是这一坚定，让笔者走了不少弯路。本文发问之日，chrome已经更新到了稳定版35.0；而据官网介绍Chrome35移除了对像Java这类NPAPI插件的支持。所以此路不通，可惜了笔者还尝试了互联网上各种方法那么久。不过倒是有个解决方案就是降级使用chrome 34，这个可以到<a href="http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/">Chrome</a>这里去下载deb包。</p>
+<p>笔者喜欢追新，所以没有选用此法，而是被迫安装了firefox。以下是下载和安装java插件的步骤：</p>
+<ol>
+<li>浙大的RVPN在windows下用jre7u55测试通过，不过貌似ubuntu下不行，官网推荐6u27版 ...</li></ol> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="mirsking.tk/tools-configuration/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="bookmark" title="Permalink to Ubuntu下安装Java插件连接浙大RVPN">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="mirsking.tk/tag/linux.html">linux</a>
+                                            <a class="danger label" href="mirsking.tk/tag/java-plugin.html">java plugin</a>
+                                            <a class="danger label" href="mirsking.tk/tag/rvpn.html">rvpn</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="mirsking.tk/tools-configuration/ubuntu12-04-vim7-4-with-lua.html" rel="bookmark" title="Permalink to ubuntu12.04安装vim7.4 with lua的心酸历程">ubuntu12.04安装vim7.4 with lua的心酸历程</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2014-05-09T19:42:00+08:00"> Fri 09 May 2014 </abbr>
                                     <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    <a class="url fn" href="mirsking.tk/author/mirsking.html"> mirsking</a>
                                     </address>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <p>因团队需要，忍痛抛弃了ubuntu14.04 LTS，改回ubuntu12.04，允许我吐槽一分钟：</p>
@@ -65,26 +98,26 @@
 7.3也就算了，偏偏低于vim 7.3.885。结果就是悲剧的无法使用大名鼎鼎的<strong><a href="https://github.com/Shougo/neocomplete.vim">neocomplete.vim</a></strong>插件。本来以为找到了终极的YouCompleteMe插件，结果发现YouCompleteMe是依赖neocomplete.vim的。</p>
 <p>本来吧，在ubuntu12.04上装vim 7 ...</p> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="/tools-configuration/ubuntu12-04-vim7-4-with-lua.html" rel="bookmark" title="Permalink to ubuntu12.04安装vim7.4 with lua的心酸历程">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="mirsking.tk/tools-configuration/ubuntu12-04-vim7-4-with-lua.html" rel="bookmark" title="Permalink to ubuntu12.04安装vim7.4 with lua的心酸历程">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/linux.html">Linux</a>
-                                            <a class="danger label" href="/tag/ubuntu.html">ubuntu</a>
-                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
+                                            <a class="danger label" href="mirsking.tk/tag/linux.html">Linux</a>
+                                            <a class="danger label" href="mirsking.tk/tag/ubuntu.html">ubuntu</a>
+                                            <a class="danger label" href="mirsking.tk/tag/cheng-xu-yuan.html">程序员</a>
                                 </div>
 
 
 
                         </article></li>
                         <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/collections/dmp-clmc.html" rel="bookmark" title="Permalink to 基于DMP的目标在线跟踪、在线避障机械臂">基于DMP的目标在线跟踪、在线避障机械臂</a></h2> </header>
+                                <header> <h2 class="entry-title"><a href="mirsking.tk/collections/dmp-clmc.html" rel="bookmark" title="Permalink to 基于DMP的目标在线跟踪、在线避障机械臂">基于DMP的目标在线跟踪、在线避障机械臂</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2014-04-18T21:23:00+08:00"> Fri 18 April 2014 </abbr>
                                     <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    <a class="url fn" href="mirsking.tk/author/mirsking.html"> mirsking</a>
                                     </address>
                                 </footer><!-- /.post-info -->
                                 <div class="entry-content"> <p>算一算，大概有一个月没有写博客了。</p>
@@ -117,44 +150,13 @@
 
 </div> </div><!-- /.entry-content -->
 
-                                <div class="medium primary btn"><a href="/collections/dmp-clmc.html" rel="bookmark" title="Permalink to 基于DMP的目标在线跟踪、在线避障机械臂">Read more <i class="icon-arrow-right"></i></a></div>
+                                <div class="medium primary btn"><a href="mirsking.tk/collections/dmp-clmc.html" rel="bookmark" title="Permalink to 基于DMP的目标在线跟踪、在线避障机械臂">Read more <i class="icon-arrow-right"></i></a></div>
 
 
 
                                 <div class="row tag-row">
                                         <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/robot.html">robot</a>
-                                </div>
-
-
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/programing/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html" rel="bookmark" title="Permalink to Matlab绘制各种动态心形图并保存为Gif">Matlab绘制各种动态心形图并保存为Gif</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-03-20T22:33:00+08:00"> Thu 20 March 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>“码农”，这个自从接触编程，就永远不可能丢掉的头衔，让多少程序猿痛并快乐着。</p>
-<p>作为码农中的一员，却也时常给自己找些乐趣，比如最近很火的<a href="http://gabrielecirulli.github.io/2048/">2048游戏</a>。</p>
-<p>又比如：用Matlab画出一些漂亮的图片。先放一张图（注意，点击图片可以看到动态图哦）：</p>
-<p><a href="/images/heart-beats.gif"><img alt="heart-beats" src="/images/heart-beats.gif" /></a></p>
-<p>还不错吧，下面就贴出源代码，造福大家：</p>
-<div class="highlight"><pre><span class="n">clc</span> <span class="p">;</span><span class="n">clear</span>  
-<span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span><span class="nv">%200</span><span class="err">这个值越大，则画面越细腻</span>  
-<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">Z</span><span class="p">]</span> <span class="o">=</span> <span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>  
-<span class="n">I1</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.\^</span><span class="mi">2</span><span class="o">+</span><span class="mi">9</span><span class="sr">/4\*Y.\^2+Z.\^2-1).\^3-X.\^2.\*Z.\^3-9/</span><span class="mi">80</span><span class="o">\*</span><span class="n">Y</span><span class="o">.\^</span><span class="mi">2</span><span class="o">.\*</span><span class="n">Z ...</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/programing/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html" rel="bookmark" title="Permalink to Matlab绘制各种动态心形图并保存为Gif">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/matlab.html">Matlab</a>
-                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
+                                            <a class="danger label" href="mirsking.tk/tag/robot.html">robot</a>
                                 </div>
 
 
@@ -169,42 +171,42 @@
 <h4>Pages</h4>
 
  <ul>
-      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="mirsking.tk/pages/about.html">About</a></li>
   </ul>
 
 <h4>Categories</h4>
 <ul>
-		<li><a href="/category/blog.html">Blog</a></li>
-		<li><a href="/category/career.html">Career</a></li>
-		<li><a href="/category/collections.html">Collections</a></li>
-		<li><a href="/category/other-interests.html">Other Interests</a></li>
-		<li><a href="/category/programing.html">Programing</a></li>
-		<li><a href="/category/tools-configuration.html">Tools Configuration</a></li>
+		<li><a href="mirsking.tk/category/blog.html">Blog</a></li>
+		<li><a href="mirsking.tk/category/career.html">Career</a></li>
+		<li><a href="mirsking.tk/category/collections.html">Collections</a></li>
+		<li><a href="mirsking.tk/category/other-interests.html">Other Interests</a></li>
+		<li><a href="mirsking.tk/category/programing.html">Programing</a></li>
+		<li><a href="mirsking.tk/category/tools-configuration.html">Tools Configuration</a></li>
 </ul>
 
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/c.html">C</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="/tag/interests.html">interests</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/matlab.html">Matlab</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/c.html">C</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-2"><a href="mirsking.tk/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/vc.html">VC++</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/windows.html">Windows</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/php.html">PHP</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/linux.html">linux</a></li>
+	    <li class="tag-2"><a href="mirsking.tk/tag/interests.html">interests</a></li>
+	    <li class="tag-2"><a href="mirsking.tk/tag/blog.html">blog</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/robot.html">robot</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/bash.html">Bash</a></li>
 </ul>
 
 <nav class="widget">
@@ -220,9 +222,9 @@
 </div> </div><!-- /.row -->
 
 <p class="paginator">
-            <a href="/index.html"><i class="icon-arrow-left"></i></a>
-    Page 2 / 5
-        <a href="/index3.html"><i class="icon-arrow-right"></i></a>
+            <a href="mirsking.tk/index.html"><i class="icon-arrow-left"></i></a>
+    Page 2 / 6
+        <a href="mirsking.tk/index3.html"><i class="icon-arrow-right"></i></a>
 </p>
 </section><!-- /#content -->
 
@@ -262,8 +264,8 @@
     </div>
 
 
-  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
-  <script src="/theme/js/libs/gumby.min.js"></script>
-  <script src="/theme/js/plugins.js"></script>
+  <script src="mirsking.tk/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="mirsking.tk/theme/js/libs/gumby.min.js"></script>
+  <script src="mirsking.tk/theme/js/plugins.js"></script>
 </body>
 </html>

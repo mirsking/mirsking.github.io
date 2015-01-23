@@ -2,10 +2,10 @@
 <html lang="zh">
 <head>
 
-        <title>基于DMP的目标在线跟踪、在线避障机械臂</title>
+        <title>飞扬博客-MirsKing</title>
         <meta charset="utf-8" />
         <link href="mirsking.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Full Atom Feed" />
-        <link href="mirsking.tk/feeds/collections.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Categories Atom Feed" />
+        <link href="mirsking.tk/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Categories Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -44,61 +44,57 @@
               </ul>
             </div>
 
-<section id="content" class="body">
+<section id="content">
+<h2>Articles in the Blog category</h2>
+
 
    <div class="row">
+
+
         <div class="eleven columns">
+                 <ol id="post-list">
+                        <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="mirsking.tk/blog/calling-sequence-of-wordpresss-theme-files.html" rel="bookmark" title="Permalink to WordPress主题文件的调用顺序">WordPress主题文件的调用顺序</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-01-15T08:10:00+08:00"> Wed 15 January 2014 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="mirsking.tk/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>本文将展示主题文件执行的层次结构。简而言之,当你加载一个页面时，我们要看看哪些模板文件被执行。您可能已经知道单篇日志是用single.php解析的。单个页面是加载page.php来render的。但WordPress将根据各种实际情况来寻找不同的模板文件,因此，这里，我们就要看看这是如何工作的。</p>
+<p>我们首先应该清楚这一点:没有 index.php和style.css你的主题已经不再是一个有效的WP主题…所以理所当然,如果你只有这两个文件,每一个网页被render时WP都将试图加载index.php。各位客观且快速浏览一眼下面这个“cheatsheet”来看看我所指的:  </p>
+<p><a href="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/07/TemplateMap.jpg"><img alt="TemplateMap" src="http://www.yeahzan.com/zanblog/wp-content/uploads/2013/07/TemplateMap.jpg" /></a><br />
+（ps:这个图应该从上至下，从左往右看。）</p>
+<p>注意一下每个页面类型的执行流程都将在index.php终结。这就是为什么index.php是每一个WordPress主题所必须的文件。如果我们在WP主题中遗漏任何其他文件(例如,如果没有“search.php”),WP会自动调用index.php。</p>
+<p>现在让我们来看看一些执行顺序的细节问题。<br />
+我要向你们展示WP在你当前活动主题文件夹中搜索文件的流程。<br />
+当你打算从现在开始创造一个WordPress主题的话，我希望这将会是有用的:<br />
+我将会向你展示每一类型的文件执行的层次。</p>
+<hr />
+<h3>首页</h3>
+<p>对于每一个网站，这是第一,也是最重要的一个页面。所以WP提供了极大的范围来让你定制这个页面。让我们看看这个用于显示首页的文件的层次。</p>
+<blockquote>
+<ol>
+<li>front-page ...</li></ol></blockquote> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="mirsking.tk/blog/calling-sequence-of-wordpresss-theme-files.html" rel="bookmark" title="Permalink to WordPress主题文件的调用顺序">Read more <i class="icon-arrow-right"></i></a></div>
 
 
-            <header>
-              <h2 class="entry-title">
-                <a href="mirsking.tk/collections/dmp-clmc.html" rel="bookmark"
-                   title="Permalink to 基于DMP的目标在线跟踪、在线避障机械臂">基于DMP的目标在线跟踪、在线避障机械臂</a></h2>
-           
-            </header>
-            <footer class="post-info">
-              <abbr class="published" title="2014-04-18T21:23:00+08:00">
-                Fri 18 April 2014
-              </abbr>
-              <address class="vcard author">By 
-                <a class="url fn" href="mirsking.tk/author/mirsking.html"> mirsking</a>
-              </address>
-            </footer><!-- /.post-info -->
-            <div class="entry-content">
-              <p>算一算，大概有一个月没有写博客了。</p>
-<p>这一个月，从DMP模型的学习到仿真再到正在进行中的实物实现，毕设也算是有些进展。</p>
-<p>可惜自身技术太欠缺，一路走来坎坎坷坷。</p>
-<p>每每走到死胡同，看不到未来，都会拿出下面CLMC实验室的两个视频，膜拜一番，然后鼓励自己在这条路上且行且远。</p>
-<p>分享出来，给大家见识见识，更是对自己莫大的激励。</p>
-<p>好了，废话不多说，上视频！</p>
-<div align="center">
 
-#### 自适应避障端杯子
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="mirsking.tk/tag/php.html">PHP</a>
+                                            <a class="danger label" href="mirsking.tk/tag/wordpress.html">WordPress</a>
+                                            <a class="danger label" href="mirsking.tk/tag/zhu-ti.html">主题</a>
+                                </div>
 
-</div>
 
-<div align="center">
 
-[youku id="XNzAwNjU5MzA0"]
-
-</div>
-
-<div align="center">
-
-#### 自适应避障端杯子倒水
-
-</div>
-
-<div align="center">
-
-[youku id="XNzAwNjU5NjI0"]
-
-</div>
-            </div><!-- /.entry-content -->
-
+                        </article></li>
+                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-
+        
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -154,8 +150,11 @@
 
 </div> </div><!-- /.row -->
 
-
-</section>
+<p class="paginator">
+            <a href="mirsking.tk/category/blog.html"><i class="icon-arrow-left"></i></a>
+    Page 2 / 2
+</p>
+</section><!-- /#content -->
 
        </div><!-- /.row -->
     </div><!-- /.container -->

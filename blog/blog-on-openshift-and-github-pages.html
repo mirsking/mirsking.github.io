@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+        <title>Blog on Openshift and Github Pages</title>
+        <meta charset="utf-8" />
+        <link href="mirsking.tk/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Full Atom Feed" />
+        <link href="mirsking.tk/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Categories Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="mirsking.tk/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="mirsking.tk/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="mirsking.tk/theme/pygment.css" />
+
+        <script src="mirsking.tk/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="mirsking.tk/">飞扬博客-MirsKing <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="mirsking.tk/">Home</a></li>
+
+                <li><a href="mirsking.tk/pages/about.html">About</a></li>
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="mirsking.tk/blog/blog-on-openshift-and-github-pages.html" rel="bookmark"
+                   title="Permalink to Blog on Openshift and Github Pages">Blog on Openshift and Github Pages</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-01-23T13:00:00+08:00">
+                Fri 23 January 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="mirsking.tk/author/mirsking.html"> mirsking</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>考试终于结束了，复习这两周好辛苦的说：又是感冒，又是扭到脖子...</p>
+<p>上次复习过程中将博客迁移到了Github Pages中，暂时分配了域名<a href="http://mirsking.tk">mirsking.tk</a>，然后一直想添加一个二级域名<a href="#">feed.mirsking.tk</a>作为RSS的域名，以便和原来的博客无缝转移。可惜Github Pages貌似只支持一个域名，无法 做二级域名转发，而且不支持.htaccess...</p>
+<p>无奈VPS太贵，踌躇间，突然想起以前申请的免费云主机Openshift(Openshift的优点是长期免费，而且最重要的式支持git!!!)于是乎，折腾就此开始。现在记录下折腾的过程和成果。</p>
+<h2>折腾效果</h2>
+<h3>博客域名:</h3>
+<div class="highlight"><pre> <span class="n">mirsking</span><span class="o">.</span><span class="n">tk</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span> <span class="sr">//</span><span class="err">由于</span><span class="n">tk</span><span class="err">域名对国内搜索引擎不友好</span><span class="p">,</span><span class="err">所以这个域名只做</span><span class="n">github</span><span class="err">的备份用</span><span class="o">.</span>
+
+ <span class="n">mirsking</span><span class="o">.</span><span class="n">com</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">domain</span><span class="o">-</span><span class="n">mirsking</span><span class="o">.</span><span class="n">rhcloud</span><span class="o">.</span><span class="n">com</span> <span class="sr">//</span><span class="err">这个作为主域名</span><span class="p">,</span><span class="err">兼容原来博客基本上所有的链接地址</span><span class="p">(</span><span class="err">原博客的部分链接做了删除</span><span class="o">...</span><span class="p">)</span>
+ <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">com</span> <span class="n">CNMAE</span><span class="err">到</span> <span class="n">feed</span><span class="o">-</span><span class="n">mirsking</span><span class="o">.</span><span class="n">rhcloud</span><span class="o">.</span><span class="n">com</span> <span class="sr">//</span><span class="err">这个作为</span><span class="n">feed</span><span class="err">的主域名</span>
+
+ <span class="n">mirsking</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
+ <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
+
+ <span class="n">wangpeng</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
+ <span class="n">feed</span><span class="o">.</span><span class="n">wangpeng</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+
+
+<p>额, 不要骂我搞了这么多域名, ml/tk都是免费域名,只是为了防止被别人抢注, wangpeng.ml本来是被别人占着的,好不容易刚刚抢注到...</p>
+<h2>折腾过程</h2>
+<ol>
+<li>
+<p>Github Pages存储的是pelican生成的静态网页,具体看我上一篇博客.</p>
+</li>
+<li>
+<p>Openshift 上创建了两个app,一个用来托管mirsking.com主站,一个用来托管feed.mirsking.com. 没办法,谁让Openshift也不支持二级域名重定向呢. 不过不知道是否支持.htaccess, 等有空了再试验一下.</p>
+</li>
+</ol>
+<h3>Openshift创建app并配置nginx</h3>
+<ul>
+<li>
+<p>登陆<a href="https://openshift.redhat.com/">openshift</a>,在Applications选项卡中添加Application</p>
+</li>
+<li>
+<p>选择最右下脚的Do it yourself(注意这里一定要选择diy,否则运行nginx就要停用已经跑起来的占用了端口服务)</p>
+</li>
+<li>
+<p>cd到Openshift的TMP目录下载安装nginx,这里初次用Openshift的我感觉到了深深的恶意,没有找到Openshift的文档,不清楚Openshift到底又多少各变量,在此总结下:</p>
+</li>
+</ul>
+<h4>Openshit变量总结</h4>
+<div class="highlight"><pre><span class="nv">$OPENSHIFT_TMP_DIR</span>          <span class="o">/</span><span class="n">tmp</span>
+<span class="nv">$OPENSHIFT_DATA_DIR</span>         <span class="o">~</span><span class="sr">/app-root/</span><span class="n">data</span>
+<span class="nv">$OPENSHIFT_DIY_IP</span>           <span class="n">your</span> <span class="n">ip</span>
+<span class="nv">$OPENSHIFT_DIY_PORT</span>         <span class="n">your</span> <span class="n">port</span>
+</pre></div>
+
+
+<h4>nginx安装过程</h4>
+<div class="highlight"><pre><span class="n">cd</span> <span class="nv">$OPENSHIFT_TMP_DIR</span>
+<span class="n">wget</span> <span class="n">http:</span><span class="sr">//</span><span class="n">nginx</span><span class="o">.</span><span class="n">org</span><span class="sr">/download/</span><span class="n">nginx</span><span class="o">-</span><span class="mf">1.7.9</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">wget</span> <span class="n">ftp:</span><span class="sr">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">csx</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="sr">/pub/so</span><span class="n">ftware</span><span class="sr">/programming/</span><span class="n">pcre</span><span class="o">/</span><span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+
+<span class="n">tar</span> <span class="n">xzf</span> <span class="n">nginx</span><span class="o">-</span><span class="mf">1.7.9</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">tar</span> <span class="n">xzf</span> <span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+
+<span class="n">cd</span> <span class="n">nginx</span><span class="o">-</span><span class="mf">1.7.9</span>
+<span class="nb">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="nv">$OPENSHIFT_DATA_DIR</span><span class="o">/</span><span class="n">nginx</span>
+<span class="o">.</span><span class="sr">/configure --prefix=$OPENSHIFT_DATA_DIR/</span><span class="n">nginx</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">pcre</span><span class="o">=</span><span class="nv">$OPENSHIFT_TMP_DIR</span><span class="o">/</span><span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span>
+<span class="n">make</span> 
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+
+
+<p>经过上述步骤nginx已经安装成功了,下边就是配置nginx并启动了,先:<code>echo $OPENSHIFT_DIY_IP</code>  <code>echo $OPENSHIFT_DIY_PORT</code>, 获取application的ip和端口.</p>
+<div class="highlight"><pre><span class="n">vim</span> <span class="nv">$OPENSHIFT_DATA_DIR</span><span class="sr">/nginx/co</span><span class="n">nf</span><span class="o">/</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span><span class="err">`</span>
+</pre></div>
+
+
+<p>找到</p>
+<div class="highlight"><pre><span class="n">server</span><span class="p">{</span>
+    <span class="nb">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="n">server_name</span> <span class="n">localhost</span><span class="p">;</span>
+    <span class="n">location</span> <span class="o">/</span><span class="p">{</span>
+        <span class="n">root</span> <span class="n">your_site_dir</span>
+        <span class="nb">index</span> <span class="nb">index</span><span class="o">.</span><span class="n">html</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>修改为上边<code>echo</code>出来的ip和端口. root后边写自己的博客地址.</p>
+<p>最后到<code>$OPENSHIFT_DATA_DIR/nginx/sbin/</code>目录运行nginx,nginx就成功跑起来了.</p>
+<p>这里如果出现"Permission Denied"之类的错误,基本都是ip和端口没配置好,Openshift没给那些端口权限导致的.</p>
+<p>好了,这次总结到此为止,开始写老板的大作业喽!!!</p>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+      <li><a href="mirsking.tk/pages/about.html">About</a></li>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="mirsking.tk/category/blog.html">Blog</a></li>
+		<li><a href="mirsking.tk/category/career.html">Career</a></li>
+		<li><a href="mirsking.tk/category/collections.html">Collections</a></li>
+		<li><a href="mirsking.tk/category/other-interests.html">Other Interests</a></li>
+		<li><a href="mirsking.tk/category/programing.html">Programing</a></li>
+		<li><a href="mirsking.tk/category/tools-configuration.html">Tools Configuration</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-1"><a href="mirsking.tk/tag/matlab.html">Matlab</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/c.html">C</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-2"><a href="mirsking.tk/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/vc.html">VC++</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/windows.html">Windows</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/php.html">PHP</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/linux.html">linux</a></li>
+	    <li class="tag-2"><a href="mirsking.tk/tag/interests.html">interests</a></li>
+	    <li class="tag-2"><a href="mirsking.tk/tag/blog.html">blog</a></li>
+	    <li class="tag-1"><a href="mirsking.tk/tag/robot.html">robot</a></li>
+	    <li class="tag-4"><a href="mirsking.tk/tag/bash.html">Bash</a></li>
+</ul>
+
+<nav class="widget">
+  <h4>Links</h4>
+  <ul>
+    <li><a href="http://tianjun.ml/">Tianjun</a></li>
+    <li><a href="http://www.peakwang.com">Peakwang</a></li>
+  </ul>
+</nav>
+
+
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+                <li><div class="btn primary"><a href="http://www.github.com/mirsking/" target="_blank">Github</a></div></li>
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="mirsking.tk/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="mirsking.tk/theme/js/libs/gumby.min.js"></script>
+  <script src="mirsking.tk/theme/js/plugins.js"></script>
+</body>
+</html>
