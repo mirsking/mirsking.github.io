@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="mirsking.tk/" rel="alternate"></link><link href="mirsking.tk/feeds/collections.atom.xml" rel="self"></link><id>mirsking.tk/</id><updated>2014-04-18T21:23:00+08:00</updated><entry><title>基于DMP的目标在线跟踪、在线避障机械臂</title><link href="mirsking.tk/collections/dmp-clmc.html" rel="alternate"></link><updated>2014-04-18T21:23:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-04-18:mirsking.tk/collections/dmp-clmc.html</id><summary type="html">&lt;p&gt;算一算，大概有一个月没有写博客了。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="/" rel="alternate"></link><link href="/feeds/collections.atom.xml" rel="self"></link><id>/</id><updated>2014-04-18T21:23:00+08:00</updated><entry><title>基于DMP的目标在线跟踪、在线避障机械臂</title><link href="/collections/dmp-clmc.html" rel="alternate"></link><updated>2014-04-18T21:23:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-04-18:collections/dmp-clmc.html</id><summary type="html">&lt;p&gt;算一算，大概有一个月没有写博客了。&lt;/p&gt;
 &lt;p&gt;这一个月，从DMP模型的学习到仿真再到正在进行中的实物实现，毕设也算是有些进展。&lt;/p&gt;
 &lt;p&gt;可惜自身技术太欠缺，一路走来坎坎坷坷。&lt;/p&gt;
 &lt;p&gt;每每走到死胡同，看不到未来，都会拿出下面CLMC实验室的两个视频，膜拜一番，然后鼓励自己在这条路上且行且远。&lt;/p&gt;
@@ -27,7 +27,7 @@
 
 [youku id="XNzAwNjU5NjI0"]
 
-&lt;/div&gt;</summary><category term="robot"></category></entry><entry><title>Timo VS Kuka人机乒乓巅峰对决</title><link href="mirsking.tk/collections/timo-vs-kuka.html" rel="alternate"></link><updated>2014-03-13T20:11:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-13:mirsking.tk/collections/timo-vs-kuka.html</id><summary type="html">&lt;p&gt;3月11日中午12点，官网如期放出了kuka与timo的对战视频，可惜源是&lt;code&gt;you~tu~be&lt;/code&gt;的。&lt;br /&gt;
+&lt;/div&gt;</summary><category term="robot"></category></entry><entry><title>Timo VS Kuka人机乒乓巅峰对决</title><link href="/collections/timo-vs-kuka.html" rel="alternate"></link><updated>2014-03-13T20:11:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-13:collections/timo-vs-kuka.html</id><summary type="html">&lt;p&gt;3月11日中午12点，官网如期放出了kuka与timo的对战视频，可惜源是&lt;code&gt;you~tu~be&lt;/code&gt;的。&lt;br /&gt;
 做了个搬运工，官网下载——&gt;优酷上传，造福国内。&lt;br /&gt;
 视频前35秒是重复的预告视频，可以直接快进到00分35秒看。&lt;br /&gt;
 另外3分32秒，亮瞎双眼！&lt;/p&gt;
@@ -36,7 +36,7 @@
 &lt;p&gt;1）国内：http://www.flvxz.com/
 飞驴下载，支持优酷、土豆、i奇艺等等国内视频网站。  &lt;/p&gt;
 &lt;p&gt;2）国外：http://www.clipconverter.cc/ 支持you\~tu\~be  &lt;/p&gt;
-&lt;p&gt;使用方法很简单，直接将对应网站的视频地址复制到这两个网站的输入框中，然后就是分析-（转码）-下载喽。&lt;/p&gt;</summary><category term="robot"></category></entry><entry><title>KuKa机器手与人类Timo的乒乓对决</title><link href="mirsking.tk/collections/kuka-vs-timo.html" rel="alternate"></link><updated>2014-02-22T13:51:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-22:mirsking.tk/collections/kuka-vs-timo.html</id><summary type="html">&lt;p&gt;2014年3月11日Kuka出品的机器人将要跟德国乒乓选手Timo在上海对决，以庆祝Kuka 在上海西南部开设新工厂。&lt;/p&gt;
+&lt;p&gt;使用方法很简单，直接将对应网站的视频地址复制到这两个网站的输入框中，然后就是分析-（转码）-下载喽。&lt;/p&gt;</summary><category term="robot"></category></entry><entry><title>KuKa机器手与人类Timo的乒乓对决</title><link href="/collections/kuka-vs-timo.html" rel="alternate"></link><updated>2014-02-22T13:51:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-22:collections/kuka-vs-timo.html</id><summary type="html">&lt;p&gt;2014年3月11日Kuka出品的机器人将要跟德国乒乓选手Timo在上海对决，以庆祝Kuka 在上海西南部开设新工厂。&lt;/p&gt;
 &lt;p&gt;此次比赛的预告片看起来相当振奋忍心，值得期待！&lt;br /&gt;
 官网地址为http://www.kuka-timoboll.com/。&lt;/p&gt;
 &lt;p&gt;但由于墙的原因，官网上的预告视频无法观看。&lt;br /&gt;

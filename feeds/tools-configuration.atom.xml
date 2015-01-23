@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="mirsking.tk/" rel="alternate"></link><link href="mirsking.tk/feeds/tools-configuration.atom.xml" rel="self"></link><id>mirsking.tk/</id><updated>2014-05-25T17:47:00+08:00</updated><entry><title>Ubuntu下安装Java插件连接浙大RVPN</title><link href="mirsking.tk/tools-configuration/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="alternate"></link><updated>2014-05-25T17:47:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-05-25:mirsking.tk/tools-configuration/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html</id><summary type="html">&lt;p&gt;浙大的RVPN是通过访问rvpn.zju.edu.cn，然后调用Java插件运行Sangfor(深信服)的client然后添加本地路由表实现的。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="/" rel="alternate"></link><link href="/feeds/tools-configuration.atom.xml" rel="self"></link><id>/</id><updated>2014-05-25T17:47:00+08:00</updated><entry><title>Ubuntu下安装Java插件连接浙大RVPN</title><link href="/tools-configuration/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="alternate"></link><updated>2014-05-25T17:47:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-05-25:tools-configuration/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html</id><summary type="html">&lt;p&gt;浙大的RVPN是通过访问rvpn.zju.edu.cn，然后调用Java插件运行Sangfor(深信服)的client然后添加本地路由表实现的。&lt;/p&gt;
 &lt;p&gt;windows平台IE上很容易安装Java插件，进而自动下载Sanfor的client。唯一需要注意的是在第一次访问rvpn.zju.edu.cn的时候最好把本地防火墙关闭，否则很可能登陆后一切就绪却卡在“正在初始化”阶段。这个阶段一般是因为权限不够或防火墙禁止了下载客户端、安装vpn虚拟网卡导致的。所以最好是把防火墙关了吧，反正也是鸡肋的东西。&lt;/p&gt;
 &lt;p&gt;本文主要是记录下Ubuntu下安装Java插件并连接RVPN的过程。下面就开始喽：&lt;/p&gt;
 &lt;h2&gt;Java插件篇&lt;/h2&gt;
@@ -27,7 +27,7 @@
 &lt;h2&gt;rvpn的设置&lt;/h2&gt;
 &lt;p&gt;java安装成功后，就可以访问rvpn了。访问rvpn.zju.edu.cn登陆后，会运行一个java插件，同意运行即可。然后会下载sangfor的一个client到\~/.sangfor目录。这里注意一下打开firefox时最好在terminal中用&lt;code&gt;sudo firefox&lt;/code&gt;或&lt;code&gt;gksudo firefoxi&lt;/code&gt;打开，因为sangfor在运行时会虚拟一个tun0的网卡，然后建立一组路由表，这个是需要root权限的。&lt;/p&gt;
 &lt;p&gt;这里如果运行正常，就会出现&lt;/p&gt;
-&lt;p&gt;&lt;a href="mirsking.tk/images/easyconnect.png"&gt;&lt;img alt="easyconnect" src="mirsking.tk/images/easyconnect.png" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="/images/easyconnect.png"&gt;&lt;img alt="easyconnect" src="/images/easyconnect.png" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这个小图标。然后就可以尽情访问内网了。&lt;/p&gt;
 &lt;p&gt;但是这里笔者在执行的时候遇到了一个问题。现象是：登陆显示正常，但是没有绿色的小图标，也就无法访问内网。&lt;/p&gt;
 &lt;p&gt;笔者当时尝试了n种方法，郁闷到了极点。出去转了一圈，笔者就想，在windows上，java插件运行后既然调用的是sangfor的exe然后出现了绿色图标，也即easyconnect，那么ubuntu一定是调用sangfor这一步出错导致了上述现象。&lt;/p&gt;
@@ -47,7 +47,7 @@
 &lt;h2&gt;小结&lt;/h2&gt;
 &lt;p&gt;RVPN在windows下很easy，特别是有IE浏览器这种所有开发必须兼容的强大浏览器。&lt;/p&gt;
 &lt;p&gt;而Ubuntu下其实Firefox/Chrome也都是支持的，可惜Chrome升级35版后放弃了对Java插件的支持。&lt;/p&gt;
-&lt;p&gt;RVPN在windows和Ubuntu下倒腾了两天，想来这种东西常常是某人按官网流程来一遍就所有OK，某人搞了N久却一直搞不定的东西。所以这种东西总是不能一味照着别人的步子重复的，还是要搞的时候思路清楚，把握其中的原理，然后借助强大的google，问题就迎刃而解了！&lt;/p&gt;</summary><category term="linux"></category><category term="java plugin"></category><category term="rvpn"></category></entry><entry><title>ubuntu12.04安装vim7.4 with lua的心酸历程</title><link href="mirsking.tk/tools-configuration/ubuntu12-04-vim7-4-with-lua.html" rel="alternate"></link><updated>2014-05-09T19:42:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-05-09:mirsking.tk/tools-configuration/ubuntu12-04-vim7-4-with-lua.html</id><summary type="html">&lt;p&gt;因团队需要，忍痛抛弃了ubuntu14.04 LTS，改回ubuntu12.04，允许我吐槽一分钟：&lt;/p&gt;
+&lt;p&gt;RVPN在windows和Ubuntu下倒腾了两天，想来这种东西常常是某人按官网流程来一遍就所有OK，某人搞了N久却一直搞不定的东西。所以这种东西总是不能一味照着别人的步子重复的，还是要搞的时候思路清楚，把握其中的原理，然后借助强大的google，问题就迎刃而解了！&lt;/p&gt;</summary><category term="linux"></category><category term="java plugin"></category><category term="rvpn"></category></entry><entry><title>ubuntu12.04安装vim7.4 with lua的心酸历程</title><link href="/tools-configuration/ubuntu12-04-vim7-4-with-lua.html" rel="alternate"></link><updated>2014-05-09T19:42:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-05-09:tools-configuration/ubuntu12-04-vim7-4-with-lua.html</id><summary type="html">&lt;p&gt;因团队需要，忍痛抛弃了ubuntu14.04 LTS，改回ubuntu12.04，允许我吐槽一分钟：&lt;/p&gt;
 &lt;p&gt;第一就是搜狗和麒麟合力打造的新版linux版输入法，简单&lt;code&gt;sudo dpkg -i&lt;/code&gt;，结果到ubuntu12.04这却要ppa升级fcitx。升级玩的fcitx却各种不稳定，不定时抽风，然后整个输入法就甭想了。&lt;/p&gt;
 &lt;p&gt;第二是今天的重点，ubuntu14.04安装vim 7.4直接一个&lt;code&gt;sudo apt-get install vim&lt;/code&gt;就ok了，结果到12.04这，偏偏要给你装vim 7.3。vim
 7.3也就算了，偏偏低于vim 7.3.885。结果就是悲剧的无法使用大名鼎鼎的&lt;strong&gt;&lt;a href="https://github.com/Shougo/neocomplete.vim"&gt;neocomplete.vim&lt;/a&gt;&lt;/strong&gt;插件。本来以为找到了终极的YouCompleteMe插件，结果发现YouCompleteMe是依赖neocomplete.vim的。&lt;/p&gt;
@@ -83,7 +83,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;命令很简单，卸载，依赖处理，装依赖，编译vim7.4（加入lua参数）。终于可以爽爽的用vim了。&lt;/p&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="程序员"></category></entry><entry><title>Visual Studio添加Armadillo线性代数库实现矩阵运算</title><link href="mirsking.tk/tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="alternate"></link><updated>2014-03-16T10:05:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-16:mirsking.tk/tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html</id><summary type="html">&lt;p&gt;Armadillo是一个C++开发的线性代数库，其可以使用LAPACK进行加速，从而取得了速度和易用性上的平衡。从而可以方便高效地把Matlab中的程序方便地移植到C++中。  &lt;/p&gt;
+&lt;p&gt;命令很简单，卸载，依赖处理，装依赖，编译vim7.4（加入lua参数）。终于可以爽爽的用vim了。&lt;/p&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="程序员"></category></entry><entry><title>Visual Studio添加Armadillo线性代数库实现矩阵运算</title><link href="/tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="alternate"></link><updated>2014-03-16T10:05:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-16:tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html</id><summary type="html">&lt;p&gt;Armadillo是一个C++开发的线性代数库，其可以使用LAPACK进行加速，从而取得了速度和易用性上的平衡。从而可以方便高效地把Matlab中的程序方便地移植到C++中。  &lt;/p&gt;
 &lt;p&gt;Armadillo也提供了python的接口armanpy。同时在Armadillo基础上也开发了许多实用的包，如用于快速机器学习的MLPACK。&lt;br /&gt;
 详细介绍可以看官网：&lt;a href="http://arma.sourceforge.net/"&gt;Armadillo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;由于最近做毕设需要将Matlab的算法移植到C++上，所以安装了这个库，虽然简单，却也学习到了一些东西。  &lt;/p&gt;

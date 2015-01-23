@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="mirsking.tk/" rel="alternate"></link><link href="mirsking.tk/feeds/programing.atom.xml" rel="self"></link><id>mirsking.tk/</id><updated>2014-03-20T22:33:00+08:00</updated><entry><title>Matlab绘制各种动态心形图并保存为Gif</title><link href="mirsking.tk/programing/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html" rel="alternate"></link><updated>2014-03-20T22:33:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-20:mirsking.tk/programing/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html</id><summary type="html">&lt;p&gt;“码农”，这个自从接触编程，就永远不可能丢掉的头衔，让多少程序猿痛并快乐着。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="/" rel="alternate"></link><link href="/feeds/programing.atom.xml" rel="self"></link><id>/</id><updated>2014-03-20T22:33:00+08:00</updated><entry><title>Matlab绘制各种动态心形图并保存为Gif</title><link href="/programing/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html" rel="alternate"></link><updated>2014-03-20T22:33:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-20:programing/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html</id><summary type="html">&lt;p&gt;“码农”，这个自从接触编程，就永远不可能丢掉的头衔，让多少程序猿痛并快乐着。&lt;/p&gt;
 &lt;p&gt;作为码农中的一员，却也时常给自己找些乐趣，比如最近很火的&lt;a href="http://gabrielecirulli.github.io/2048/"&gt;2048游戏&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;又比如：用Matlab画出一些漂亮的图片。先放一张图（注意，点击图片可以看到动态图哦）：&lt;/p&gt;
-&lt;p&gt;&lt;a href="mirsking.tk/images/heart-beats.gif"&gt;&lt;img alt="heart-beats" src="mirsking.tk/images/heart-beats.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="/images/heart-beats.gif"&gt;&lt;img alt="heart-beats" src="/images/heart-beats.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;还不错吧，下面就贴出源代码，造福大家：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;clc&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;clear&lt;/span&gt;  
 &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linspace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="nv"&gt;%200&lt;/span&gt;&lt;span class="err"&gt;这个值越大，则画面越细腻&lt;/span&gt;  
@@ -55,7 +55,7 @@
 
 &lt;p&gt;大量的注释，我就不多解释了。其原理就是每帧图像转换为index型图像数据存入gif文件中。&lt;/p&gt;
 &lt;p&gt;怎么样？不过瘾？再来一个（注意，点击图片可以看到动态图哦）：  &lt;/p&gt;
-&lt;p&gt;&lt;a href="mirsking.tk/images/heart-waves.gif"&gt;&lt;img alt="heart-waves" src="mirsking.tk/images/heart-waves.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="/images/heart-waves.gif"&gt;&lt;img alt="heart-waves" src="/images/heart-waves.gif" /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;同样附上源码：  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;close&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt;  
 &lt;span class="n"&gt;clear&lt;/span&gt;  
@@ -81,7 +81,7 @@
 &lt;p&gt;总结一下，核心有两个：&lt;br /&gt;
 1）构造漂亮的函数&lt;br /&gt;
 2）画图，每一帧调用一次MakeGif保存为动态图  &lt;/p&gt;
-&lt;p&gt;关于如何构造漂亮的函数，突然让我想到了笛卡尔的心型曲线了，什么时候有机会去搞搞。&lt;/p&gt;</summary><category term="Matlab"></category><category term="程序员"></category></entry><entry><title>你绝不知道的Linux中极好用的命令</title><link href="mirsking.tk/programing/the-best-commands-you-never-knew-about-in-linux.html" rel="alternate"></link><updated>2014-02-18T17:50:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-18:mirsking.tk/programing/the-best-commands-you-never-knew-about-in-linux.html</id><summary type="html">&lt;h2&gt;引子&lt;/h2&gt;
+&lt;p&gt;关于如何构造漂亮的函数，突然让我想到了笛卡尔的心型曲线了，什么时候有机会去搞搞。&lt;/p&gt;</summary><category term="Matlab"></category><category term="程序员"></category></entry><entry><title>你绝不知道的Linux中极好用的命令</title><link href="/programing/the-best-commands-you-never-knew-about-in-linux.html" rel="alternate"></link><updated>2014-02-18T17:50:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-18:programing/the-best-commands-you-never-knew-about-in-linux.html</id><summary type="html">&lt;h2&gt;引子&lt;/h2&gt;
 &lt;p&gt;最近发现了一个很好玩的网站Quora。&lt;/p&gt;
 &lt;p&gt;该网站的立意是：to share and grow the world's knowledge.&lt;/p&gt;
 &lt;p&gt;而其实现途径则是：Ask any question, get real answers from people with
@@ -106,7 +106,7 @@ first hand experience, and blog about what you know.&lt;/p&gt;
 &lt;p&gt;diff3——或许你用过diff命令，但是你曾经需要比较三个文件的不同吗？试试这个命令吧。&lt;/p&gt;
 &lt;p&gt;cal——在命令窗中工作了许久，想快速看下日历？输入cal看看发生了什么把。&lt;/p&gt;
 &lt;h2&gt;结语&lt;/h2&gt;
-&lt;p&gt;文中提到了一些很奇怪的命令，正因为奇进而我们可能见到的机会比较小。但是有一部分命令如果熟练用起来还是不错的，比如：ctrl+r，比如tac。当然文中列出的命令只是linux庞大命令库的凤毛麟角，欢迎大家回帖分享大家喜欢的命令！&lt;/p&gt;</summary><category term="Linux"></category><category term="Bash"></category></entry><entry><title>Robotics Toolbox for MATLAB学习笔记（二）</title><link href="mirsking.tk/programing/learning-robotics-toolbox-for-matlab2.html" rel="alternate"></link><updated>2014-02-14T18:23:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-14:mirsking.tk/programing/learning-robotics-toolbox-for-matlab2.html</id><summary type="html">&lt;p&gt;距离上次写学习笔记已经一个星期了，最近懒惰了，呵呵。重新走起！今天虽然是情人节+元宵节，但是学习丝毫不能落下。下面言归正传：&lt;/p&gt;
+&lt;p&gt;文中提到了一些很奇怪的命令，正因为奇进而我们可能见到的机会比较小。但是有一部分命令如果熟练用起来还是不错的，比如：ctrl+r，比如tac。当然文中列出的命令只是linux庞大命令库的凤毛麟角，欢迎大家回帖分享大家喜欢的命令！&lt;/p&gt;</summary><category term="Linux"></category><category term="Bash"></category></entry><entry><title>Robotics Toolbox for MATLAB学习笔记（二）</title><link href="/programing/learning-robotics-toolbox-for-matlab2.html" rel="alternate"></link><updated>2014-02-14T18:23:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-14:programing/learning-robotics-toolbox-for-matlab2.html</id><summary type="html">&lt;p&gt;距离上次写学习笔记已经一个星期了，最近懒惰了，呵呵。重新走起！今天虽然是情人节+元宵节，但是学习丝毫不能落下。下面言归正传：&lt;/p&gt;
 &lt;p&gt;首先贴出&lt;a href="http://www.mirsking.com/programingalgorithm/learning-robotics-toolbox-for-matlab/" title="Robotics Toolbox for MATLAB学习笔记（一）"&gt;Robotics Toolbox for MATLAB学习笔记（一）&lt;/a&gt;的地址（点击链接直达）。&lt;/p&gt;
 &lt;p&gt;第三天（2014,2,14）操作臂逆运动学总结&lt;/p&gt;
 &lt;h2&gt;操作臂逆运动学之——ikine()函数的学习&lt;/h2&gt;
@@ -144,7 +144,7 @@ first hand experience, and blog about what you know.&lt;/p&gt;
 
 
 &lt;p&gt;好了，今天的逆运动学函数就总结到这里，最后的参数没来得及翻译，下次有机会再补上吧。&lt;/p&gt;
-&lt;p&gt;另外，下一阶段将进行，轨迹规划相关内容的学习和总结。监督自己加把劲吧！&lt;/p&gt;</summary><category term="Matlab"></category><category term="Robotics Toolbox"></category></entry><entry><title>Robotics Toolbox for MATLAB学习笔记（一）</title><link href="mirsking.tk/programing/learning-robotics-toolbox-for-matlab.html" rel="alternate"></link><updated>2014-02-05T10:03:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-05:mirsking.tk/programing/learning-robotics-toolbox-for-matlab.html</id><summary type="html">&lt;p&gt;Robotics Toolbox for MATLAB是由Peter I. Corke编写的第三方工具箱。提供了机器人轨迹规划的各种函数。&lt;/p&gt;
+&lt;p&gt;另外，下一阶段将进行，轨迹规划相关内容的学习和总结。监督自己加把劲吧！&lt;/p&gt;</summary><category term="Matlab"></category><category term="Robotics Toolbox"></category></entry><entry><title>Robotics Toolbox for MATLAB学习笔记（一）</title><link href="/programing/learning-robotics-toolbox-for-matlab.html" rel="alternate"></link><updated>2014-02-05T10:03:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-02-05:programing/learning-robotics-toolbox-for-matlab.html</id><summary type="html">&lt;p&gt;Robotics Toolbox for MATLAB是由Peter I. Corke编写的第三方工具箱。提供了机器人轨迹规划的各种函数。&lt;/p&gt;
 &lt;p&gt;从今天开始要学习该工具箱并能熟练掌握。本文将记录每日的学习进度，以供将来查阅。&lt;/p&gt;
 &lt;h3&gt;第一天（2014,2,5）Robotics Toolbox的安装与简单函数的学习&lt;/h3&gt;
 &lt;p&gt;根据&lt;a href="http://www.petercorke.com/Robotics_Toolbox.html"&gt;官网的说明&lt;/a&gt;，安装步骤如下：&lt;/p&gt;
