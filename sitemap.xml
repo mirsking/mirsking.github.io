@@ -5,37 +5,44 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2015-01-23T14:15:33-00:00</lastmod>
+<lastmod>2015-01-27T10:56:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2015-01-23T14:15:33-00:00</lastmod>
+<lastmod>2015-01-27T10:56:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2015-01-23T14:15:33-00:00</lastmod>
+<lastmod>2015-01-27T10:56:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2015-01-23T14:15:33-00:00</lastmod>
+<lastmod>2015-01-27T10:56:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/pages/about.html</loc>
-<lastmod>2015-01-23T14:15:33-00:00</lastmod>
+<lastmod>2015-01-27T10:56:12-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.3</priority>
+</url>
+
+<url>
+<loc>/programing/ros_init.html</loc>
+<lastmod>2015-01-26T23:00:00+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <url>
@@ -180,7 +187,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/programing.html</loc>
-<lastmod>2014-03-20T22:33:00+08:00</lastmod>
+<lastmod>2015-01-26T23:00:00+08:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -208,7 +215,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/c.html</loc>
-<lastmod>2014-01-15T14:26:00+08:00</lastmod>
+<lastmod>2015-01-26T23:00:00+08:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -242,8 +249,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/ubuntu.html</loc>
-<lastmod>2014-05-09T19:42:00+08:00</lastmod>
+<loc>/tag/ros.html</loc>
+<lastmod>2015-01-26T23:00:00+08:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -333,8 +340,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/ubuntu.html</loc>
+<lastmod>2014-05-09T19:42:00+08:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/author/mirsking.html</loc>
-<lastmod>2015-01-23T13:00:00+08:00</lastmod>
+<lastmod>2015-01-26T23:00:00+08:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

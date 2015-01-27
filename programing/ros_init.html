@@ -2,9 +2,10 @@
 <html lang="zh">
 <head>
 
-        <title>飞扬博客-MirsKing - C</title>
+        <title>深入探究ros::init()</title>
         <meta charset="utf-8" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Full Atom Feed" />
+        <link href="/feeds/programing.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Categories Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -43,99 +44,108 @@
               </ul>
             </div>
 
-<section id="content">
-
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">深入探究ros::init()</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2015-01-26T23:00:00+08:00"> Mon 26 January 2015 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>ROS是Willow Garage公司与Stanford University合作推出的开源机器人操作系统(Robot Operation System), Willow Garage也在此系统之上推出了Personal Robot 2(PR2), PR2由于出色的抓取在家庭服务机器人里可谓相当吊! 重要的是ROS已经被大多数科研机构接受并在其上进行研究和开发. 感觉Willow Garage在下一盘很大的棋, 有点安卓系统在手机上的赶脚...</p>
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/programing/ros_init.html" rel="bookmark"
+                   title="Permalink to 深入探究ros::init()">深入探究ros::init()</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-01-26T23:00:00+08:00">
+                Mon 26 January 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>ROS是Willow Garage公司与Stanford University合作推出的开源机器人操作系统(Robot Operation System), Willow Garage也在此系统之上推出了Personal Robot 2(PR2), PR2由于出色的抓取在家庭服务机器人里可谓相当吊! 重要的是ROS已经被大多数科研机构接受并在其上进行研究和开发. 感觉Willow Garage在下一盘很大的棋, 有点安卓系统在手机上的赶脚...</p>
 <p>用ROS也有大半年了, 但有个问题一直困扰我, 就是ROS每个Node在建立时第一步要做的就是<code>ros::init()</code>一个node, 但是在C++的API里边, ros一定要加入argc和argv两个参数. 但是这两个参数又从来没用过,而且在运行的时候ROS一般又不用<code>XX [Options]</code>这种方式, 那参数到底是谁传进去的, 传进去到底做了什么呢?</p>
 <p>今天仔细翻了一下API, 算是把这个问题大概理解清楚了. </p>
 <h2>函数原型</h2>
 <div class="highlight"><pre><span class="kt">void</span> <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit32_t</span> <span class="n">options</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
 
-<span class="kt">void ...</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/ros.html">ros</a>
-                                            <a class="danger label" href="/tag/c.html">C++</a>
-                                </div>
+<span class="kt">void</span> <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="k">const</span> <span class="n">M_string</span><span class="o">&amp;</span> <span class="n">remappings</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit32_t</span> <span class="n">options</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="k">const</span> <span class="n">VP_string</span><span class="o">&amp;</span> <span class="n">remappings_args</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit32_t</span> <span class="n">options</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
 
 
-
-                        </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/career/build-your-programming-technical-skills.html" rel="bookmark" title="Permalink to 程序员技术练级攻略">程序员技术练级攻略</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-01-15T14:26:00+08:00"> Wed 15 January 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <div class="alert alert-info">
-
-#### 前言
-
-</div>
-
-<p>你是否觉得自己从学校毕业的时候只做过小玩具一样的程序？<wbr></wbr>走入职场后哪怕没有什么经验也可以把以下这些课外练习走一遍（朋友的抱怨：学校课程总是从理论出发，<wbr></wbr>作业项目都看不出有什么实际作用，不如从工作中的需求出发）</p>
-<p>建议：</p>
+<h2>谁传入参数? 传入参数做什么?</h2>
+<p>先说第一个, 官方说argc, argv是用来解析来自命令行remapping arguments, 而所谓remapping arguments就是在调用<code>rosrun package_name node_name param_name:=param_value</code> 中的<code>param:=param_value</code>部分. OK, 解决了第一个问题: 这些参数是从命令行的remapping arguments中传入的.</p>
+<p>那么传入参数是有一定格式的, ROS wiki在<a href="http://wiki.ros.org/Remapping%20Arguments">这里</a>对Remappig Arguments做了详细解释. 在看这个之前, 我们先来回顾一个Resources Names这个概念.</p>
+<h3>Resource Names</h3>
+<h4>Graph Resource Names</h4>
+<p>图资源命名提供了ROS计算图中资源的分层命名结构, 这些计算图包括 Nodes/Parameters/Topics/Services等. </p>
+<p>ROS中图资源命名包括四种格式: base/relative/global/private, 大概是这个样子:</p>
 <ul>
-<li>不要乱买书，不要乱追新技术新名词，<wbr></wbr>基础的东西经过很长时间积累而且还会在未来至少10年通用。</li>
-<li>回顾一下历史，看看历史上时间线上技术的发展，你才能明白明天会是什么样。</li>
-<li>一定要动手，例子不管多么简单，<wbr></wbr>建议至少自己手敲一遍看看是否理解了里头的细枝末节。</li>
-<li>一定要学会思考，思考为什么要这样，而不是那样。还要举一反三地思考。</li>
+<li>base</li>
+<li>relative/name</li>
+<li>/global/name</li>
+<li>~private/name</li>
 </ul>
-<p><strong>注</strong>：你也许会很奇怪为什么下面的东西很偏Unix/Linux，这是因为我觉得Windows下的编程可能会在未来很没有前途，原因如下：</p>
-<ul>
-<li>现在的用户界面几乎被两个东西主宰了，1）Web，2）移动设备iOS或Android。Windows的图形界面不吃香了。</li>
-<li>越来越多的企业在用成本低性能高的Linux和各种开源技术来构架其系统，Windows的成本太高了。</li>
-<li>微软的东西变得太快了，很不持久，他们完全是在玩弄程序员。详情参见《<a href="http://coolshell.cn/articles/3008.html" title="Windows编程革命简史">Windows编程革命史</a>》</li>
-</ul>
-<p>所以，我个人认为以后的趋势是前端是Web+移动，后端是Linux+开源。开发这边基本上没Windows什么事。</p>
-<div class="alert alert-info">
+<p>也就是说直接名字开头的不以/开头的表示base names, 这种方式是最常用的, 因为可以方便的remapping到其他namespace.</p>
+<p>而以/开头的表示global names, 这种方式不推荐用, 因为这样写出来的代码不太方便移植.</p>
+<p>以~开头的则是private names, 这个目前没用到过, 不太理解.</p>
+<h4>Package Resource Names</h4>
+<p>Package命名就是比如<code>std_msgs/String</code>这种, <code>std_msgs</code>就是一个package name. 这里就不详细说了.</p>
+<h3>传入参数做什么?</h3>
+<p>回顾完资源命名方法, 就可以来说传入参数到底是干什么的了. <code>param_name:=param_value</code> 传入的参数, 就是为了remap resource name, 其格式如下:</p>
+<table>
+<thead>
+<tr>
+<th>Node Namespace</th>
+<th>Remapping Argument</th>
+<th>Matching Names</th>
+<th>Final Resolved Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>foo:=bar</td>
+<td>foo, /foo</td>
+<td>/bar</td>
+</tr>
+<tr>
+<td>/baz</td>
+<td>foo:=bar</td>
+<td>foo, /baz/foo</td>
+<td>/baz/bar</td>
+</tr>
+<tr>
+<td>/</td>
+<td>/foo:=bar</td>
+<td>foo, /foo</td>
+<td>/bar</td>
+</tr>
+<tr>
+<td>/baz</td>
+<td>/foo:=bar</td>
+<td>/foo</td>
+<td>/baz/bar</td>
+</tr>
+<tr>
+<td>/baz</td>
+<td>/foo:=/a/b/c/bar</td>
+<td>/foo</td>
+<td>/a/b/c/bar</td>
+</tr>
+</tbody>
+</table>
+<p>用两句话概括就是: 不具名的命名空间中, 匹配的是param_name和/param_name, Resolve是直接加/替换; 具名命名空间中, 匹配的是/namespace/param_name, Resolve分两种: 1) 替换内容中无命名空间, 则加Node namespace替换, 2)替换内容中有命名空间, 则直接替换.</p>
+<p>最后回过头看下函数原型: 一三函数分别将argv 和 VP_String类型的参数转化为M_String, 从而调用第二个函数, 最终用这些参数初始化了master和network. </p>
+<p>其中M_String是typedef的<code>map&lt;string, string&gt;</code>, 而VP_String则是<code>vector&lt;pair&lt;string, string&gt;&gt;</code>.</p>
+            </div><!-- /.entry-content -->
 
-#### 启蒙入门
-
-</div>
-
-<p><strong>1、 学习一门脚本语言，例如Python/Ruby ...</strong></p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/career/build-your-programming-technical-skills.html" rel="bookmark" title="Permalink to 程序员技术练级攻略">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/c.html">C</a>
-                                            <a class="danger label" href="/tag/python.html">Python</a>
-                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
-                                </div>
-
-
-
-                        </article></li>
-                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -192,10 +202,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

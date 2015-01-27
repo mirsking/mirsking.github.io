@@ -53,6 +53,38 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/other-interests/tp-wr941n-v2-with-openwrt-ddwrt-and-uboot.html" rel="bookmark" title="Permalink to TP WR941N v2原厂、OpenWRT、DD-WRT、刷不死的Uboot">TP WR941N v2原厂、OpenWRT、DD-WRT、刷不死的Uboot</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2014-07-30T00:15:00+08:00"> Wed 30 July 2014 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>曾经学长Tianjun告诉我一个好玩的WRTnode，可惜148大洋一个裸板太贵，而且错过了公测…</p>
+<p>而家里正好无线网需要中继，于是冲着AR9314大厂的芯入手了一款改版的WR941N，TP的产品向来是早期版本做工扎实稳定，新的版本就不断偷工减料降低成本，所以选择了v2版（为了省事，直接入手的改版机，改了SMA，16M Flash，64M RAM，加USB，基本够折腾了）。</p>
+<p>既然有WRTnode的前奏，当然是想刷OpenWRT耍耍，可惜改版机入手后就已经刷成了OpenWRT+刷不死的Uboot。不过回来后发现有一天左右死机一次的bug，于是乎想刷回官方固件，这其中刷坏了Uboot，各种辛酸泪啊。</p>
+<p>心酸不表，本文主要总结下刷机历程，以备日后有时间再折腾而翻阅。</p>
+<h2>固件互刷</h2>
+<p>不用Uboot，最安全的原厂、OpenWRT、DD-WRT互刷。此法乃网络上搞到的，只做简单总结：  </p>
+<h3>原厂——> OpenWRT</h3>
+<p>A、直接网页升级固件：openwrt-ar71xx-tl-wr941nd-v2-squashfs-factory.bin。<br />
+<a href="http://downloads.openwrt.org/snapshots/trunk/ar71xx">固件下载地址</a>  </p>
+<p>B、然后telnet到路由，将openwrt-ar71xx-tl-wr941nd-v2-squashfs-sysupgrad.bin固件上传到/tmp目录，使用命令<code>mtd –r ...</code></p> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/other-interests/tp-wr941n-v2-with-openwrt-ddwrt-and-uboot.html" rel="bookmark" title="Permalink to TP WR941N v2原厂、OpenWRT、DD-WRT、刷不死的Uboot">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/linux.html">linux</a>
+                                            <a class="danger label" href="/tag/openwrt.html">OpenWRT</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="/tools-configuration/enable-java-plugin-to-connect-rvpn-at-zju-on-ubuntu.html" rel="bookmark" title="Permalink to Ubuntu下安装Java插件连接浙大RVPN">Ubuntu下安装Java插件连接浙大RVPN</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2014-05-25T17:47:00+08:00"> Sun 25 May 2014 </abbr>
@@ -112,56 +144,6 @@
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/collections/dmp-clmc.html" rel="bookmark" title="Permalink to 基于DMP的目标在线跟踪、在线避障机械臂">基于DMP的目标在线跟踪、在线避障机械臂</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-04-18T21:23:00+08:00"> Fri 18 April 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>算一算，大概有一个月没有写博客了。</p>
-<p>这一个月，从DMP模型的学习到仿真再到正在进行中的实物实现，毕设也算是有些进展。</p>
-<p>可惜自身技术太欠缺，一路走来坎坎坷坷。</p>
-<p>每每走到死胡同，看不到未来，都会拿出下面CLMC实验室的两个视频，膜拜一番，然后鼓励自己在这条路上且行且远。</p>
-<p>分享出来，给大家见识见识，更是对自己莫大的激励。</p>
-<p>好了，废话不多说，上视频！</p>
-<div align="center">
-
-#### 自适应避障端杯子
-
-</div>
-
-<div align="center">
-
-[youku id="XNzAwNjU5MzA0"]
-
-</div>
-
-<div align="center">
-
-#### 自适应避障端杯子倒水
-
-</div>
-
-<div align="center">
-
-[youku id="XNzAwNjU5NjI0"]
-
-</div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/collections/dmp-clmc.html" rel="bookmark" title="Permalink to 基于DMP的目标在线跟踪、在线避障机械臂">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/robot.html">robot</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -187,26 +169,27 @@
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
 	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/c.html">C</a></li>
+	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
+	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
+	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
+	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
+	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
+	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
+	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
+	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
+	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
 </ul>
 
 <nav class="widget">

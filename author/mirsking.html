@@ -53,6 +53,35 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">深入探究ros::init()</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-01-26T23:00:00+08:00"> Mon 26 January 2015 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>ROS是Willow Garage公司与Stanford University合作推出的开源机器人操作系统(Robot Operation System), Willow Garage也在此系统之上推出了Personal Robot 2(PR2), PR2由于出色的抓取在家庭服务机器人里可谓相当吊! 重要的是ROS已经被大多数科研机构接受并在其上进行研究和开发. 感觉Willow Garage在下一盘很大的棋, 有点安卓系统在手机上的赶脚...</p>
+<p>用ROS也有大半年了, 但有个问题一直困扰我, 就是ROS每个Node在建立时第一步要做的就是<code>ros::init()</code>一个node, 但是在C++的API里边, ros一定要加入argc和argv两个参数. 但是这两个参数又从来没用过,而且在运行的时候ROS一般又不用<code>XX [Options]</code>这种方式, 那参数到底是谁传进去的, 传进去到底做了什么呢?</p>
+<p>今天仔细翻了一下API, 算是把这个问题大概理解清楚了. </p>
+<h2>函数原型</h2>
+<div class="highlight"><pre><span class="kt">void</span> <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit32_t</span> <span class="n">options</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="kt">void ...</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/ros.html">ros</a>
+                                            <a class="danger label" href="/tag/c.html">C++</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="/blog/blog-on-openshift-and-github-pages.html" rel="bookmark" title="Permalink to Blog on Openshift and Github Pages">Blog on Openshift and Github Pages</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2015-01-23T13:00:00+08:00"> Fri 23 January 2015 </abbr>
@@ -115,38 +144,6 @@
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/other-interests/tp-wr941n-v2-with-openwrt-ddwrt-and-uboot.html" rel="bookmark" title="Permalink to TP WR941N v2原厂、OpenWRT、DD-WRT、刷不死的Uboot">TP WR941N v2原厂、OpenWRT、DD-WRT、刷不死的Uboot</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-07-30T00:15:00+08:00"> Wed 30 July 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>曾经学长Tianjun告诉我一个好玩的WRTnode，可惜148大洋一个裸板太贵，而且错过了公测…</p>
-<p>而家里正好无线网需要中继，于是冲着AR9314大厂的芯入手了一款改版的WR941N，TP的产品向来是早期版本做工扎实稳定，新的版本就不断偷工减料降低成本，所以选择了v2版（为了省事，直接入手的改版机，改了SMA，16M Flash，64M RAM，加USB，基本够折腾了）。</p>
-<p>既然有WRTnode的前奏，当然是想刷OpenWRT耍耍，可惜改版机入手后就已经刷成了OpenWRT+刷不死的Uboot。不过回来后发现有一天左右死机一次的bug，于是乎想刷回官方固件，这其中刷坏了Uboot，各种辛酸泪啊。</p>
-<p>心酸不表，本文主要总结下刷机历程，以备日后有时间再折腾而翻阅。</p>
-<h2>固件互刷</h2>
-<p>不用Uboot，最安全的原厂、OpenWRT、DD-WRT互刷。此法乃网络上搞到的，只做简单总结：  </p>
-<h3>原厂——> OpenWRT</h3>
-<p>A、直接网页升级固件：openwrt-ar71xx-tl-wr941nd-v2-squashfs-factory.bin。<br />
-<a href="http://downloads.openwrt.org/snapshots/trunk/ar71xx">固件下载地址</a>  </p>
-<p>B、然后telnet到路由，将openwrt-ar71xx-tl-wr941nd-v2-squashfs-sysupgrad.bin固件上传到/tmp目录，使用命令<code>mtd –r ...</code></p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/other-interests/tp-wr941n-v2-with-openwrt-ddwrt-and-uboot.html" rel="bookmark" title="Permalink to TP WR941N v2原厂、OpenWRT、DD-WRT、刷不死的Uboot">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/linux.html">linux</a>
-                                            <a class="danger label" href="/tag/openwrt.html">OpenWRT</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -172,26 +169,27 @@
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
 	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/c.html">C</a></li>
+	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
+	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
+	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
+	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
+	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
+	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
+	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
+	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
+	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
 </ul>
 
 <nav class="widget">

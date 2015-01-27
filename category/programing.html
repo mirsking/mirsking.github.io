@@ -54,6 +54,35 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">深入探究ros::init()</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-01-26T23:00:00+08:00"> Mon 26 January 2015 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>ROS是Willow Garage公司与Stanford University合作推出的开源机器人操作系统(Robot Operation System), Willow Garage也在此系统之上推出了Personal Robot 2(PR2), PR2由于出色的抓取在家庭服务机器人里可谓相当吊! 重要的是ROS已经被大多数科研机构接受并在其上进行研究和开发. 感觉Willow Garage在下一盘很大的棋, 有点安卓系统在手机上的赶脚...</p>
+<p>用ROS也有大半年了, 但有个问题一直困扰我, 就是ROS每个Node在建立时第一步要做的就是<code>ros::init()</code>一个node, 但是在C++的API里边, ros一定要加入argc和argv两个参数. 但是这两个参数又从来没用过,而且在运行的时候ROS一般又不用<code>XX [Options]</code>这种方式, 那参数到底是谁传进去的, 传进去到底做了什么呢?</p>
+<p>今天仔细翻了一下API, 算是把这个问题大概理解清楚了. </p>
+<h2>函数原型</h2>
+<div class="highlight"><pre><span class="kt">void</span> <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit32_t</span> <span class="n">options</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="kt">void ...</span></pre></div> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/ros.html">ros</a>
+                                            <a class="danger label" href="/tag/c.html">C++</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="/programing/use-matlab-to-draw-and-save-a-cool-gif-dynamic-photo.html" rel="bookmark" title="Permalink to Matlab绘制各种动态心形图并保存为Gif">Matlab绘制各种动态心形图并保存为Gif</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2014-03-20T22:33:00+08:00"> Thu 20 March 2014 </abbr>
@@ -115,40 +144,6 @@ first hand experience, and blog about what you know.</p>
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/programing/learning-robotics-toolbox-for-matlab2.html" rel="bookmark" title="Permalink to Robotics Toolbox for MATLAB学习笔记（二）">Robotics Toolbox for MATLAB学习笔记（二）</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-02-14T18:23:00+08:00"> Fri 14 February 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>距离上次写学习笔记已经一个星期了，最近懒惰了，呵呵。重新走起！今天虽然是情人节+元宵节，但是学习丝毫不能落下。下面言归正传：</p>
-<p>首先贴出<a href="http://www.mirsking.com/programingalgorithm/learning-robotics-toolbox-for-matlab/" title="Robotics Toolbox for MATLAB学习笔记（一）">Robotics Toolbox for MATLAB学习笔记（一）</a>的地址（点击链接直达）。</p>
-<p>第三天（2014,2,14）操作臂逆运动学总结</p>
-<h2>操作臂逆运动学之——ikine()函数的学习</h2>
-<p>首先总结下前几天学习但没有总结的操作臂逆运动学函数ikine()。</p>
-<p>所谓逆运动学是由操作臂的位姿求取对应的角坐标参数。</p>
-<p>robotics工具箱中有ikine()函数可以方便实现。同时对于puma560这种六自由度的操作臂，还有更方便的ikine6s()函数。</p>
-<h3>ikine6s()函数的参数</h3>
-<p>由于逆运动学解的不唯一性，ikine6s()函数提供了一些参数以限定解的形式。如下：</p>
-<div class="highlight"><pre><span class="n">left</span> <span class="ow">or</span> <span class="n">right</span> <span class="n">handed</span>    <span class="s">&#39;l&#39;</span> <span class="p">,</span> <span class="s">&#39;r&#39;</span>  
-<span class="n">elbow</span> <span class="n">up</span> <span class="ow">or</span> <span class="n">down</span>    <span class="s">&#39;u&#39;</span> <span class="p">,</span> <span class="s">&#39;d&#39;</span>  
-<span class="n">wrist ...</span></pre></div> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/programing/learning-robotics-toolbox-for-matlab2.html" rel="bookmark" title="Permalink to Robotics Toolbox for MATLAB学习笔记（二）">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/matlab.html">Matlab</a>
-                                            <a class="danger label" href="/tag/robotics-toolbox.html">Robotics Toolbox</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -174,26 +169,27 @@ first hand experience, and blog about what you know.</p>
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
 	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/c.html">C</a></li>
+	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
+	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
+	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
+	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
+	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
+	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
+	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
+	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
+	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
 </ul>
 
 <nav class="widget">
