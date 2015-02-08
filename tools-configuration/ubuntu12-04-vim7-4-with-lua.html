@@ -80,21 +80,10 @@
 <span class="n">cd</span> <span class="sr">/usr/</span><span class="n">bin</span>
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">luajit</span><span class="o">-</span><span class="mf">2.0.0</span><span class="o">-</span><span class="n">beta9</span> <span class="n">luajit</span>  
 <span class="n">cd</span> <span class="o">~</span>  
-<span class="n">hg</span> <span class="n">clone</span> <span class="n">https:</span><span class="sr">//co</span><span class="n">de</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="sr">/p/</span><span class="n">vim</span><span class="o">/</span>  
+<span class="n">hg</span> <span class="n">clone</span> <span class="n">https:</span><span class="sr">//co</span><span class="n">de</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="sr">/p/</span><span class="n">vim</span><span class="sr">/ #若google被墙,则可以clone我github上的备份 https://github.com/mi</span><span class="n">rsking</span><span class="o">/</span><span class="n">vim</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">vim</span>
 
-<span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">features</span><span class="o">=</span><span class="n">huge</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">cscope</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">rubyinterp</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">largefile</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">netbeans</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">pythoninterp</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">dir</span><span class="o">=</span><span class="sr">/usr/</span><span class="n">lib</span><span class="sr">/python2.7/co</span><span class="n">nfig</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">perlinterp</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">luainterp</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">luajit</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">fail</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">missing</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">lua</span><span class="o">-</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span> <span class="o">\</span>  
-<span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">gui</span><span class="o">=</span><span class="n">gnome2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">cscope</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span>
+<span class="o">.</span><span class="sr">/configure --with-features=huge --enable-cscope --enable-rubyinterp --enable-largefile --disable-netbeans --enable-pythoninterp --with-python-config-dir=/</span><span class="n">usr</span><span class="sr">/lib/</span><span class="n">python2</span><span class="mf">.7</span><span class="sr">/config --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-lua-prefix=/</span><span class="n">usr</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">gui</span><span class="o">=</span><span class="n">gnome2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">cscope</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span>
 
 <span class="n">make</span> <span class="n">VIMRUNTIMEDIR</span><span class="o">=</span><span class="sr">/usr/s</span><span class="n">hare</span><span class="sr">/vim/</span><span class="n">vim74</span>  
 <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
@@ -102,6 +91,30 @@
 
 
 <p>命令很简单，卸载，依赖处理，装依赖，编译vim7.4（加入lua参数）。终于可以爽爽的用vim了。</p>
+<h2>about vimrc and plugins, 2015-02-08</h2>
+<p>vim的vimrc一直用的<a href="tianjun.ml">tianjun</a>学长的, 非常的好用, 不过后来自己添加了一些其他插件, 然后上传到了git上备份. 这里总结一下添加的插件及插件安装方法.</p>
+<h3>插件安装</h3>
+<p>使用bundle管理插件, 所以首先要下载bundle:</p>
+<div class="highlight"><pre>mkdir -p ~/.vim/bundle/
+<span class="nb">cd</span> ~/.vim/bundle/
+git clone https://github.com/gmarik/vundle.git 
+</pre></div>
+
+
+<p>接着把.vimrc放到~目录中, 然后启动vim, 这是会报一堆错, 都是因为插件没安装的原因, 一路回车进入vim界面, 然后</p>
+<div class="highlight"><pre><span class="p">:</span><span class="n">BundleInstall</span>
+</pre></div>
+
+
+<p>这样.vimrc中的插件就会自动下载并安装, github网速略慢, 所以这个会持续略久...</p>
+<h3>使用的插件</h3>
+<ul>
+<li>YouCompleteMe : 语义级自动补全神器</li>
+<li>xml.vim : xml高亮</li>
+<li>syntastic :   语法检查</li>
+<li>vim-instant-markdown : vim写markdown, 浏览器实时预览</li>
+<li>vim-markdown :    这个也是个markdown插件, 貌似安装比较简单, 不过还没试验过.</li>
+</ul>
             </div><!-- /.entry-content -->
 
 
@@ -128,27 +141,28 @@
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
+	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
+	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
 	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
+	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
+	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
+	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
+	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
+	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
+	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="/tag/planning.html">planning</a></li>
+	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
+	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
 	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
 	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
 	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
+	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
 </ul>
 
 <nav class="widget">
@@ -205,5 +219,35 @@
   <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="/theme/js/libs/gumby.min.js"></script>
   <script src="/theme/js/plugins.js"></script>
+
+  <!-- Using MathJax, with the delimiters $ -->
+  <!-- Conflict with pygments for the .mo and .mi --> 
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    styles: {
+    ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+    },
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],processEscapes: true}
+    });
+    MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+        var VARIANT = MathJax.OutputJax["HTML-CSS"].FONTDATA.VARIANT;
+        VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+        VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+        VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+        VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+        });
+        MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+        var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+        VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+        VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+        VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+        VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+        });
+  </script>
+  <!-- MathJax script END-->
+  
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></script></script>
+
 </body>
 </html>

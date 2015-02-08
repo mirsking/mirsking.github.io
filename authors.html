@@ -45,7 +45,7 @@
 
     <h1>Authors on 飞扬博客-MirsKing</h1>
 
-    <ul>        <li><a href="/author/mirsking.html">mirsking</a> (17)</li>
+    <ul>        <li><a href="/author/mirsking.html">mirsking</a> (18)</li>
     </ul>
 
        </div><!-- /.row -->
@@ -87,5 +87,35 @@
   <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
   <script src="/theme/js/libs/gumby.min.js"></script>
   <script src="/theme/js/plugins.js"></script>
+
+  <!-- Using MathJax, with the delimiters $ -->
+  <!-- Conflict with pygments for the .mo and .mi --> 
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    styles: {
+    ".MathJax .mo, .MathJax .mi": {color: "black ! important"}}
+    },
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],processEscapes: true}
+    });
+    MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+        var VARIANT = MathJax.OutputJax["HTML-CSS"].FONTDATA.VARIANT;
+        VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+        VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+        VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+        VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+        });
+        MathJax.Hub.Register.StartupHook("SVG Jax Ready",function () {
+        var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;
+        VARIANT["normal"].fonts.unshift("MathJax_SansSerif");
+        VARIANT["bold"].fonts.unshift("MathJax_SansSerif-bold");
+        VARIANT["italic"].fonts.unshift("MathJax_SansSerif-italic");
+        VARIANT["-tex-mathit"].fonts.unshift("MathJax_SansSerif-italic");
+        });
+  </script>
+  <!-- MathJax script END-->
+  
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script></script></script>
+
 </body>
 </html>

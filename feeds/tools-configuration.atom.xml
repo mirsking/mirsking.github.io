@@ -62,28 +62,41 @@
 &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="sr"&gt;/usr/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;ln&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;luajit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mf"&gt;2.0.0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;beta9&lt;/span&gt; &lt;span class="n"&gt;luajit&lt;/span&gt;  
 &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="o"&gt;~&lt;/span&gt;  
-&lt;span class="n"&gt;hg&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https:&lt;/span&gt;&lt;span class="sr"&gt;//co&lt;/span&gt;&lt;span class="n"&gt;de&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;google&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/p/&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;  
+&lt;span class="n"&gt;hg&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https:&lt;/span&gt;&lt;span class="sr"&gt;//co&lt;/span&gt;&lt;span class="n"&gt;de&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;google&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="sr"&gt;/p/&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="sr"&gt;/ #若google被墙,则可以clone我github上的备份 https://github.com/mi&lt;/span&gt;&lt;span class="n"&gt;rsking&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;
 &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;vim&lt;/span&gt;
 
-&lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;configure&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;features&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;huge&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cscope&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;rubyinterp&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;largefile&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;disable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;netbeans&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pythoninterp&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sr"&gt;/usr/&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="sr"&gt;/python2.7/co&lt;/span&gt;&lt;span class="n"&gt;nfig&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;perlinterp&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;luainterp&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;luajit&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fail&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;missing&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;lua&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt; &lt;span class="o"&gt;\&lt;/span&gt;  
-&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gui&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;gnome2&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cscope&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;
+&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="sr"&gt;/configure --with-features=huge --enable-cscope --enable-rubyinterp --enable-largefile --disable-netbeans --enable-pythoninterp --with-python-config-dir=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="sr"&gt;/lib/&lt;/span&gt;&lt;span class="n"&gt;python2&lt;/span&gt;&lt;span class="mf"&gt;.7&lt;/span&gt;&lt;span class="sr"&gt;/config --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-lua-prefix=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gui&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;gnome2&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cscope&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;
 
 &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;VIMRUNTIMEDIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sr"&gt;/usr/s&lt;/span&gt;&lt;span class="n"&gt;hare&lt;/span&gt;&lt;span class="sr"&gt;/vim/&lt;/span&gt;&lt;span class="n"&gt;vim74&lt;/span&gt;  
 &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;命令很简单，卸载，依赖处理，装依赖，编译vim7.4（加入lua参数）。终于可以爽爽的用vim了。&lt;/p&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="程序员"></category></entry><entry><title>Visual Studio添加Armadillo线性代数库实现矩阵运算</title><link href="/tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="alternate"></link><updated>2014-03-16T10:05:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-16:tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html</id><summary type="html">&lt;p&gt;Armadillo是一个C++开发的线性代数库，其可以使用LAPACK进行加速，从而取得了速度和易用性上的平衡。从而可以方便高效地把Matlab中的程序方便地移植到C++中。  &lt;/p&gt;
+&lt;p&gt;命令很简单，卸载，依赖处理，装依赖，编译vim7.4（加入lua参数）。终于可以爽爽的用vim了。&lt;/p&gt;
+&lt;h2&gt;about vimrc and plugins, 2015-02-08&lt;/h2&gt;
+&lt;p&gt;vim的vimrc一直用的&lt;a href="tianjun.ml"&gt;tianjun&lt;/a&gt;学长的, 非常的好用, 不过后来自己添加了一些其他插件, 然后上传到了git上备份. 这里总结一下添加的插件及插件安装方法.&lt;/p&gt;
+&lt;h3&gt;插件安装&lt;/h3&gt;
+&lt;p&gt;使用bundle管理插件, 所以首先要下载bundle:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkdir -p ~/.vim/bundle/
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~/.vim/bundle/
+git clone https://github.com/gmarik/vundle.git 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接着把.vimrc放到~目录中, 然后启动vim, 这是会报一堆错, 都是因为插件没安装的原因, 一路回车进入vim界面, 然后&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;BundleInstall&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;这样.vimrc中的插件就会自动下载并安装, github网速略慢, 所以这个会持续略久...&lt;/p&gt;
+&lt;h3&gt;使用的插件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;YouCompleteMe : 语义级自动补全神器&lt;/li&gt;
+&lt;li&gt;xml.vim : xml高亮&lt;/li&gt;
+&lt;li&gt;syntastic :   语法检查&lt;/li&gt;
+&lt;li&gt;vim-instant-markdown : vim写markdown, 浏览器实时预览&lt;/li&gt;
+&lt;li&gt;vim-markdown :    这个也是个markdown插件, 貌似安装比较简单, 不过还没试验过.&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="Linux"></category><category term="ubuntu"></category><category term="程序员"></category></entry><entry><title>Visual Studio添加Armadillo线性代数库实现矩阵运算</title><link href="/tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="alternate"></link><updated>2014-03-16T10:05:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-03-16:tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html</id><summary type="html">&lt;p&gt;Armadillo是一个C++开发的线性代数库，其可以使用LAPACK进行加速，从而取得了速度和易用性上的平衡。从而可以方便高效地把Matlab中的程序方便地移植到C++中。  &lt;/p&gt;
 &lt;p&gt;Armadillo也提供了python的接口armanpy。同时在Armadillo基础上也开发了许多实用的包，如用于快速机器学习的MLPACK。&lt;br /&gt;
 详细介绍可以看官网：&lt;a href="http://arma.sourceforge.net/"&gt;Armadillo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;由于最近做毕设需要将Matlab的算法移植到C++上，所以安装了这个库，虽然简单，却也学习到了一些东西。  &lt;/p&gt;
