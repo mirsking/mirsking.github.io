@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>Robotics Toolbox for MATLAB学习笔记（二）</title>
+        <title>SIGNALS IN LINUX</title>
         <meta charset="utf-8" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Full Atom Feed" />
         <link href="/feeds/programing.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Categories Atom Feed" />
@@ -52,58 +52,227 @@
 
             <header>
               <h2 class="entry-title">
-                <a href="/programing/learning-robotics-toolbox-for-matlab2.html" rel="bookmark"
-                   title="Permalink to Robotics Toolbox for MATLAB学习笔记（二）">Robotics Toolbox for MATLAB学习笔记（二）</a></h2>
+                <a href="/programing/signals_in_linux.html" rel="bookmark"
+                   title="Permalink to SIGNALS IN LINUX">SIGNALS IN LINUX</a></h2>
            
             </header>
             <footer class="post-info">
-              <abbr class="published" title="2014-02-14T18:23:00+08:00">
-                Fri 14 February 2014
+              <abbr class="published" title="2015-02-11T14:00:00+08:00">
+                Wed 11 February 2015
               </abbr>
               <address class="vcard author">By 
                 <a class="url fn" href="/author/mirsking.html"> mirsking</a>
               </address>
             </footer><!-- /.post-info -->
             <div class="entry-content">
-              <p>距离上次写学习笔记已经一个星期了，最近懒惰了，呵呵。重新走起！今天虽然是情人节+元宵节，但是学习丝毫不能落下。下面言归正传：</p>
-<p>首先贴出<a href="http://www.mirsking.com/programingalgorithm/learning-robotics-toolbox-for-matlab/" title="Robotics Toolbox for MATLAB学习笔记（一）">Robotics Toolbox for MATLAB学习笔记（一）</a>的地址（点击链接直达）。</p>
-<p>第三天（2014,2,14）操作臂逆运动学总结</p>
-<h2>操作臂逆运动学之——ikine()函数的学习</h2>
-<p>首先总结下前几天学习但没有总结的操作臂逆运动学函数ikine()。</p>
-<p>所谓逆运动学是由操作臂的位姿求取对应的角坐标参数。</p>
-<p>robotics工具箱中有ikine()函数可以方便实现。同时对于puma560这种六自由度的操作臂，还有更方便的ikine6s()函数。</p>
-<h3>ikine6s()函数的参数</h3>
-<p>由于逆运动学解的不唯一性，ikine6s()函数提供了一些参数以限定解的形式。如下：</p>
-<div class="highlight"><pre><span class="n">left</span> <span class="ow">or</span> <span class="n">right</span> <span class="n">handed</span>    <span class="s">&#39;l&#39;</span> <span class="p">,</span> <span class="s">&#39;r&#39;</span>  
-<span class="n">elbow</span> <span class="n">up</span> <span class="ow">or</span> <span class="n">down</span>    <span class="s">&#39;u&#39;</span> <span class="p">,</span> <span class="s">&#39;d&#39;</span>  
-<span class="n">wrist</span> <span class="n">flipped</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">flipped</span>    <span class="s">&#39;f&#39;</span> <span class="p">,</span> <span class="s">&#39;n&#39;</span>
-</pre></div>
-
-
-<p>另外，如果无解，则该函数会返回NaN</p>
-<h3>ikine()函数的参数</h3>
-<p>而对于ikine()函数。其调用形式有三种，如下：</p>
-<div class="highlight"><pre><span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Q0</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Q0</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span>
-</pre></div>
-
-
-<p>其中，T是位姿矩阵；Q0是角坐标的初始估计；M是Mask矩阵，使用它表示只取矩阵中为1对应的角度。</p>
-<p>而OPTIONS参数比较多。如下：</p>
-<div class="highlight"><pre><span class="s">&#39;pinv&#39;</span> <span class="k">use</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">inverse</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">Jacobian</span> <span class="n">transpose</span>  
-<span class="s">&#39;ilimit&#39;</span><span class="p">,</span><span class="n">L</span> <span class="n">set</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">iteration</span> <span class="n">count</span> <span class="p">(</span><span class="n">default</span> <span class="mi">1000</span><span class="p">)</span>  
-<span class="s">&#39;tol&#39;</span><span class="p">,</span><span class="n">T</span> <span class="n">set</span> <span class="n">the</span> <span class="n">tolerance</span> <span class="n">on</span> <span class="n">error</span> <span class="n">norm</span> <span class="p">(</span><span class="n">default</span> <span class="mf">1e-6</span><span class="p">)</span>  
-<span class="s">&#39;alpha&#39;</span><span class="p">,</span><span class="n">A</span> <span class="n">set</span> <span class="n">step</span> <span class="n">size</span> <span class="n">gain</span> <span class="p">(</span><span class="n">default</span> <span class="mi">1</span><span class="p">)</span>  
-<span class="s">&#39;novarstep&#39;</span> <span class="n">disable</span> <span class="n">variable</span> <span class="n">step</span> <span class="n">size</span>  
-<span class="s">&#39;verbose&#39;</span> <span class="n">show</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">point</span>  
-<span class="s">&#39;verbose=2&#39;</span> <span class="n">show</span> <span class="n">state</span> <span class="n">at</span> <span class="nb">each</span> <span class="n">iteration</span>  
-<span class="s">&#39;plot&#39;</span> <span class="n">plot</span> <span class="n">iteration</span> <span class="n">state</span> <span class="n">versus</span> <span class="nb">time</span>  
-</pre></div>
-
-
-<p>好了，今天的逆运动学函数就总结到这里，最后的参数没来得及翻译，下次有机会再补上吧。</p>
-<p>另外，下一阶段将进行，轨迹规划相关内容的学习和总结。监督自己加把劲吧！</p>
+              <p>上次急匆匆回家，把一篇draft也push到网站上去了。。。</p>
+<p>linux上写代码，经常遇到一些SIG开头的错误提示，每次遇到都很DT的找寻好久。在家闲来无事看了Linux System Programing的Signals部分，感觉书中写的很好，于是乎总结一下就有了本文。</p>
+<p>使用的pelican的gum主题，表格的ui简直就是一团渣渣，先凑合着看吧，有空来完善下。</p>
+<h3>信号（signals）</h3>
+<p>信号是提供异步事件处理机制的软件中断，是进程间通信的主要方式。
+不只是事件发生是异步的，信号处理也是异步的。</p>
+<h3>信号的生命周期</h3>
+<ul>
+<li>产生</li>
+<li>内核存储</li>
+<li>内核处理信号 </li>
+</ul>
+<h3>信号处理方式</h3>
+<ul>
+<li>忽略（ignore）</li>
+<li>处理 （handle）
+handle又包括调用默认action和自定义action</li>
+</ul>
+<h3>信号标示符</h3>
+<p>头文件：<code>#include&lt;signal.h&gt;</code></p>
+<p>SIG*实质是一个正数，没有零，零代表 null signal</p>
+<p>下边是linux中一些信号的描述和默认action:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Description</th>
+<th>Default action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIGABRT</td>
+<td>Sent by abort()</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGALRM</td>
+<td>Sent by alarm()</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGBUS</td>
+<td>Hardware or alignment error</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGCHLD</td>
+<td>Child has terminated</td>
+<td>Ignored</td>
+</tr>
+<tr>
+<td>SIGCONT</td>
+<td>Process has continued after being stopped</td>
+<td>Ignored</td>
+</tr>
+<tr>
+<td>SIGFPE</td>
+<td>Arithmetic exception</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGHUP</td>
+<td>Process’s controlling terminal was closed (most frequently, the user logged out)</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGILL</td>
+<td>Process tried to execute an illegal instruction</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGINT</td>
+<td>User generated the interrupt character (Ctrl-C)</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGIO</td>
+<td>Asynchronous I/O event</td>
+<td>Terminate^a</td>
+</tr>
+<tr>
+<td>SIGKILL</td>
+<td>Uncatchable process termination</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGPIPE</td>
+<td>Process wrote to a pipe but there are no readers</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGPROF</td>
+<td>Profiling timer expired</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGPWR</td>
+<td>Power failure</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGQUIT</td>
+<td>User generated the quit character (Ctrl-)</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGSEGV</td>
+<td>Memory access violation</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGSTKFLT</td>
+<td>Coprocessor stack fault</td>
+<td>Terminate^b</td>
+</tr>
+<tr>
+<td>SIGSTOP</td>
+<td>Suspends execution of the process</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>SIGSYS</td>
+<td>Process tried to execute an invalid system call</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGTERM</td>
+<td>Catchable process termination</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGTRAP</td>
+<td>Break point encountered</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGTSTP</td>
+<td>User generated the suspend character (Ctrl-Z)</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>SIGTTIN</td>
+<td>Background process read from controlling terminal</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>SIGTTOU</td>
+<td>Background process wrote to controlling terminal</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>SIGURG</td>
+<td>Urgent I/O pending</td>
+<td>Ignored</td>
+</tr>
+<tr>
+<td>SIGUSR1</td>
+<td>Process-defined signal</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGUSR2</td>
+<td>Process-defined signal</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGVTALRM</td>
+<td>Generated by setitimer()  when called with the ITIMER_VIRTUAL flag</td>
+<td>Terminate</td>
+</tr>
+<tr>
+<td>SIGWINCH</td>
+<td>Size of controlling terminal window changed</td>
+<td>Ignored</td>
+</tr>
+<tr>
+<td>SIGXCPU</td>
+<td>Processor resource limits were exceeded</td>
+<td>Terminate with core dump</td>
+</tr>
+<tr>
+<td>SIGXFSZ</td>
+<td>File resource limits were exceeded</td>
+<td>Terminate with core dump</td>
+</tr>
+</tbody>
+</table>
+<p>a The behavior on other Unix systems, such as BSD, is to ignore this signal.</p>
+<p>b The Linux kernel no longer generates this signal; it remains only for backward compatibility.</p>
+<p>这里边有31个信号标示符，看着就头大，总结几个常见的吧，然后其他再遇到的继续查 Linux System Programming。</p>
+<ol>
+<li>
+<p>SIGINT    Crtl+C</p>
+</li>
+<li>
+<p>SIGKILL    process is forcefully terminated</p>
+</li>
+<li>
+<p>SIGABT    about()发出，接着进程终止并产生一个core file（这是什么？） 。在linux中，assert()之类的断言会调用about() 。一般这个错误经常遇到，主要是内存分配和释放错误，比如一个指针free了两次，然后assert时候就挂掉了。SIGABRT是中止一个程序，它可以被捕捉，但不能被阻塞。处理函数返回后，所有打开的文件描述符将会被关闭，流也会被flush。程序会结束，有可能的话还会core dump。 当程序调用abort(3)时，该进程会向自己发送SIGABRT信号。所以，SIGABRT一般用于信号中一些关键的处理，assert失败时也会使用它。不应该去捕捉SIGSEGV和SIGABRT信号，如果收到这种信号，说明进程处于一个不确定的状态，很可能会直接挂起。</p>
+</li>
+<li>
+<p>SIGSEGV This signal, whose name derives from segmentation violation, is sent to a process when it attempts an invalid memory access. This includes accessing unmapped memory, reading from memory that is not read-enabled, executing code in memory that is not execute-enabled, or writing to memory that is not write-enabled. Processes may catch and handle this signal, but the default action is to terminate the process and generate a core dump. 这个是经常遇到的非法访问内存错误，C++的内存操作还是要认真学习积累经验啊。</p>
+</li>
+<li>
+<p>SIGBUS 这个我没遇到过，不过有人说address alignment可能会导致SIGBUS，先放到这里，以后遇到再来总结。</p>
+</li>
+</ol>
             </div><!-- /.entry-content -->
 
 

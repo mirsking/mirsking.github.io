@@ -54,6 +54,62 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/programing/signals_in_linux.html" rel="bookmark" title="Permalink to SIGNALS IN LINUX">SIGNALS IN LINUX</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-02-11T14:00:00+08:00"> Wed 11 February 2015 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>上次急匆匆回家，把一篇draft也push到网站上去了。。。</p>
+<p>linux上写代码，经常遇到一些SIG开头的错误提示，每次遇到都很DT的找寻好久。在家闲来无事看了Linux System Programing的Signals部分，感觉书中写的很好，于是乎总结一下就有了本文。</p>
+<p>使用的pelican的gum主题，表格的ui简直就是一团渣渣，先凑合着看吧，有空来完善下。</p>
+<h3>信号（signals）</h3>
+<p>信号是提供异步事件处理机制的软件中断，是进程间通信的主要方式。
+不只是事件发生是异步的，信号处理也是异步的。</p>
+<h3>信号的生命周期</h3>
+<ul>
+<li>产生</li>
+<li>内核存储</li>
+<li>内核处理信号 </li>
+</ul>
+<h3>信号处理方式</h3>
+<ul>
+<li>忽略（ignore）</li>
+<li>处理 （handle）
+handle又包括调用默认action和自定义action</li>
+</ul>
+<h3>信号标示符</h3>
+<p>头文件：<code>#include&lt;signal.h&gt;</code></p>
+<p>SIG*实质是一个正数，没有零，零代表 null signal</p>
+<p>下边是linux中一些信号的描述和默认action:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Description</th>
+<th>Default action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIGABRT</td>
+<td>Sent by abort ...</td></tr></tbody></table> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/programing/signals_in_linux.html" rel="bookmark" title="Permalink to SIGNALS IN LINUX">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/c.html">c++</a>
+                                            <a class="danger label" href="/tag/linux.html">linux</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">深入探究ros::init()</a></h2> </header>
                                 <footer class="post-info">
                                     <abbr class="published" title="2015-01-26T23:00:00+08:00"> Mon 26 January 2015 </abbr>
@@ -113,37 +169,6 @@
 
 
                         </article></li>
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/programing/the-best-commands-you-never-knew-about-in-linux.html" rel="bookmark" title="Permalink to 你绝不知道的Linux中极好用的命令">你绝不知道的Linux中极好用的命令</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-02-18T17:50:00+08:00"> Tue 18 February 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <h2>引子</h2>
-<p>最近发现了一个很好玩的网站Quora。</p>
-<p>该网站的立意是：to share and grow the world's knowledge.</p>
-<p>而其实现途径则是：Ask any question, get real answers from people with
-first hand experience, and blog about what you know.</p>
-<p>也就是说任何人可以发布自己的问题，然后由一群高智商、丰富经验的网友来答疑解难从而助力知识大爆发。</p>
-<p>听起来类似百度知道，但上边的问题和解答，个人感觉比百度知道的水平要高许多。</p>
-<h2>正文</h2>
-<p>好了，闲话休题。下边来为大家介绍在上面看到的一个好帖：《<a href="http://www.quora.com/Jordan-Goldman-4/Posts/The-Best-Commands-You-Never-Knew-About-in-Linux?srid=toPT&amp;share=1" title="The Best Commands You Never Knew About in Linux">The Best Commands You Never Knew About in Linux</a>》。所以将其转过来 ...</p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/programing/the-best-commands-you-never-knew-about-in-linux.html" rel="bookmark" title="Permalink to 你绝不知道的Linux中极好用的命令">Read more <i class="icon-arrow-right"></i></a></div>
-
-
-
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/linux.html">Linux</a>
-                                            <a class="danger label" href="/tag/bash.html">Bash</a>
-                                </div>
-
-
-
-                        </article></li>
                 </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
@@ -169,28 +194,27 @@ first hand experience, and blog about what you know.</p>
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
 	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-4"><a href="/tag/planning.html">planning</a></li>
+	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
+	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
 	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
+	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
+	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
+	    <li class="tag-1"><a href="/tag/c.html">c++</a></li>
+	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
+	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
+	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
+	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
 	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
 	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
+	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
+	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
 	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
+	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
+	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
+	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
+	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
 </ul>
 
 <nav class="widget">
