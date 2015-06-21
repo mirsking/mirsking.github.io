@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="/" rel="alternate"></link><link href="/feeds/collections.atom.xml" rel="self"></link><id>/</id><updated>2015-02-01T20:00:00+08:00</updated><entry><title>[机器人学中的空间描述与变换系列 一]坐标与位姿</title><link href="/collections/spatial_descriptions_and_transformations_in_robotics_1_positions_and_orientations.html" rel="alternate"></link><updated>2015-02-01T20:00:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2015-02-01:collections/spatial_descriptions_and_transformations_in_robotics_1_positions_and_orientations.html</id><summary type="html">&lt;p&gt;$$
-\begin{aligned}
-\dot{x} &amp;amp; = \sigma(y-x) \
-\dot{y} &amp;amp; = \rho x - y - xz \
-\dot{z} &amp;amp; = -\beta z + xy
-\end{aligned}
-$$&lt;/p&gt;</summary><category term="robot"></category><category term="planning"></category></entry><entry><title>基于DMP的目标在线跟踪、在线避障机械臂</title><link href="/collections/dmp-clmc.html" rel="alternate"></link><updated>2014-04-18T21:23:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-04-18:collections/dmp-clmc.html</id><summary type="html">&lt;p&gt;算一算，大概有一个月没有写博客了。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>飞扬博客-MirsKing</title><link href="/" rel="alternate"></link><link href="/feeds/collections.atom.xml" rel="self"></link><id>/</id><updated>2014-04-18T21:23:00+08:00</updated><entry><title>基于DMP的目标在线跟踪、在线避障机械臂</title><link href="/collections/dmp-clmc.html" rel="alternate"></link><updated>2014-04-18T21:23:00+08:00</updated><author><name>mirsking</name></author><id>tag:,2014-04-18:collections/dmp-clmc.html</id><summary type="html">&lt;p&gt;算一算，大概有一个月没有写博客了。&lt;/p&gt;
 &lt;p&gt;这一个月，从DMP模型的学习到仿真再到正在进行中的实物实现，毕设也算是有些进展。&lt;/p&gt;
 &lt;p&gt;可惜自身技术太欠缺，一路走来坎坎坷坷。&lt;/p&gt;
 &lt;p&gt;每每走到死胡同，看不到未来，都会拿出下面CLMC实验室的两个视频，膜拜一番，然后鼓励自己在这条路上且行且远。&lt;/p&gt;

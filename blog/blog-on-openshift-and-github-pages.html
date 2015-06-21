@@ -58,7 +58,7 @@
             </header>
             <footer class="post-info">
               <abbr class="published" title="2015-01-23T13:00:00+08:00">
-                Fri 23 January 2015
+                五 23 一月 2015
               </abbr>
               <address class="vcard author">By 
                 <a class="url fn" href="/author/mirsking.html"> mirsking</a>
@@ -70,16 +70,16 @@
 <p>无奈VPS太贵，踌躇间，突然想起以前申请的免费云主机Openshift(Openshift的优点是长期免费，而且最重要的式支持git!!!)于是乎，折腾就此开始。现在记录下折腾的过程和成果。</p>
 <h2>折腾效果</h2>
 <h3>博客域名:</h3>
-<div class="highlight"><pre> <span class="n">mirsking</span><span class="o">.</span><span class="n">tk</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span> <span class="sr">//</span><span class="err">由于</span><span class="n">tk</span><span class="err">域名对国内搜索引擎不友好</span><span class="p">,</span><span class="err">所以这个域名只做</span><span class="n">github</span><span class="err">的备份用</span><span class="o">.</span>
+<div class="highlight"><pre> <span class="n">mirsking</span><span class="p">.</span><span class="n">tk</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span> <span class="c1">//由于tk域名对国内搜索引擎不友好,所以这个域名只做github的备份用.</span>
 
- <span class="n">mirsking</span><span class="o">.</span><span class="n">com</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">domain</span><span class="o">-</span><span class="n">mirsking</span><span class="o">.</span><span class="n">rhcloud</span><span class="o">.</span><span class="n">com</span> <span class="sr">//</span><span class="err">这个作为主域名</span><span class="p">,</span><span class="err">兼容原来博客基本上所有的链接地址</span><span class="p">(</span><span class="err">原博客的部分链接做了删除</span><span class="o">...</span><span class="p">)</span>
- <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">com</span> <span class="n">CNMAE</span><span class="err">到</span> <span class="n">feed</span><span class="o">-</span><span class="n">mirsking</span><span class="o">.</span><span class="n">rhcloud</span><span class="o">.</span><span class="n">com</span> <span class="sr">//</span><span class="err">这个作为</span><span class="n">feed</span><span class="err">的主域名</span>
+ <span class="n">mirsking</span><span class="p">.</span><span class="n">com</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">domain</span><span class="o">-</span><span class="n">mirsking</span><span class="p">.</span><span class="n">rhcloud</span><span class="p">.</span><span class="n">com</span> <span class="c1">//这个作为主域名,兼容原来博客基本上所有的链接地址(原博客的部分链接做了删除...)</span>
+ <span class="n">feed</span><span class="p">.</span><span class="n">mirsking</span><span class="p">.</span><span class="n">com</span> <span class="n">CNMAE</span><span class="err">到</span> <span class="n">feed</span><span class="o">-</span><span class="n">mirsking</span><span class="p">.</span><span class="n">rhcloud</span><span class="p">.</span><span class="n">com</span> <span class="c1">//这个作为feed的主域名</span>
 
- <span class="n">mirsking</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
- <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
+ <span class="n">mirsking</span><span class="p">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="p">.</span><span class="n">com</span>
+ <span class="n">feed</span><span class="p">.</span><span class="n">mirsking</span><span class="p">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">feed</span><span class="p">.</span><span class="n">mirsking</span><span class="p">.</span><span class="n">com</span>
 
- <span class="n">wangpeng</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
- <span class="n">feed</span><span class="o">.</span><span class="n">wangpeng</span><span class="o">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">feed</span><span class="o">.</span><span class="n">mirsking</span><span class="o">.</span><span class="n">com</span>
+ <span class="n">wangpeng</span><span class="p">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">mirsking</span><span class="p">.</span><span class="n">com</span>
+ <span class="n">feed</span><span class="p">.</span><span class="n">wangpeng</span><span class="p">.</span><span class="n">ml</span> <span class="n">CNAME</span><span class="err">到</span> <span class="n">feed</span><span class="p">.</span><span class="n">mirsking</span><span class="p">.</span><span class="n">com</span>
 </pre></div>
 
 
@@ -106,41 +106,41 @@
 </li>
 </ul>
 <h4>Openshit变量总结</h4>
-<div class="highlight"><pre><span class="nv">$OPENSHIFT_TMP_DIR</span>          <span class="o">/</span><span class="n">tmp</span>
-<span class="nv">$OPENSHIFT_DATA_DIR</span>         <span class="o">~</span><span class="sr">/app-root/</span><span class="n">data</span>
-<span class="nv">$OPENSHIFT_DIY_IP</span>           <span class="n">your</span> <span class="n">ip</span>
-<span class="nv">$OPENSHIFT_DIY_PORT</span>         <span class="n">your</span> <span class="n">port</span>
+<div class="highlight"><pre><span class="err">$</span><span class="n">OPENSHIFT_TMP_DIR</span>          <span class="o">/</span><span class="n">tmp</span>
+<span class="err">$</span><span class="n">OPENSHIFT_DATA_DIR</span>         <span class="o">~/</span><span class="n">app</span><span class="o">-</span><span class="n">root</span><span class="o">/</span><span class="n">data</span>
+<span class="err">$</span><span class="n">OPENSHIFT_DIY_IP</span>           <span class="n">your</span> <span class="n">ip</span>
+<span class="err">$</span><span class="n">OPENSHIFT_DIY_PORT</span>         <span class="n">your</span> <span class="n">port</span>
 </pre></div>
 
 
 <h4>nginx安装过程</h4>
-<div class="highlight"><pre><span class="n">cd</span> <span class="nv">$OPENSHIFT_TMP_DIR</span>
-<span class="n">wget</span> <span class="n">http:</span><span class="sr">//</span><span class="n">nginx</span><span class="o">.</span><span class="n">org</span><span class="sr">/download/</span><span class="n">nginx</span><span class="o">-</span><span class="mf">1.7.9</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="n">wget</span> <span class="n">ftp:</span><span class="sr">//</span><span class="n">ftp</span><span class="o">.</span><span class="n">csx</span><span class="o">.</span><span class="n">cam</span><span class="o">.</span><span class="n">ac</span><span class="o">.</span><span class="n">uk</span><span class="sr">/pub/so</span><span class="n">ftware</span><span class="sr">/programming/</span><span class="n">pcre</span><span class="o">/</span><span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<div class="highlight"><pre><span class="n">cd</span> <span class="err">$</span><span class="n">OPENSHIFT_TMP_DIR</span>
+<span class="n">wget</span> <span class="n">http</span><span class="o">:</span><span class="c1">//nginx.org/download/nginx-1.7.9.tar.gz</span>
+<span class="n">wget</span> <span class="n">ftp</span><span class="o">:</span><span class="c1">//ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.36.tar.gz</span>
 
-<span class="n">tar</span> <span class="n">xzf</span> <span class="n">nginx</span><span class="o">-</span><span class="mf">1.7.9</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="n">tar</span> <span class="n">xzf</span> <span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">tar</span> <span class="n">xzf</span> <span class="n">nginx</span><span class="o">-</span><span class="mf">1.7.9</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<span class="n">tar</span> <span class="n">xzf</span> <span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
 
 <span class="n">cd</span> <span class="n">nginx</span><span class="o">-</span><span class="mf">1.7.9</span>
-<span class="nb">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="nv">$OPENSHIFT_DATA_DIR</span><span class="o">/</span><span class="n">nginx</span>
-<span class="o">.</span><span class="sr">/configure --prefix=$OPENSHIFT_DATA_DIR/</span><span class="n">nginx</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">pcre</span><span class="o">=</span><span class="nv">$OPENSHIFT_TMP_DIR</span><span class="o">/</span><span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="err">$</span><span class="n">OPENSHIFT_DATA_DIR</span><span class="o">/</span><span class="n">nginx</span>
+<span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=</span><span class="err">$</span><span class="n">OPENSHIFT_DATA_DIR</span><span class="o">/</span><span class="n">nginx</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">pcre</span><span class="o">=</span><span class="err">$</span><span class="n">OPENSHIFT_TMP_DIR</span><span class="o">/</span><span class="n">pcre</span><span class="o">-</span><span class="mf">8.36</span>
 <span class="n">make</span> 
 <span class="n">make</span> <span class="n">install</span>
 </pre></div>
 
 
 <p>经过上述步骤nginx已经安装成功了,下边就是配置nginx并启动了,先:<code>echo $OPENSHIFT_DIY_IP</code>  <code>echo $OPENSHIFT_DIY_PORT</code>, 获取application的ip和端口.</p>
-<div class="highlight"><pre><span class="n">vim</span> <span class="nv">$OPENSHIFT_DATA_DIR</span><span class="sr">/nginx/co</span><span class="n">nf</span><span class="o">/</span><span class="n">nginx</span><span class="o">.</span><span class="n">conf</span><span class="err">`</span>
+<div class="highlight"><pre><span class="n">vim</span> <span class="err">$</span><span class="n">OPENSHIFT_DATA_DIR</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">nginx</span><span class="p">.</span><span class="n">conf</span><span class="err">`</span>
 </pre></div>
 
 
 <p>找到</p>
 <div class="highlight"><pre><span class="n">server</span><span class="p">{</span>
-    <span class="nb">listen</span> <span class="mi">80</span><span class="p">;</span>
-    <span class="n">server_name</span> <span class="n">localhost</span><span class="p">;</span>
+    <span class="n">listen</span> <span class="p">[</span><span class="n">ip</span><span class="o">:</span><span class="n">port</span><span class="p">];</span>
+    <span class="n">server_name</span> <span class="p">[</span><span class="n">ip</span><span class="p">];</span>
     <span class="n">location</span> <span class="o">/</span><span class="p">{</span>
         <span class="n">root</span> <span class="n">your_site_dir</span>
-        <span class="nb">index</span> <span class="nb">index</span><span class="o">.</span><span class="n">html</span>
+        <span class="n">index</span> <span class="n">index</span><span class="p">.</span><span class="n">html</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -176,28 +176,6 @@
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-4"><a href="/tag/planning.html">planning</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
 </ul>
 
 <nav class="widget">

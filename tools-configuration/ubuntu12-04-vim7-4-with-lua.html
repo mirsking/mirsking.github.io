@@ -58,7 +58,7 @@
             </header>
             <footer class="post-info">
               <abbr class="published" title="2014-05-09T19:42:00+08:00">
-                Fri 09 May 2014
+                五 09 五月 2014
               </abbr>
               <address class="vcard author">By 
                 <a class="url fn" href="/author/mirsking.html"> mirsking</a>
@@ -77,15 +77,15 @@
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">vim</span> <span class="n">vim</span><span class="o">-</span><span class="n">runtime</span> <span class="n">vim</span><span class="o">-</span><span class="n">gnome</span> <span class="n">vim</span><span class="o">-</span><span class="n">tiny</span> <span class="n">vim</span><span class="o">-</span><span class="n">common</span> <span class="n">vim</span><span class="o">-</span><span class="n">gui</span><span class="o">-</span><span class="n">common</span>  
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">build</span><span class="o">-</span><span class="n">dep</span> <span class="n">vim</span><span class="o">-</span><span class="n">gnome</span>  
 <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">luajit</span> <span class="n">libluajit</span><span class="o">-</span><span class="mf">5.1</span> <span class="n">libncurses5</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgnome2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgnomeui</span><span class="o">-</span><span class="n">dev</span> <span class="n">libgtk2</span><span class="mf">.0</span><span class="o">-</span><span class="n">dev</span> <span class="n">libatk1</span><span class="mf">.0</span><span class="o">-</span><span class="n">dev</span> <span class="n">libbonoboui2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libcairo2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libx11</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxpm</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxt</span><span class="o">-</span><span class="n">dev</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span> <span class="n">ruby</span><span class="o">-</span><span class="n">dev</span> <span class="n">mercurial</span>  
-<span class="n">cd</span> <span class="sr">/usr/</span><span class="n">bin</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span>
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">luajit</span><span class="o">-</span><span class="mf">2.0.0</span><span class="o">-</span><span class="n">beta9</span> <span class="n">luajit</span>  
 <span class="n">cd</span> <span class="o">~</span>  
-<span class="n">hg</span> <span class="n">clone</span> <span class="n">https:</span><span class="sr">//co</span><span class="n">de</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="sr">/p/</span><span class="n">vim</span><span class="sr">/ #若google被墙,则可以clone我github上的备份 https://github.com/mi</span><span class="n">rsking</span><span class="o">/</span><span class="n">vim</span><span class="o">.</span><span class="n">git</span>
+<span class="n">hg</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//code.google.com/p/vim/ #若google被墙,则可以clone我github上的备份 https://github.com/mirsking/vim.git</span>
 <span class="n">cd</span> <span class="n">vim</span>
 
-<span class="o">.</span><span class="sr">/configure --with-features=huge --enable-cscope --enable-rubyinterp --enable-largefile --disable-netbeans --enable-pythoninterp --with-python-config-dir=/</span><span class="n">usr</span><span class="sr">/lib/</span><span class="n">python2</span><span class="mf">.7</span><span class="sr">/config --enable-perlinterp --enable-luainterp --with-luajit --enable-fail-if-missing --with-lua-prefix=/</span><span class="n">usr</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">gui</span><span class="o">=</span><span class="n">gnome2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">cscope</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span>
+<span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">features</span><span class="o">=</span><span class="n">huge</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">cscope</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">rubyinterp</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">largefile</span> <span class="o">--</span><span class="n">disable</span><span class="o">-</span><span class="n">netbeans</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">pythoninterp</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">python</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">dir</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="mf">.7</span><span class="o">/</span><span class="n">config</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">perlinterp</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">luainterp</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">luajit</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">fail</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">missing</span> <span class="o">--</span><span class="n">with</span><span class="o">-</span><span class="n">lua</span><span class="o">-</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">gui</span><span class="o">=</span><span class="n">gnome2</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">cscope</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span>
 
-<span class="n">make</span> <span class="n">VIMRUNTIMEDIR</span><span class="o">=</span><span class="sr">/usr/s</span><span class="n">hare</span><span class="sr">/vim/</span><span class="n">vim74</span>  
+<span class="n">make</span> <span class="n">VIMRUNTIMEDIR</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">vim</span><span class="o">/</span><span class="n">vim74</span>  
 <span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
 </pre></div>
 
@@ -102,7 +102,7 @@ git clone https://github.com/gmarik/vundle.git
 
 
 <p>接着把.vimrc放到~目录中, 然后启动vim, 这是会报一堆错, 都是因为插件没安装的原因, 一路回车进入vim界面, 然后</p>
-<div class="highlight"><pre><span class="p">:</span><span class="n">BundleInstall</span>
+<div class="highlight"><pre><span class="o">:</span><span class="n">BundleInstall</span>
 </pre></div>
 
 
@@ -141,28 +141,6 @@ git clone https://github.com/gmarik/vundle.git
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-4"><a href="/tag/planning.html">planning</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
 </ul>
 
 <nav class="widget">

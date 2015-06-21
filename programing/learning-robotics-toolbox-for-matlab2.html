@@ -58,7 +58,7 @@
             </header>
             <footer class="post-info">
               <abbr class="published" title="2014-02-14T18:23:00+08:00">
-                Fri 14 February 2014
+                五 14 二月 2014
               </abbr>
               <address class="vcard author">By 
                 <a class="url fn" href="/author/mirsking.html"> mirsking</a>
@@ -74,31 +74,31 @@
 <p>robotics工具箱中有ikine()函数可以方便实现。同时对于puma560这种六自由度的操作臂，还有更方便的ikine6s()函数。</p>
 <h3>ikine6s()函数的参数</h3>
 <p>由于逆运动学解的不唯一性，ikine6s()函数提供了一些参数以限定解的形式。如下：</p>
-<div class="highlight"><pre><span class="n">left</span> <span class="ow">or</span> <span class="n">right</span> <span class="n">handed</span>    <span class="s">&#39;l&#39;</span> <span class="p">,</span> <span class="s">&#39;r&#39;</span>  
-<span class="n">elbow</span> <span class="n">up</span> <span class="ow">or</span> <span class="n">down</span>    <span class="s">&#39;u&#39;</span> <span class="p">,</span> <span class="s">&#39;d&#39;</span>  
-<span class="n">wrist</span> <span class="n">flipped</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">flipped</span>    <span class="s">&#39;f&#39;</span> <span class="p">,</span> <span class="s">&#39;n&#39;</span>
+<div class="highlight"><pre><span class="n">left</span> <span class="n">or</span> <span class="n">right</span> <span class="n">handed</span>    <span class="sc">&#39;l&#39;</span> <span class="p">,</span> <span class="sc">&#39;r&#39;</span>  
+<span class="n">elbow</span> <span class="n">up</span> <span class="n">or</span> <span class="n">down</span>    <span class="sc">&#39;u&#39;</span> <span class="p">,</span> <span class="sc">&#39;d&#39;</span>  
+<span class="n">wrist</span> <span class="n">flipped</span> <span class="n">or</span> <span class="n">not</span> <span class="n">flipped</span>    <span class="sc">&#39;f&#39;</span> <span class="p">,</span> <span class="sc">&#39;n&#39;</span>
 </pre></div>
 
 
 <p>另外，如果无解，则该函数会返回NaN</p>
 <h3>ikine()函数的参数</h3>
 <p>而对于ikine()函数。其调用形式有三种，如下：</p>
-<div class="highlight"><pre><span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Q0</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Q0</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Q0</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="n">R</span><span class="p">.</span><span class="n">ikine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">Q0</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span>
 </pre></div>
 
 
 <p>其中，T是位姿矩阵；Q0是角坐标的初始估计；M是Mask矩阵，使用它表示只取矩阵中为1对应的角度。</p>
 <p>而OPTIONS参数比较多。如下：</p>
-<div class="highlight"><pre><span class="s">&#39;pinv&#39;</span> <span class="k">use</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">inverse</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">Jacobian</span> <span class="n">transpose</span>  
-<span class="s">&#39;ilimit&#39;</span><span class="p">,</span><span class="n">L</span> <span class="n">set</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">iteration</span> <span class="n">count</span> <span class="p">(</span><span class="n">default</span> <span class="mi">1000</span><span class="p">)</span>  
-<span class="s">&#39;tol&#39;</span><span class="p">,</span><span class="n">T</span> <span class="n">set</span> <span class="n">the</span> <span class="n">tolerance</span> <span class="n">on</span> <span class="n">error</span> <span class="n">norm</span> <span class="p">(</span><span class="n">default</span> <span class="mf">1e-6</span><span class="p">)</span>  
-<span class="s">&#39;alpha&#39;</span><span class="p">,</span><span class="n">A</span> <span class="n">set</span> <span class="n">step</span> <span class="n">size</span> <span class="n">gain</span> <span class="p">(</span><span class="n">default</span> <span class="mi">1</span><span class="p">)</span>  
-<span class="s">&#39;novarstep&#39;</span> <span class="n">disable</span> <span class="n">variable</span> <span class="n">step</span> <span class="n">size</span>  
-<span class="s">&#39;verbose&#39;</span> <span class="n">show</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">point</span>  
-<span class="s">&#39;verbose=2&#39;</span> <span class="n">show</span> <span class="n">state</span> <span class="n">at</span> <span class="nb">each</span> <span class="n">iteration</span>  
-<span class="s">&#39;plot&#39;</span> <span class="n">plot</span> <span class="n">iteration</span> <span class="n">state</span> <span class="n">versus</span> <span class="nb">time</span>  
+<div class="highlight"><pre><span class="err">&#39;</span><span class="n">pinv</span><span class="err">&#39;</span> <span class="n">use</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">inverse</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">Jacobian</span> <span class="n">transpose</span>  
+<span class="err">&#39;</span><span class="n">ilimit</span><span class="err">&#39;</span><span class="p">,</span><span class="n">L</span> <span class="n">set</span> <span class="n">the</span> <span class="n">maximum</span> <span class="n">iteration</span> <span class="n">count</span> <span class="p">(</span><span class="k">default</span> <span class="mi">1000</span><span class="p">)</span>  
+<span class="err">&#39;</span><span class="n">tol</span><span class="err">&#39;</span><span class="p">,</span><span class="n">T</span> <span class="n">set</span> <span class="n">the</span> <span class="n">tolerance</span> <span class="n">on</span> <span class="n">error</span> <span class="n">norm</span> <span class="p">(</span><span class="k">default</span> <span class="mf">1e-6</span><span class="p">)</span>  
+<span class="err">&#39;</span><span class="n">alpha</span><span class="err">&#39;</span><span class="p">,</span><span class="n">A</span> <span class="n">set</span> <span class="n">step</span> <span class="n">size</span> <span class="n">gain</span> <span class="p">(</span><span class="k">default</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="err">&#39;</span><span class="n">novarstep</span><span class="err">&#39;</span> <span class="n">disable</span> <span class="n">variable</span> <span class="n">step</span> <span class="n">size</span>  
+<span class="err">&#39;</span><span class="n">verbose</span><span class="err">&#39;</span> <span class="n">show</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span> <span class="n">each</span> <span class="n">point</span>  
+<span class="err">&#39;</span><span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="err">&#39;</span> <span class="n">show</span> <span class="n">state</span> <span class="n">at</span> <span class="n">each</span> <span class="n">iteration</span>  
+<span class="err">&#39;</span><span class="n">plot</span><span class="err">&#39;</span> <span class="n">plot</span> <span class="n">iteration</span> <span class="n">state</span> <span class="n">versus</span> <span class="n">time</span>  
 </pre></div>
 
 
@@ -130,28 +130,6 @@
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-4"><a href="/tag/planning.html">planning</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
 </ul>
 
 <nav class="widget">

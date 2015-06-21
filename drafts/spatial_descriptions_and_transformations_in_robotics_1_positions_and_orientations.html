@@ -2,9 +2,10 @@
 <html lang="zh">
 <head>
 
-        <title>飞扬博客-MirsKing - VC++</title>
+        <title>[机器人学中的空间描述与变换系列 一]坐标与位姿</title>
         <meta charset="utf-8" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Full Atom Feed" />
+        <link href="/feeds/collections.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Categories Atom Feed" />
 
 
         <!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -43,52 +44,39 @@
               </ul>
             </div>
 
-<section id="content">
-
-
+<section id="content" class="body">
 
    <div class="row">
-
-
         <div class="eleven columns">
-                 <ol id="post-list">
-                        <li><article class="hentry">
-                                <header> <h2 class="entry-title"><a href="/tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="bookmark" title="Permalink to Visual Studio添加Armadillo线性代数库实现矩阵运算">Visual Studio添加Armadillo线性代数库实现矩阵运算</a></h2> </header>
-                                <footer class="post-info">
-                                    <abbr class="published" title="2014-03-16T10:05:00+08:00"> 日 16 三月 2014 </abbr>
-                                    <address class="vcard author">By 
-                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
-                                    </address>
-                                </footer><!-- /.post-info -->
-                                <div class="entry-content"> <p>Armadillo是一个C++开发的线性代数库，其可以使用LAPACK进行加速，从而取得了速度和易用性上的平衡。从而可以方便高效地把Matlab中的程序方便地移植到C++中。  </p>
-<p>Armadillo也提供了python的接口armanpy。同时在Armadillo基础上也开发了许多实用的包，如用于快速机器学习的MLPACK。<br />
-详细介绍可以看官网：<a href="http://arma.sourceforge.net/">Armadillo</a></p>
-<p>由于最近做毕设需要将Matlab的算法移植到C++上，所以安装了这个库，虽然简单，却也学习到了一些东西。  </p>
-<p>下面是安装过程及一些要注意的，记录一下，方便以后查阅。有需要的童鞋也可以一步一步跟着做一做。</p>
-<h3>到官网下载Armadillo的源文件</h3>
-<p>这里要注意的是，今天为止最新的版本是armadillo-4.100.2.tar.gz。而4.0以后的版本貌似只支持visual studio 2010以上的编译器，如果使用的是visual studio 2008的编译器，会提示编译器版本过低。所以像我这样不得不用2008的就只能下载低版本：我使用的是armadillo-3.920.4.tar.gz，测试可用。下边是下载链接。  </p>
-<p><a href="http://sourceforge.net/projects/arma/files/armadillo-3.930.4.tar.gz/download">armadillo-3.930.4.tar.gz（2008可用）</a>  </p>
-<p><a href="http://sourceforge.net/projects/arma/files/armadillo-4.100.2.tar.gz/download">armadillo-4 ...</a></p> </div><!-- /.entry-content -->
-
-                                <div class="medium primary btn"><a href="/tools-configuration/add-armadillo-linear-algebra-library-for-visual-studio.html" rel="bookmark" title="Permalink to Visual Studio添加Armadillo线性代数库实现矩阵运算">Read more <i class="icon-arrow-right"></i></a></div>
 
 
+            <header>
+              <h2 class="entry-title">
+                <a href="/drafts/spatial_descriptions_and_transformations_in_robotics_1_positions_and_orientations.html" rel="bookmark"
+                   title="Permalink to [机器人学中的空间描述与变换系列 一]坐标与位姿">[机器人学中的空间描述与变换系列 一]坐标与位姿</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-02-01T20:00:00+08:00">
+                日 01 二月 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>$$
+\begin{aligned}
+\dot{x} &amp; = \sigma(y-x) \
+\dot{y} &amp; = \rho x - y - xz \
+\dot{z} &amp; = -\beta z + xy
+\end{aligned}
+$$</p>
+            </div><!-- /.entry-content -->
 
-                                <div class="row tag-row">
-                                        <span>Tagged as : </span>
-                                            <a class="danger label" href="/tag/windows.html">Windows</a>
-                                            <a class="danger label" href="/tag/matlab.html">Matlab</a>
-                                            <a class="danger label" href="/tag/vc.html">VC++</a>
-                                            <a class="danger label" href="/tag/cheng-xu-yuan.html">程序员</a>
-                                </div>
-
-
-
-                        </article></li>
-                </ol><!-- /#posts-list -->
 
         </div><!-- /.eleven.columns -->
-        
+
 <div class="three columns">
 
 <h4>Pages</h4>
@@ -124,10 +112,8 @@
 
 </div> </div><!-- /.row -->
 
-<p class="paginator">
-    Page 1 / 1
-</p>
-</section><!-- /#content -->
+
+</section>
 
        </div><!-- /.row -->
     </div><!-- /.container -->

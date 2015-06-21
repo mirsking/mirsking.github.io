@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 
-        <title>飞扬博客-MirsKing - C</title>
+        <title>飞扬博客-MirsKing - c++</title>
         <meta charset="utf-8" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="飞扬博客-MirsKing Full Atom Feed" />
 
@@ -53,9 +53,65 @@
         <div class="eleven columns">
                  <ol id="post-list">
                         <li><article class="hentry">
+                                <header> <h2 class="entry-title"><a href="/programing/signals_in_linux.html" rel="bookmark" title="Permalink to SIGNALS IN LINUX">SIGNALS IN LINUX</a></h2> </header>
+                                <footer class="post-info">
+                                    <abbr class="published" title="2015-02-11T14:00:00+08:00"> 三 11 二月 2015 </abbr>
+                                    <address class="vcard author">By 
+                                    <a class="url fn" href="/author/mirsking.html"> mirsking</a>
+                                    </address>
+                                </footer><!-- /.post-info -->
+                                <div class="entry-content"> <p>上次急匆匆回家，把一篇draft也push到网站上去了。。。</p>
+<p>linux上写代码，经常遇到一些SIG开头的错误提示，每次遇到都很DT的找寻好久。在家闲来无事看了Linux System Programing的Signals部分，感觉书中写的很好，于是乎总结一下就有了本文。</p>
+<p>使用的pelican的gum主题，表格的ui简直就是一团渣渣，先凑合着看吧，有空来完善下。</p>
+<h3>信号（signals）</h3>
+<p>信号是提供异步事件处理机制的软件中断，是进程间通信的主要方式。
+不只是事件发生是异步的，信号处理也是异步的。</p>
+<h3>信号的生命周期</h3>
+<ul>
+<li>产生</li>
+<li>内核存储</li>
+<li>内核处理信号 </li>
+</ul>
+<h3>信号处理方式</h3>
+<ul>
+<li>忽略（ignore）</li>
+<li>处理 （handle）
+handle又包括调用默认action和自定义action</li>
+</ul>
+<h3>信号标示符</h3>
+<p>头文件：<code>#include&lt;signal.h&gt;</code></p>
+<p>SIG*实质是一个正数，没有零，零代表 null signal</p>
+<p>下边是linux中一些信号的描述和默认action:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Description</th>
+<th>Default action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIGABRT</td>
+<td>Sent by abort ...</td></tr></tbody></table> </div><!-- /.entry-content -->
+
+                                <div class="medium primary btn"><a href="/programing/signals_in_linux.html" rel="bookmark" title="Permalink to SIGNALS IN LINUX">Read more <i class="icon-arrow-right"></i></a></div>
+
+
+
+                                <div class="row tag-row">
+                                        <span>Tagged as : </span>
+                                            <a class="danger label" href="/tag/c.html">c++</a>
+                                            <a class="danger label" href="/tag/linux.html">linux</a>
+                                </div>
+
+
+
+                        </article></li>
+                        <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="/programing/ros_init.html" rel="bookmark" title="Permalink to 深入探究ros::init()">深入探究ros::init()</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2015-01-26T23:00:00+08:00"> Mon 26 January 2015 </abbr>
+                                    <abbr class="published" title="2015-01-26T23:00:00+08:00"> 一 26 一月 2015 </abbr>
                                     <address class="vcard author">By 
                                     <a class="url fn" href="/author/mirsking.html"> mirsking</a>
                                     </address>
@@ -64,7 +120,7 @@
 <p>用ROS也有大半年了, 但有个问题一直困扰我, 就是ROS每个Node在建立时第一步要做的就是<code>ros::init()</code>一个node, 但是在C++的API里边, ros一定要加入argc和argv两个参数. 但是这两个参数又从来没用过,而且在运行的时候ROS一般又不用<code>XX [Options]</code>这种方式, 那参数到底是谁传进去的, 传进去到底做了什么呢?</p>
 <p>今天仔细翻了一下API, 算是把这个问题大概理解清楚了. </p>
 <h2>函数原型</h2>
-<div class="highlight"><pre><span class="kt">void</span> <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="n">unit32_t</span> <span class="n">options</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight"><pre><span class="kt">void</span> <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="kt">unit32_t</span> <span class="n">options</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
 
 <span class="kt">void ...</span></pre></div> </div><!-- /.entry-content -->
 
@@ -84,7 +140,7 @@
                         <li><article class="hentry">
                                 <header> <h2 class="entry-title"><a href="/career/build-your-programming-technical-skills.html" rel="bookmark" title="Permalink to 程序员技术练级攻略">程序员技术练级攻略</a></h2> </header>
                                 <footer class="post-info">
-                                    <abbr class="published" title="2014-01-15T14:26:00+08:00"> Wed 15 January 2014 </abbr>
+                                    <abbr class="published" title="2014-01-15T14:26:00+08:00"> 三 15 一月 2014 </abbr>
                                     <address class="vcard author">By 
                                     <a class="url fn" href="/author/mirsking.html"> mirsking</a>
                                     </address>
@@ -157,28 +213,6 @@
 
 <h4>Tags</h4>
 	<ul>
-	    <li class="tag-4"><a href="/tag/ros.html">ros</a></li>
-	    <li class="tag-1"><a href="/tag/linux.html">linux</a></li>
-	    <li class="tag-1"><a href="/tag/robot.html">robot</a></li>
-	    <li class="tag-4"><a href="/tag/zhu-ti.html">主题</a></li>
-	    <li class="tag-1"><a href="/tag/robotics-toolbox.html">Robotics Toolbox</a></li>
-	    <li class="tag-4"><a href="/tag/googleer-ci-yan-zheng.html">google二次验证</a></li>
-	    <li class="tag-4"><a href="/tag/ubuntu.html">ubuntu</a></li>
-	    <li class="tag-2"><a href="/tag/c.html">C++</a></li>
-	    <li class="tag-1"><a href="/tag/cheng-xu-yuan.html">程序员</a></li>
-	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
-	    <li class="tag-2"><a href="/tag/blog.html">blog</a></li>
-	    <li class="tag-4"><a href="/tag/windows.html">Windows</a></li>
-	    <li class="tag-4"><a href="/tag/java-plugin.html">java plugin</a></li>
-	    <li class="tag-2"><a href="/tag/wordpress.html">WordPress</a></li>
-	    <li class="tag-4"><a href="/tag/openwrt.html">OpenWRT</a></li>
-	    <li class="tag-4"><a href="/tag/planning.html">planning</a></li>
-	    <li class="tag-4"><a href="/tag/php.html">PHP</a></li>
-	    <li class="tag-1"><a href="/tag/matlab.html">Matlab</a></li>
-	    <li class="tag-4"><a href="/tag/bash.html">Bash</a></li>
-	    <li class="tag-2"><a href="/tag/interests.html">interests</a></li>
-	    <li class="tag-4"><a href="/tag/vc.html">VC++</a></li>
-	    <li class="tag-4"><a href="/tag/rvpn.html">rvpn</a></li>
 </ul>
 
 <nav class="widget">
