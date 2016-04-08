@@ -22,10 +22,12 @@ gems:
 - jekyll-paginate
 
 # Config
+## support the code highlight
+highlighter: pygements
 paginate: 5
 paginate_path: "page/:num"
 # Build settings
-markdown: kramdown
+markdown: rdiscount 
 
 # Archive
 jekyll-archives:
