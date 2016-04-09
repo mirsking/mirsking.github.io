@@ -1753,14 +1753,6 @@ ul {
     top: 3px;
 }
 
-.highlight {
-    background: #fff;
-}
-
-.highlighter-rouge .highlight {
-    background: #eef;
-}
-
 .highlight .c {
     color: #998;
     font-style: italic;

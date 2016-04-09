@@ -22,12 +22,21 @@ gems:
 - jekyll-paginate
 
 # Config
-## support the code highlight
-highlighter: pygements
 paginate: 5
 paginate_path: "page/:num"
 # Build settings
-markdown: rdiscount 
+markdown: kramdown
+kramdown:
+  input: GFM
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+  enable_coderay: true
+  syntax_highlighter: rouge
+  coderay:
+    coderay_line_numbers:  nil
+  #auto_ids: true
 
 # Archive
 jekyll-archives:

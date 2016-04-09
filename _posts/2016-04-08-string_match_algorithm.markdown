@@ -15,7 +15,7 @@ tags:
 ## Brute-Force Algorithm
 字符串匹配最简单的想法是将pattern对齐source，然后顺序比较是否相同，发生不匹配后将pattern后移一位进行匹配。  
 
-```
+```cpp
 int search(const string& src, const string& pattern)
 {
 	if (pattern.empty())
@@ -89,7 +89,7 @@ b[i+1]的代表的意义是pattern的长度为$i+1$的前缀$p_0p_1...p_i$的边
 * 如果$p[j] == p[i]$，意味着当前边界可以被$p[i]$扩展。  
 * 如果$p[j] != p[i]$，意味着当前边界无法被$p[i]$扩展。则通过$j = b[j]$，尝试当前边界的子边界（注意这里的描述）  
 
-```
+```cpp
 void kmpBorder(const string& pattern, vector<int>& borders)
 {
 	borders.resize(pattern.size() + 1);
@@ -116,7 +116,7 @@ http://7xnluw.com1.z0.glb.clouddn.com/algorithm/kmp/shift_example.png)
 
 上搜索过程的代码，详细过程见下图。  
 
-```
+```cpp
 int search(const string& src, const string& pattern)
 {
 	if (pattern.empty())
