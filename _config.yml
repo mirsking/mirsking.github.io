@@ -37,7 +37,10 @@ kramdown:
   coderay:
     coderay_line_numbers:  nil
   #auto_ids: true
-
+comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : mirsking 
 # Archive
 jekyll-archives:
   enabled: []
