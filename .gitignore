@@ -2,3 +2,5 @@ _site/
 .bundle/
 Gemfile.lock
 .DS_Store
+.sass-cache
+_posts/.*.swp
