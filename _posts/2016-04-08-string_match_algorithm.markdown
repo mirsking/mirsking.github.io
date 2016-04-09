@@ -2,7 +2,7 @@
 layout: post
 title:  "字符串匹配算法"
 date:   2016-04-08 22:15:00 +0800
-categories: 实习与工作／算法
+categories: 实习与工作
 tags:
 - 算法
 - 字符串匹配
