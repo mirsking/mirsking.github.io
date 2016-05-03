@@ -1,18 +1,12 @@
 body,
 h1,
 h2,
-h3,
-h4,
-h5,
-h6,
 p,
 blockquote,
 pre,
 hr,
 dl,
 dd,
-ol,
-ul,
 figure {
     margin: 0;
     padding: 0;
@@ -108,10 +102,6 @@ pre,
 code {
     font-size: 15px;
     background-color: #222;
-}
-
-code {
-    padding: 1px 5px;
 }
 
 pre {
@@ -253,7 +243,6 @@ pre>code {
 
 ol,
 ul {
-    list-style: none;
     margin-left: 0;
 }
 
