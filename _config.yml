@@ -100,5 +100,5 @@ duoshuo_username: mirsking
 skill_software_keywords: [C++, Python, Design Patterns]
 #skill_mobile_app_keywords: [Android, Reverse Engineering]
 skill_windows_keywords: [Qt]
-#popular_repos: ['chinese-copywriting-guidelines','android-reverse-engineering', 'csdncommenter', 'mzlogin.github.io', 'vim-markdown-toc']
-#contribute_repos: ['sparanoid/chinese-copywriting-guidelines', 'waylife/RentCrawer']
+popular_repos: ['mirsking.github.io', 'urdf_ws']
+contribute_repos: ['zoharby/matconvnet', 'dawnos/PPD']

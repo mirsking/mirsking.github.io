@@ -9,6 +9,7 @@ permalink: /about/
 ---
 
 ![avatar](https://avatars2.githubusercontent.com/u/6286383?v=3&s=460)
+
 用心记录成长过程的点点滴滴！
 
 ## 联系
