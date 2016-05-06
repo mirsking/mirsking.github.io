@@ -17,7 +17,7 @@ Github上建站大都式用jekyl、octopress，可惜都是用ruby写的。ruby�
 
 ### pelican 安装
 
-```
+```bash
 pip install pelican 
 mkdir blog && cd blog
 pelican-quickstart
@@ -28,13 +28,13 @@ pelican-quickstart
 
 ### pelican markdown 支持
 
-```
+```bash
 pip install Markdown
 ```
 
 ### pelican 主题的安装与配置
 
-```
+```bash
 pelican-themes -l #显示已安装主题
 git clone https://github.com/getpelican/pelican-themes.git #clone pelican's themes on github
 pelican-themes -i [Theme's path]

@@ -21,7 +21,7 @@ E117: 未定义的函数: neocomplcache\#enable
 OK，吐槽结束，转入这个正题，在ubuntu12.04上装带有lua的vim 7.4教程：
 
 
-```
+```bash
 sudo apt-get remove vim vim-runtime vim-gnome vim-tiny vim-common vim-gui-common  
 sudo apt-get purge vim vim-runtime vim-gnome vim-tiny vim-common vim-gui-common  
 sudo apt-get build-dep vim-gnome  
@@ -58,7 +58,7 @@ git clone https://github.com/gmarik/vundle.git
 
 接着把.vimrc放到~目录中, 然后启动vim, 这是会报一堆错, 都是因为插件没安装的原因, 一路回车进入vim界面, 然后
 
-```
+```bash
 :BundleInstall
 ```
 

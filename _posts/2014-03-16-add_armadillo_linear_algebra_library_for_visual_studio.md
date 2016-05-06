@@ -38,23 +38,25 @@ Armadillo也提供了python的接口armanpy。同时在Armadillo基础上也开�
 
 打开X:/armadillo-3.930.4/include\\armadillo\_bits目录中的config.hpp文件。  
 找到并将以下两行前的注释去掉，改为：  
+
+```cpp
+#define ARMA_USE_LAPACK  
+#define ARMA_USE_BLAS
 ```
- #define ARMA_USE_LAPACK  
- #define ARMA_USE_BLAS
-```
+
 ### 写个测试程序
 
-``` 
- #include <iostream>  
- #include <armadillo>  
- int main()  
- {  
- arma::mat A = arma::randu(5, 5) * 10;  
- arma::mat B = arma::inv(A);  
- A.print("A = \n");  
- B.print("inv（A） = \n");  
- return 0;  
- }  
+```cpp
+#include <iostream>  
+#include <armadillo>  
+int main()  
+{  
+arma::mat A = arma::randu(5, 5) * 10;  
+arma::mat B = arma::inv(A);  
+A.print("A = \n");  
+B.print("inv（A） = \n");  
+return 0;  
+}  
 ```
 
 在项目属性中的链接器中添加 libblas.lib，liblapack.lib，liblapacke.lib 编译生成。  

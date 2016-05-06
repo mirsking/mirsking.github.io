@@ -30,7 +30,7 @@ Robotics Toolbox for MATLAB是由Peter I. Corke编写的第三方工具箱。提
 
 这里简单介绍下rpy2tr函数：
 
-```
+```matlab
 R = RPY2R(RPY, OPTIONS) is an orthonormal rotation matrix  
 equivalent to the  specified roll, pitch, yaw angles  
 which correspond to rotations about the X, Y, Z axes respectively.  
@@ -49,7 +49,7 @@ where the last index corresponds to the rows of RPY.
 
 #### link函数的调用格式 
 
-```
+```matlab
 L = LINK([theta D A alpha])
 
 L =LINK([theta D A alphaD sigma])
@@ -65,7 +65,7 @@ L =LINK([theta D A alpha sigma offset], CONVENTION)
 
 参数CONVENTION可以取‘standard’和‘modified’，其中‘standard’代表采用标准的D-H参数，‘modified’代表采用改进的D-H参数。参数‘alpha’代表扭转角，参数‘A’代表杆件长度，参数‘theta’代表关节角，参数‘D’代表横距，参数‘sigma’代表关节类型：0代表旋转关节，非0代表移动关节。另外LINK还有一些数据域：
 
-```
+```matlab
 LINK.alpha %返回扭转角
 
 LINK.A %返回杆件长度
@@ -112,7 +112,7 @@ LINK.dyn return legacy DYN row
 
 顾名思义，该函数是将多个由Link生成的连杆连接起来。
 
-```
+```matlab
 bot = SerialLink([L1 L2 L3], 'name', 'my robot');
 ```
 
@@ -120,7 +120,7 @@ bot = SerialLink([L1 L2 L3], 'name', 'my robot');
 
 或者连杆有L(1) L(2)等表示，则可简洁地表示为
 
-```
+```matlab
 bot = SerialLink(L 'name', 'my robot');
 ```
 
@@ -128,7 +128,7 @@ bot = SerialLink(L 'name', 'my robot');
 
 fkine函数是用来计算操作臂正向运动矩阵（forward kinematics），其调用格式为：
 
-```
+```matlab
 bot.fkine([pi/4 -pi/4]) %该式表示将bot操作臂的两个连杆分别旋转pi/4和 -pi/4。
 ```
 

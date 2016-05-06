@@ -25,7 +25,7 @@ robotics工具箱中有ikine()函数可以方便实现。同时对于puma560这�
 
 由于逆运动学解的不唯一性，ikine6s()函数提供了一些参数以限定解的形式。如下：
 
-```
+```matlab
 left or right handed	'l' , 'r'  
 elbow up or down	'u' , 'd'  
 wrist flipped or not flipped	'f' , 'n'
@@ -37,7 +37,7 @@ wrist flipped or not flipped	'f' , 'n'
 
 而对于ikine()函数。其调用形式有三种，如下：
 
-```
+```matlab
 Q = R.ikine(T)
 Q = R.ikine(T, Q0, OPTIONS)
 Q = R.ikine(T, Q0, M, OPTIONS)
@@ -47,7 +47,7 @@ Q = R.ikine(T, Q0, M, OPTIONS)
 
 而OPTIONS参数比较多。如下：
 
-``` 
+``` matlab
 'pinv' use pseudo-inverse instead of Jacobian transpose  
 'ilimit',L set the maximum iteration count (default 1000)  
 'tol',T set the tolerance on error norm (default 1e-6)  
