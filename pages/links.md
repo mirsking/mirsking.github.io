@@ -11,3 +11,4 @@ permalink: /links/
 > God made relatives. Thank God we can choose our friends.
 
 * [Mirsking''s Blog](http://mirsking.com)
+* [Tian Jun Machine Learning](http://tianjun.ml)
