@@ -1,6 +1,8 @@
 _site/
-.bundle/
-Gemfile.lock
+*.swp
+*.~vsd
+\#*\#
+*~
 .DS_Store
-.sass-cache
-_posts/.*.swp
+Gemfile.lock
+.sass-cache/
