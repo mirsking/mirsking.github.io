@@ -19,8 +19,14 @@ tags:
 1. 数据库的新建、删除、选择、显示  
     ```
     CREATE DATABASE dbname; # 新建数据库  
+    ```
+    ```
     DROP DATABASE dbname; # 删除数据库  
+    ```
+    ```
     USE dbname; # 选择数据库  
+    ```
+    ```
     SHOW DATABASES; # 列出数据库
 	```
 
