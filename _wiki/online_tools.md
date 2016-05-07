@@ -5,6 +5,8 @@ categories: 工具配置
 description: 实用在线工具
 ---
 
+* [Jekyll Variables](https://jekyllrb.com/docs/variables/)
+
 * [ASCII对照表](http://tool.oschina.net/commons?type=4)
 
 * [TCP/UDP常见端口参考](http://tool.oschina.net/commons?type=7)
