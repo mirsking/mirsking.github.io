@@ -73,17 +73,17 @@ KMP算法的核心思想是记录一个数组，这个数组保存着当在patte
 
 > **定理**：$r, s$都是$x$的边界，且$|r|<|s|$，那么$r$也是$s$的边界。  
 这个定理可以由下图推得：  
-![border_theorem](http://7xnluw.com1.z0.glb.clouddn.com/algorithm/kmp/border_theorem.gif)
+![border_theorem](http://cdn.mirsking.com/algorithm/kmp/border_theorem.gif)
 
 > **定义**：$r$是字符串$x$的边界，$a$是一个字符。如果$ra$是$xa$的边界，那么我们说边界$r$被$a$扩展为$ra$。  
 如下图所示  
-![border_extension](http://7xnluw.com1.z0.glb.clouddn.com/algorithm/kmp/border_extension.gif)
+![border_extension](http://cdn.mirsking.com/algorithm/kmp/border_extension.gif)
 
 #### 预处理过程
 我们用b[m+1]这样一个数组来存储pattern步进信息（有些地方，这个数组叫做next数组），其中m是pattern字符串的长度。  
 b[i+1]的代表的意义是pattern的长度为$i+1$的前缀$p_0p_1...p_i$的边界。所以他可以由$p_0p_1...p_{i-1}$的边界是否可以有$p_i$扩展获得。  
 如果能够扩展也就意味着：$p[b[i]] == p[i]$（见下图）。  
-![border_extension_b_i+1](http://7xnluw.com1.z0.glb.clouddn.com/algorithm/kmp/border_extension_b_i%2B1.gif)
+![border_extension_b_i+1](http://cdn.mirsking.com/algorithm/kmp/border_extension_b_i%2B1.gif)
 
 预处理的过程，在一个while循环中用j来存储当前边界的长度  
 * 如果$p[j] == p[i]$，意味着当前边界可以被$p[i]$扩展。  
@@ -112,7 +112,7 @@ void kmpBorder(const string& pattern, vector<int>& borders)
 > 例子  
 如下图，0~4已经匹配，5处发生c和d的不匹配。而已匹配的部分$abcab$长度为5， 其边界是$ab$长度为2，所以要向右移5-2=3位。  
 ![shift_example](
-http://7xnluw.com1.z0.glb.clouddn.com/algorithm/kmp/shift_example.png)
+http://cdn.mirsking.com/algorithm/kmp/shift_example.png)
 
 上搜索过程的代码，详细过程见下图。  
 
@@ -140,7 +140,7 @@ int search(const string& src, const string& pattern)
 	return -1;
 }
 ```  
-![search](http://7xnluw.com1.z0.glb.clouddn.com/algorithm/kmp/search.gif)
+![search](http://cdn.mirsking.com/algorithm/kmp/search.gif)
 
 
 

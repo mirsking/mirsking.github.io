@@ -47,7 +47,7 @@ java安装成功后，就可以访问rvpn了。访问rvpn.zju.edu.cn登陆后，
 
 这里如果运行正常，就会出现
 
-![easyconnect](http://7xnluw.com1.z0.glb.clouddn.com/tools_configuration/easyconnect.png)
+![easyconnect](http://cdn.mirsking.com/tools_configuration/easyconnect.png)
 
 这个小图标。然后就可以尽情访问内网了。
 

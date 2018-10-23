@@ -24,7 +24,7 @@ pelican-quickstart
 ```
 最后一步完成后，在blog目录会生成如下图的目录，以后只要在content目录下写markdown，然后在blog目录下`pelican`一下，静态文件就输出到output文件夹了。
 
-![pelican目录结构](http://7xnluw.com1.z0.glb.clouddn.com/tools_configuration/150112_pelican_direction_struct.png)
+![pelican目录结构](http://cdn.mirsking.com/tools_configuration/150112_pelican_direction_struct.png)
 
 ### pelican markdown 支持
 

@@ -12,7 +12,7 @@ categories: Coding
 
 又比如：用Matlab画出一些漂亮的图片。先放一张图（注意，点击图片可以看到动态图哦）：
 
-![heart-beats](http://7xnluw.com1.z0.glb.clouddn.com/tools_configuration/heart-beats.gif)
+![heart-beats](http://cdn.mirsking.com/tools_configuration/heart-beats.gif)
 
 还不错吧，下面就贴出源代码，造福大家：
 
@@ -69,7 +69,7 @@ end
 
 怎么样？不过瘾？再来一个（注意，点击图片可以看到动态图哦）：  
 
-![heart-waves](http://7xnluw.com1.z0.glb.clouddn.com/tools_configuration/heart-waves.gif)
+![heart-waves](http://cdn.mirsking.com/tools_configuration/heart-waves.gif)
 
 同样附上源码：  
 

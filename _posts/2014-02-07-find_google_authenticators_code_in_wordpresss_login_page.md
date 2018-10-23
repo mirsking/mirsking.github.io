@@ -18,7 +18,7 @@ authenticator的验证码而无法登录wordpress后台怎么办？
 authenticator的字段：如图
 
 
-![googleauthenticator](http://7xnluw.com1.z0.glb.clouddn.com/tools_configuration/googleauthenticator.bmp)
+![googleauthenticator](http://cdn.mirsking.com/tools_configuration/googleauthenticator.bmp)
 
 其中googleauthenticator\_description和googleauthenticator\_secret是我们这次要用到的字段。他们就是手机端google身份验证器所需要的帐号和密码。在手机上输入完成后即可得到自己想要的验证码了。
 

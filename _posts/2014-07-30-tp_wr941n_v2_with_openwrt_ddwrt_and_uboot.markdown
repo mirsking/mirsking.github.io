@@ -61,7 +61,7 @@ A、 telnet或ssh到路由
 B、 使用 cat /proc/mtd命令查看mtd情况  
 OpenWRT一般是这样的
 
-![uboot](http://7xnluw.com1.z0.glb.clouddn.com/tools_configuration/uboot.png)
+![uboot](http://cdn.mirsking.com/tools_configuration/uboot.png)
 
 DD-WRT类似，只是最后一列的name一般有所差别，这里的name一定要确定。下一步要用。  
 

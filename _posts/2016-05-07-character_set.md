@@ -14,7 +14,7 @@ categories: Coding
  
 * [ASCII对照表](http://tool.oschina.net/commons?type=4)
  
-![ASCII](http://7xnluw.com1.z0.glb.clouddn.com/Coding/ASCII_Code_Chart.png)
+![ASCII](http://cdn.mirsking.com/Coding/ASCII_Code_Chart.png)
  
  
 ## Unicode

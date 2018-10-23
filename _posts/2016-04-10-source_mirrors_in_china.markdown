@@ -33,7 +33,7 @@ trusted-host = mirrors.aliyun.com
 
 ## Ruby
 本来一直使用淘宝的镜像源ruby.taobao.org，后来听说了这个  
-![ruby.taobao.org_unamended@2016410](http://7xnluw.com1.z0.glb.clouddn.com/tools_configuration/ruby.taobao.org_unamended.png)   
+![ruby.taobao.org_unamended@2016410](http://cdn.mirsking.com/tools_configuration/ruby.taobao.org_unamended.png)   
 所以现在改用[ruby-china的镜像](https://gems.ruby-china.org/)：  
 
 ### 对于直接gem安装镜像配置方法
